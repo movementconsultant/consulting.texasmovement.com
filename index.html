@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Texas Movement Consulting — AI Strategy & Project Consulting</title>
-  <meta name="description" content="AI project consulting, biomechanics strategy, and organizational systems for teams that move. Led by Alexander Mathai, IIT civil engineer and former NFL/NBA/UFC biomechanics consultant.">
+  <title>Texas Movement Consulting — AI Strategy &amp; Project Consulting</title>
+  <meta name="description" content="AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. Book a strategy session with Texas Movement Consulting.">
   <meta property="og:title" content="Texas Movement Consulting">
-  <meta property="og:description" content="AI strategy and project consulting built on a systems-thinking framework. From athletic performance to organizational intelligence.">
+  <meta property="og:description" content="AI strategy and project consulting built on a systems-thinking framework.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://consulting.texasmovement.com">
   <style>
     :root{--bg:#0a0a0a;--ink:#f5f5f5;--mute:#9a9a9a;--line:#1f1f1f;--accent:#c8102e}
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
     a{color:inherit;text-decoration:none}
     a:hover{color:var(--accent)}
     .wrap{max-width:920px;margin:0 auto;padding:64px 24px 96px}
@@ -20,133 +20,180 @@
     h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.02em;margin:0 0 16px;line-height:1.1}
     h2{font-size:22px;font-weight:700;margin:0 0 20px;letter-spacing:-.01em}
     .lede{font-size:18px;color:var(--mute);max-width:640px;margin:0 0 40px}
-    .cta{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:1px solid var(--line);border-radius:999px;font-size:14px;background:#111;transition:all .15s;margin-right:10px;margin-bottom:10px}
+    .cta{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:1px solid var(--line);border-radius:999px;font-size:14px}
     .cta:hover{border-color:var(--accent);color:var(--accent)}
     .cta.primary{background:var(--accent);border-color:var(--accent);color:#fff}
     .cta.primary:hover{background:#a50d24;border-color:#a50d24;color:#fff}
     section{margin-top:56px;padding-top:32px;border-top:1px solid var(--line)}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .card{padding:20px;border:1px solid var(--line);border-radius:14px;background:#0f0f0f;transition:all .15s;display:flex;flex-direction:column;gap:8px}
+    .card{padding:24px;border:1px solid var(--line);border-radius:14px;background:#0f0f0f;transition:all .15s;display:flex;flex-direction:column}
     .card:hover{border-color:#333;transform:translateY(-2px)}
     .card .name{font-weight:700;font-size:17px}
-    .card .desc{color:var(--mute);font-size:14px;line-height:1.5}
     .card .price{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-top:4px}
     .card .price span{font-size:13px;font-weight:400;color:var(--mute)}
-    .card .tag{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--mute);margin-bottom:4px;width:fit-content}
-    .card .tag.accent{border-color:var(--accent);color:var(--accent)}
-    .card .links{display:flex;gap:10px;margin-top:auto;padding-top:16px;flex-wrap:wrap}
-    .card .links a{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--mute)}
-    .card .links a:hover{border-color:var(--accent);color:var(--accent)}
-    .pill-list{display:flex;flex-direction:column;gap:8px;margin-top:8px;padding:0}
-    .pill-list li{list-style:none;font-size:13px;color:var(--mute);padding-left:14px;position:relative}
-    .pill-list li::before{content:"\2014";position:absolute;left:0;color:var(--accent)}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media(max-width:600px){.two-col{grid-template-columns:1fr}}
-    .connect{display:flex;flex-wrap:wrap;gap:12px}
-    .sbtn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid var(--line);border-radius:999px;background:#0f0f0f;font-size:14px;transition:all .15s}
-    .sbtn:hover{border-color:var(--accent);color:var(--accent)}
-    footer{margin-top:80px;padding-top:32px;border-top:1px solid var(--line);font-size:13px;color:var(--mute);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center}
-    .back{font-size:13px;color:var(--mute);margin-bottom:40px;display:inline-block}
-    .back:hover{color:var(--accent)}
-    .credential{display:inline-block;font-size:12px;padding:4px 12px;border:1px solid var(--line);border-radius:999px;color:var(--mute);margin:0 6px 6px 0}
+    .card .desc{font-size:14px;color:var(--mute);margin-top:12px;line-height:1.6;flex:1}
+    .card .badge{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:600}
+    .flow{display:flex;flex-direction:column;gap:8px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+    .flow-step{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5}
+    .flow-step .num{background:var(--accent);color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+    .flow-step .txt{color:var(--mute)}
+    .flow-step .txt a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+    .flow-step .txt a:hover{color:var(--accent)}
+    .card-cta{display:inline-block;margin-top:16px;background:var(--accent);color:#fff;padding:11px 20px;border-radius:8px;font-weight:600;font-size:14px;text-align:center;transition:opacity .2s}
+    .card-cta:hover{opacity:.88;color:#fff}
+    .card-cta.outline{background:transparent;border:1px solid var(--line);color:var(--ink)}
+    .card-cta.outline:hover{border-color:var(--accent);color:var(--accent)}
+    .note-box{background:#0f0f0f;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;margin-top:32px;font-size:14px;color:var(--mute);line-height:1.7}
+    .note-box strong{color:var(--ink)}
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media(max-width:600px){.cols{grid-template-columns:1fr}}
+    .pill{display:inline-block;padding:3px 10px;background:var(--line);border-radius:999px;font-size:12px;color:var(--mute);margin-right:6px;margin-bottom:6px}
+    .connect-row{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+    .connect-item{font-size:15px;color:var(--mute)}
+    .connect-item a{color:var(--ink)}
+    .connect-item a:hover{color:var(--accent)}
+    footer{border-top:1px solid var(--line);margin-top:80px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--mute)}
   </style>
 </head>
 <body>
-<main class="wrap">
+<div class="wrap">
 
-  <a class="back" href="https://texasmovement.com">&larr; Texas Movement International</a>
+  <a href="https://texasmovement.com" style="font-size:13px;color:var(--mute);display:inline-block;margin-bottom:48px;letter-spacing:.04em">← Texas Movement International</a>
 
   <div class="eyebrow">Texas Movement Consulting</div>
-  <h1>Strategy that moves the needle.</h1>
-  <p class="lede">AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. We don&rsquo;t just ask what tool you&rsquo;re using &mdash; we ask where your system breaks under load.</p>
-  <a class="cta primary" href="mailto:movementconsultant@gmail.com">Book a Strategy Call</a>
-  <a class="cta" href="https://www.linkedin.com/in/alexandermathai/" target="_blank">Connect on LinkedIn</a>
+  <h1>Strategy that<br>moves the needle.</h1>
+  <p class="lede">AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. We don't just ask what tool you're using—we ask where your system breaks under load.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+    <a href="https://calendly.com/movementconsultant/30min" target="_blank" rel="noopener" class="cta primary">Book a Strategy Call</a>
+    <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener" class="cta">Connect on LinkedIn</a>
+  </div>
 
   <section>
-    <div class="eyebrow">The TMC Framework</div>
-    <h2>Athletic diagnostics applied to organizational performance.</h2>
-    <p style="color:var(--mute);font-size:15px;max-width:640px;margin:0 0 24px">The same framework used to identify compensatory movement patterns in elite athletes &mdash; tensegrity, force distribution, connective tissue analysis &mdash; maps directly onto how teams and organizations move under pressure. TMC identifies where energy leaks out of your system before it shows up in your results.</p>
-    <div class="two-col">
-      <div class="card">
-        <div class="name">What We Diagnose</div>
-        <div class="desc">The gap between your strategy and your execution. Where AI tools are being adopted without a system to support them. How decision load is distributed across your team.</div>
-        <ul class="pill-list">
-          <li>AI tool integration gaps</li>
-          <li>Project flow and handoff failures</li>
-          <li>Organizational load distribution</li>
-          <li>Strategy-to-execution breakdowns</li>
+    <h2>The TMC Framework</h2>
+    <p style="color:var(--mute);font-size:15px;max-width:680px;line-height:1.7">The same framework used to identify compensatory movement patterns in elite athletes—tensegrity, force distribution, connective tissue analysis—maps directly onto how teams and organizations move under pressure. TMC identifies where energy leaks out of your system before it shows up in your results.</p>
+    <div class="cols" style="margin-top:24px">
+      <div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">What We Diagnose</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute)">
+          <li>→ AI tool integration gaps</li>
+          <li>→ Project flow and handoff failures</li>
+          <li>→ Organizational load distribution</li>
+          <li>→ Strategy-to-execution breakdowns</li>
         </ul>
       </div>
-      <div class="card">
-        <div class="name">What We Build</div>
-        <div class="desc">A diagnostic report, a systems map, and an action sequence. Not a deck that sits in a folder &mdash; a working model your team can execute against in the next 30 days.</div>
-        <ul class="pill-list">
-          <li>AI project roadmaps</li>
-          <li>Workflow architecture</li>
-          <li>Team capability audits</li>
-          <li>30/60/90-day execution plans</li>
+      <div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">What We Build</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute)">
+          <li>→ AI project roadmaps</li>
+          <li>→ Workflow architecture</li>
+          <li>→ Team capability audits</li>
+          <li>→ 30/60/90-day execution plans</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="eyebrow">Services</div>
-    <h2>Three entry points. One systems approach.</h2>
+    <h2>Services</h2>
+    <p style="color:var(--mute);font-size:14px;margin-bottom:24px">Three entry points. One systems approach. Book your call first — payment confirms your session.</p>
     <div class="grid">
+
       <div class="card">
-        <div class="tag">Entry</div>
+        <div class="badge">Entry</div>
         <div class="name">60-Minute Strategy Call</div>
         <div class="price">$250</div>
-        <div class="desc">A focused diagnostic session to identify your highest-leverage constraint &mdash; whether that&rsquo;s an AI integration gap, a project flow problem, or a team structure issue. You leave with a clear next action, not a slide deck.</div>
-        <div class="links"><a href="mailto:movementconsultant@gmail.com">Book Now</a></div>
+        <div class="desc">A focused diagnostic session to identify your highest-leverage constraint — whether that's an AI integration gap, a project flow problem, or a team structure issue. You leave with a clear next action, not a slide deck.</div>
+        <div class="flow">
+          <div class="flow-step">
+            <div class="num">1</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener">Book your 60-minute session</a> on Calendly — select a date and time that works.</div>
+          </div>
+          <div class="flow-step">
+            <div class="num">2</div>
+            <div class="txt">Complete <a href="https://consulting.texasmovement.com/products/60-minute-strategy-call" target="_blank" rel="noopener">payment ($250)</a> to confirm. You'll receive a Google Meet link after payment clears.</div>
+          </div>
+        </div>
+        <a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener" class="card-cta">Book Now — $250</a>
       </div>
-      <div class="card">
-        <div class="tag accent">Most Requested</div>
+
+      <div class="card" style="border-color:#c8102e30">
+        <div class="badge">Most Requested</div>
         <div class="name">Custom AI Project Consult</div>
         <div class="price">$2,500</div>
         <div class="desc">End-to-end consulting on a specific AI initiative. From tool selection and workflow design through implementation and team onboarding. Built around your actual project, not a template.</div>
-        <div class="links"><a href="mailto:movementconsultant@gmail.com">Start a Project</a></div>
+        <div class="flow">
+          <div class="flow-step">
+            <div class="num">1</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=ai_project" target="_blank" rel="noopener">Book a scoping call</a> on Calendly — note "AI Project Consult" when prompted.</div>
+          </div>
+          <div class="flow-step">
+            <div class="num">2</div>
+            <div class="txt">After the scoping call, you'll receive a project invoice ($2,500) by email. Payment confirms the engagement and kicks off the project.</div>
+          </div>
+        </div>
+        <a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=ai_project" target="_blank" rel="noopener" class="card-cta">Start a Project</a>
       </div>
+
       <div class="card">
-        <div class="tag">Retainer</div>
+        <div class="badge">Retainer</div>
         <div class="name">TMC Elite Monthly Retainer</div>
-        <div class="price">$7,500 <span>/mo</span></div>
+        <div class="price">$7,500 <span>/ mo</span></div>
         <div class="desc">Ongoing strategic partnership for organizations running AI initiatives at scale. Dedicated access, monthly systems reviews, and direct involvement in high-stakes decisions. Limited availability.</div>
-        <div class="links"><a href="mailto:movementconsultant@gmail.com">Apply</a></div>
+        <div class="flow">
+          <div class="flow-step">
+            <div class="num">1</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=retainer" target="_blank" rel="noopener">Book a qualification call</a> on Calendly — note "Elite Retainer" when prompted.</div>
+          </div>
+          <div class="flow-step">
+            <div class="num">2</div>
+            <div class="txt">If it's a fit, you'll receive a retainer agreement and first-month invoice ($7,500). Signing and payment confirm your spot.</div>
+          </div>
+        </div>
+        <a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=retainer" target="_blank" rel="noopener" class="card-cta outline">Apply</a>
+      </div>
+
+    </div>
+
+    <div class="note-box">
+      <strong>How payment works:</strong> For the 60-minute strategy call, payment is collected at booking to confirm your time. For the AI Project Consult and Elite Retainer, payment follows the scoping call once scope is agreed. All payments are invoiced via email — questions? <a href="mailto:movementconsultant@gmail.com" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px">movementconsultant@gmail.com</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>About the Consultant</h2>
+    <div class="cols">
+      <div>
+        <p style="font-size:15px;line-height:1.7;color:var(--mute);margin:0 0 16px">Civil engineer (IIT) turned biomechanics consultant, turned AI project strategist. The through line across all three is the same: systems that break under load do so for structural reasons, not willpower reasons. TMC applies that lens to organizational performance.</p>
+        <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener" class="cta" style="font-size:13px">View Full Profile →</a>
+      </div>
+      <div>
+        <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:12px">Credentials</div>
+        <div>
+          <span class="pill">IIT Civil Engineering</span>
+          <span class="pill">USATF Level 1</span>
+          <span class="pill">NFL / NBA / UFC Biomechanics</span>
+          <span class="pill">AI Project Consulting</span>
+          <span class="pill">TMI Founder &amp; CEO</span>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="eyebrow">About the Consultant</div>
-    <h2>Alexander Mathai</h2>
-    <p style="color:var(--mute);font-size:15px;max-width:640px;margin:0 0 20px">Civil engineer (IIT) turned biomechanics consultant, turned AI project strategist. The through line across all three is the same: systems that break under load do so for structural reasons, not willpower reasons. TMC applies that lens to organizational performance.</p>
-    <div style="margin-bottom:24px">
-      <span class="credential">IIT Civil Engineering</span>
-      <span class="credential">USATF Level 1 Certified</span>
-      <span class="credential">NFL / NBA / UFC Biomechanics</span>
-      <span class="credential">AI Project Consulting</span>
-      <span class="credential">TMI Founder &amp; CEO</span>
-    </div>
-    <a class="cta" href="https://www.linkedin.com/in/alexandermathai/" target="_blank">View Full Profile &rarr;</a>
-  </section>
-
-  <section>
-    <div class="eyebrow">Connect</div>
-    <h2>Start the conversation.</h2>
-    <div class="connect">
-      <a class="sbtn" href="mailto:movementconsultant@gmail.com">Email &mdash; movementconsultant@gmail.com</a>
-      <a class="sbtn" href="https://www.linkedin.com/in/alexandermathai/" target="_blank">LinkedIn &mdash; Alexander Mathai</a>
-      <a class="sbtn" href="https://texasmovement.com" target="_blank">TMI &mdash; texasmovement.com</a>
+    <h2>Connect</h2>
+    <p style="color:var(--mute);font-size:14px;margin-bottom:0">Start the conversation.</p>
+    <div class="connect-row">
+      <div class="connect-item">Email — <a href="mailto:movementconsultant@gmail.com">movementconsultant@gmail.com</a></div>
+      <div class="connect-item">LinkedIn — <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener">Alexander Mathai</a></div>
+      <div class="connect-item">TMI — <a href="https://texasmovement.com" target="_blank" rel="noopener">texasmovement.com</a></div>
     </div>
   </section>
 
   <footer>
-    <span>&copy; Texas Movement Consulting &middot; <a href="https://texasmovement.com">texasmovement.com</a></span>
-    <span>Part of <a href="https://texasmovement.com">Texas Movement International</a> &middot; Est. 2015</span>
+    <span>© Texas Movement Consulting · <a href="https://texasmovement.com">texasmovement.com</a></span>
+    <span>Part of Texas Movement International · Est. 2015</span>
   </footer>
 
-</main>
+</div>
 </body>
 </html>
