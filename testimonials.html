@@ -75,6 +75,25 @@
       height: 100%;
       border: 0;
     }
+    .nav {
+      font-size: 14px;
+      margin-bottom: 1.5rem;
+    }
+    .nav a {
+      color: #9a9a9a;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav a:hover {
+      color: #f5f5f7;
+    }
+    a {
+      color: #e7c46a;
+      text-decoration: none;
+    }
+    a:hover {
+      opacity: 0.9;
+    }
     @media (min-width: 768px) {
       main {
         padding: 40px 24px 60px;
@@ -90,19 +109,21 @@
 </head>
 <body>
   <main>
+    <div class="nav">
+      <a href="/">← Home</a>
+    </div>
+
     <section>
       <h1>Client Results &amp; Testimonials</h1>
       <p class="lead">
-        Behind every Launch Sprint is a founder who went from stuck to live. These stories help the next operator
-        decide whether TMC is right for them — and they’re a two‑way street: when you share, I feature your brand
-        and link directly back to your site and socials.
+        Every TMC engagement is a founder or operator going from stuck to moving forward. These stories help the next builder decide whether TMC is right for them — and they're a two‑way street: when you share, I feature your brand and link directly back to your site and socials.
       </p>
     </section>
 
     <section>
       <h2>How your words get used</h2>
       <ul>
-        <li>I only share your words publicly if you explicitly opt in inside the form and choose how you’re credited.</li>
+        <li>I only share your words publicly if you explicitly opt in inside the form and choose how you're credited.</li>
         <li>When I feature you, I link to your site and main social handle so people can find, follow, and buy from you.</li>
         <li>Your testimonial may appear on this site, in sales decks, or in private proposals — always attributed the way you asked.</li>
         <li>If you prefer to stay anonymous or want something removed later, I honor that, no drama.</li>
@@ -111,20 +132,19 @@
 
     <section>
       <p class="lead" style="margin-bottom: 0.75rem;">
-        <strong>First up:</strong> Diamond Kouture Beauty — vegan lip cosmetics, now live and shoppable at
-        <a href="https://diamondkbeauty.com" target="_blank" rel="noopener noreferrer" style="color:#e7c46a;">
+        <strong>First featured client:</strong> Diamond Kouture Beauty — vegan lip cosmetics, now live and shoppable at
+        <a href="https://diamondkbeauty.com" target="_blank" rel="noopener noreferrer">
           diamondkbeauty.com
         </a>.
       </p>
       <p class="lead" style="margin-top: 0;">
-        Worked with TMC? Take 3–5 minutes to share how it went below. It helps the next founder make a confident decision — and gets
-        your brand a feature with a link back to you.
+        Worked with TMC? Take 3–5 minutes to share how it went below. It helps the next founder make a confident decision — and gets your brand a feature with a link back to you.
       </p>
     </section>
 
     <section class="form-frame-wrapper">
       <h2>Share your results</h2>
-      <p>This short form covers what changed, what stood out, and how you’d like to be featured.</p>
+      <p>This short form covers what changed, what stood out, and how you'd like to be featured.</p>
       <div class="form-frame-shell">
         <!-- TMC_GOOGLE_FORM_IFRAME_HERE -->
         <iframe
