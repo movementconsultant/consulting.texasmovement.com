@@ -16,6 +16,11 @@
     a{color:inherit;text-decoration:none}
     a:hover{color:var(--accent)}
     .wrap{max-width:920px;margin:0 auto;padding:64px 24px 96px}
+    .nav{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:32px;align-items:center;font-size:13px}
+    .nav a{color:var(--mute);transition:color .2s}
+    .nav a:hover{color:var(--ink)}
+    .nav-sep{color:var(--line)}
+    .nav-back{display:flex;gap:16px;margin-bottom:16px}
     .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:16px}
     h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.02em;margin:0 0 16px;line-height:1.1}
     h2{font-size:22px;font-weight:700;margin:0 0 20px;letter-spacing:-.01em}
@@ -35,7 +40,7 @@
     .card .badge{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:600}
     .flow{display:flex;flex-direction:column;gap:8px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
     .flow-step{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5}
-    .flow-step .num{background:var(--accent);color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+    .flow-step .num{background:var(--accent);color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
     .flow-step .txt{color:var(--mute)}
     .flow-step .txt a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
     .flow-step .txt a:hover{color:var(--accent)}
@@ -43,7 +48,7 @@
     .card-cta:hover{opacity:.88;color:#fff}
     .card-cta.outline{background:transparent;border:1px solid var(--line);color:var(--ink)}
     .card-cta.outline:hover{border-color:var(--accent);color:var(--accent)}
-    .note-box{background:#0f0f0f;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;margin-top:32px;font-size:14px;color:var(--mute);line-height:1.7}
+    .note-box{background:#0f0f0f;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;margin-top:32px;font-size:14px;color:var(--mute);line-height:1.5}
     .note-box strong{color:var(--ink)}
     .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
     @media(max-width:600px){.cols{grid-template-columns:1fr}}
@@ -58,7 +63,15 @@
 <body>
 <div class="wrap">
 
-  <a href="https://texasmovement.com" style="font-size:13px;color:var(--mute);display:inline-block;margin-bottom:48px;letter-spacing:.04em">← Texas Movement International</a>
+  <div class="nav nav-back">
+    <a href="https://texasmovement.com" style="letter-spacing:.04em">← Texas Movement International</a>
+  </div>
+
+  <div class="nav">
+    <a href="/">Home</a>
+    <span class="nav-sep">·</span>
+    <a href="/testimonials">Testimonials</a>
+  </div>
 
   <div class="eyebrow">Texas Movement Consulting</div>
   <h1>Strategy that<br>moves the needle.</h1>
@@ -70,7 +83,7 @@
 
   <section>
     <h2>The TMC Framework</h2>
-    <p style="color:var(--mute);font-size:15px;max-width:680px;line-height:1.7">The same framework used to identify compensatory movement patterns in elite athletes—tensegrity, force distribution, connective tissue analysis—maps directly onto how teams and organizations move under pressure. TMC identifies where energy leaks out of your system before it shows up in your results.</p>
+    <p style="color:var(--mute);font-size:15px;max-width:680px;line-height:1.7">The same framework used to identify compensatory movement patterns in elite athletes—tensegrity, force distribution, and organizational load—applies directly to how teams execute on AI initiatives. We diagnose where your systems break and build workflows that don't.</p>
     <div class="cols" style="margin-top:24px">
       <div>
         <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">What We Diagnose</div>
@@ -102,15 +115,15 @@
         <div class="badge">Entry</div>
         <div class="name">60-Minute Strategy Call</div>
         <div class="price">$250</div>
-        <div class="desc">A focused diagnostic session to identify your highest-leverage constraint — whether that's an AI integration gap, a project flow problem, or a team structure issue. You leave with a clear next action, not a slide deck.</div>
+        <div class="desc">A focused diagnostic session to identify your highest-leverage constraint — whether that's an AI integration gap, a project flow problem, or a team structure issue. You leave with clarity on next steps.</div>
         <div class="flow">
           <div class="flow-step">
             <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener">Book your 60-minute session</a> on Calendly — select a date and time that works.</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener">Book your 60-minute session</a> on Calendly (choose a time that works).</div>
           </div>
           <div class="flow-step">
             <div class="num">2</div>
-            <div class="txt">Complete <a href="mailto:movementconsultant@gmail.com?subject=Payment%20Confirmation%20%E2%80%93%20Strategy%20Call%20($250)&body=Hi%2C%20I%20just%20booked%20a%2060-minute%20strategy%20call%20on%20Calendly.%20Please%20send%20my%20invoice%20to%20confirm.">payment ($250)</a> to confirm. You'll receive a Google Meet link after payment clears.</div>
+            <div class="txt">Complete <a href="mailto:movementconsultant@gmail.com?subject=Payment%20Confirmation%20%E2%80%93%20Strategy%20Call%20($250)&body=Hi%2C%20I%20just%20booked%20a%2060-minute%20strategy%20call.%20Here's%20my%20confirmation%20link%3A%20%5Bpaste%20Calendly%20link%5D" target="_blank">payment confirmation</a> to secure your spot.</div>
           </div>
         </div>
         <a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener" class="card-cta">Book Now — $250</a>
@@ -120,11 +133,11 @@
         <div class="badge">Most Requested</div>
         <div class="name">Custom AI Project Consult</div>
         <div class="price">$2,500</div>
-        <div class="desc">End-to-end consulting on a specific AI initiative. From tool selection and workflow design through implementation and team onboarding. Built around your actual project, not a template.</div>
+        <div class="desc">End-to-end consulting on a specific AI initiative. From tool selection and workflow design through implementation and team onboarding. Built around your actual project, timeline, and constraints.</div>
         <div class="flow">
           <div class="flow-step">
             <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=ai_project" target="_blank" rel="noopener">Book a scoping call</a> on Calendly — note "AI Project Consult" when prompted.</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=ai_project" target="_blank" rel="noopener">Book a scoping call</a> on Calendly to align on scope and timeline.</div>
           </div>
           <div class="flow-step">
             <div class="num">2</div>
@@ -138,11 +151,11 @@
         <div class="badge">Retainer</div>
         <div class="name">TMC Elite Monthly Retainer</div>
         <div class="price">$7,500 <span>/ mo</span></div>
-        <div class="desc">Ongoing strategic partnership for organizations running AI initiatives at scale. Dedicated access, monthly systems reviews, and direct involvement in high-stakes decisions. Limited availability.</div>
+        <div class="desc">Ongoing strategic partnership for organizations running AI initiatives at scale. Dedicated access, monthly systems reviews, and direct involvement in high-stakes decision-making and pivots.</div>
         <div class="flow">
           <div class="flow-step">
             <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=retainer" target="_blank" rel="noopener">Book a qualification call</a> on Calendly — note "Elite Retainer" when prompted.</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=retainer" target="_blank" rel="noopener">Book a qualification call</a> on Calendly so we can assess fit and scope.</div>
           </div>
           <div class="flow-step">
             <div class="num">2</div>
@@ -155,7 +168,7 @@
     </div>
 
     <div class="note-box">
-      <strong>How payment works:</strong> For the 60-minute strategy call, payment is collected at booking to confirm your time. For the AI Project Consult and Elite Retainer, payment follows the scoping call once scope is agreed. All payments are invoiced via email — questions? <a href="mailto:movementconsultant@gmail.com" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px">movementconsultant@gmail.com</a>
+      <strong>How payment works:</strong> For the 60-minute strategy call, payment is collected at booking to confirm your time. For the AI Project Consult and Elite Retainer, payment follows the scoping call once scope and timeline are locked in.
     </div>
   </section>
 
@@ -163,7 +176,7 @@
     <h2>About the Consultant</h2>
     <div class="cols">
       <div>
-        <p style="font-size:15px;line-height:1.7;color:var(--mute);margin:0 0 16px">Civil engineer (IIT) turned biomechanics consultant, turned AI project strategist. The through line across all three is the same: systems that break under load do so for structural reasons, not willpower reasons. TMC applies that lens to organizational performance.</p>
+        <p style="font-size:15px;line-height:1.7;color:var(--mute);margin:0 0 16px">Civil engineer (IIT) turned biomechanics consultant, turned AI project strategist. The through line across all three: systems thinking under load. I audit organizational structures the way I'd audit an athlete's movement—looking for where load isn't distributing cleanly, where compensations are masking bigger problems, and where small structural shifts unlock disproportionate gains.</p>
         <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener" class="cta" style="font-size:13px">View Full Profile →</a>
       </div>
       <div>
