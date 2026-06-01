@@ -19,12 +19,17 @@
     .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:16px}
     h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.02em;margin:0 0 16px;line-height:1.1}
     h2{font-size:22px;font-weight:700;margin:0 0 20px;letter-spacing:-.01em}
-    .lede{font-size:18px;color:var(--mute);max-width:640px;margin:0 0 40px}
+    .lede{font-size:18px;color:var(--mute);max-width:640px;margin:0 0 40px;line-height:1.6}
     .cta{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:1px solid var(--line);border-radius:999px;font-size:14px}
     .cta:hover{border-color:var(--accent);color:var(--accent)}
     .cta.primary{background:var(--accent);border-color:var(--accent);color:#fff}
     .cta.primary:hover{background:#a50d24;border-color:#a50d24;color:#fff}
-    .cta-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+    .cta-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;margin-bottom:32px}
+    .nav{margin-bottom:16px}
+    .nav a{font-size:14px;color:var(--mute);transition:color .2s}
+    .nav a:hover{color:var(--ink)}
+    .nav-sep{color:var(--line)}
+    .nav-back{margin-bottom:32px}
     section{margin-top:56px;padding-top:32px;border-top:1px solid var(--line)}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
     .card{padding:24px;border:1px solid var(--line);border-radius:14px;background:#0f0f0f;transition:all .15s;display:flex;flex-direction:column}
@@ -59,22 +64,20 @@
 <body>
 <div class="wrap">
 
-  <a href="https://texasmovement.com" style="font-size:13px;color:var(--mute);display:inline-block;margin-bottom:48px;letter-spacing:.04em">← Texas Movement International</a>
-
   <div class="nav nav-back">
     <a href="https://texasmovement.com" style="letter-spacing:.04em">← Texas Movement International</a>
   </div>
 
-  <div class="nav">
+  <div class="nav" style="margin-top:32px;margin-bottom:32px">
     <a href="/">Home</a>
     <span class="nav-sep">·</span>
     <a href="/testimonials">Testimonials</a>
   </div>
 
   <div class="eyebrow">Texas Movement Consulting</div>
-  <h1>Strategy that<br>moves the needle.</h1>
-  <p class="lede">AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. We don't just ask what tool you're using—we ask where your system breaks under load.</p>
-  <div class="cta-buttons">
+  <h1 style="margin-bottom:24px">Strategy that<br>moves the needle.</h1>
+  <p class="lede" style="margin-bottom:32px">AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. We don't just ask what tool you're using—we ask where your system breaks under load.</p>
+  <div class="cta-buttons" style="margin-top:0">
     <a href="https://calendly.com/movementconsultant/30min" target="_blank" rel="noopener" class="cta primary">Book a Strategy Call</a>
     <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener" class="cta">Connect on LinkedIn</a>
     <a href="/testimonials" class="cta">Read Testimonials</a>
