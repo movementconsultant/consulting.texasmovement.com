@@ -49,7 +49,7 @@
     .card-cta:hover{opacity:.88;color:#fff}
     .card-cta.outline{background:transparent;border:1px solid var(--line);color:var(--ink)}
     .card-cta.outline:hover{border-color:var(--accent);color:var(--accent)}
-    .note-box{background:#0f0f0f;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;margin-top:32px;font-size:14px;color:var(--mute);line-height:1.5}
+    .note-box{background:#0f0f0f;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;margin-top:32px;font-size:14px;color:var(--mute);line-height:1.6}
     .note-box strong{color:var(--ink)}
     .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
     @media(max-width:600px){.cols{grid-template-columns:1fr}}
@@ -59,6 +59,18 @@
     .connect-item a{color:var(--ink)}
     .connect-item a:hover{color:var(--accent)}
     footer{border-top:1px solid var(--line);margin-top:80px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--mute)}
+    .tm-form{display:flex;flex-direction:column;gap:24px;margin-top:28px;max-width:680px}
+    .tm-form-row{display:flex;flex-direction:column;gap:8px}
+    .tm-form-row label{font-size:14px;font-weight:600;color:var(--ink)}
+    .tm-form-row input,.tm-form-row textarea,.tm-form-row select{width:100%;padding:11px 14px;background:#0f0f0f;border:1px solid var(--line);border-radius:8px;color:var(--ink);font-family:inherit;font-size:14px;line-height:1.5;transition:border-color .2s}
+    .tm-form-row input::placeholder,.tm-form-row textarea::placeholder{color:var(--mute)}
+    .tm-form-row input:focus,.tm-form-row textarea:focus,.tm-form-row select:focus{outline:none;border-color:var(--accent);background:#0f0f0f}
+    .tm-form-row textarea{resize:vertical;min-height:100px}
+    .tm-form-row select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239a9a9a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:12px;padding-right:36px}
+    .tm-form-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s}
+    .tm-form-btn:hover{background:#a50d24}
+    .tm-form-btn:active{opacity:.9}
+    .tm-form-footnote{font-size:13px;color:var(--mute);margin-top:12px;font-style:italic}
   </style>
 </head>
 <body>
@@ -76,7 +88,7 @@
 
   <div class="eyebrow">Texas Movement Consulting</div>
   <h1 style="margin-bottom:24px">Strategy that<br>moves the needle.</h1>
-  <p class="lede" style="margin-bottom:32px">AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. We don't just ask what tool you're using—we ask where your system breaks under load.</p>
+  <p class="lede" style="margin-bottom:32px">AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. We don't just ask what tool you're using—we ask where it fits in your system.</p>
   <div class="cta-buttons" style="margin-top:0">
     <a href="https://calendly.com/movementconsultant/30min" target="_blank" rel="noopener" class="cta primary">Book a Strategy Call</a>
     <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener" class="cta">Connect on LinkedIn</a>
@@ -85,7 +97,7 @@
 
   <section>
     <h2>The TMC Framework</h2>
-    <p style="color:var(--mute);font-size:15px;max-width:680px;line-height:1.7">The same framework used to identify compensatory movement patterns in elite athletes—tensegrity, force distribution, and organizational load—applies directly to how teams execute on AI initiatives. We diagnose where your systems break and build workflows that don't.</p>
+    <p style="color:var(--mute);font-size:15px;max-width:680px;line-height:1.7">The same framework used to identify compensatory movement patterns in elite athletes—tensegrity, force distribution, and load tolerance—applies to organizational systems. We diagnose where your AI initiatives break down and rebuild them at the system level.</p>
     <div class="cols" style="margin-top:24px">
       <div>
         <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">What We Diagnose</div>
@@ -117,15 +129,15 @@
         <div class="badge">Entry</div>
         <div class="name">60-Minute Strategy Call</div>
         <div class="price">$250</div>
-        <div class="desc">A focused diagnostic session to identify your highest-leverage constraint — whether that's an AI integration gap, a project flow problem, or a team structure issue. You leave with clarity on next steps.</div>
+        <div class="desc">A focused diagnostic session to identify your highest-leverage constraint — whether that's an AI integration gap, a project flow problem, or a team structure issue. You leave with a clear priority.</div>
         <div class="flow">
           <div class="flow-step">
             <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener">Book your 60-minute session</a> on Calendly (choose a time that works).</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener">Book your 60-minute session</a> on Calendly.</div>
           </div>
           <div class="flow-step">
             <div class="num">2</div>
-            <div class="txt">Complete <a href="mailto:movementconsultant@gmail.com?subject=Payment%20Confirmation%20%E2%80%93%20Strategy%20Call%20($250)&body=Hi%2C%20I%20just%20booked%20a%2060-minute%20strategy%20call.%20Here's%20my%20confirmation%20link%3A%20%5Bpaste%20Calendly%20link%5D" target="_blank">payment confirmation</a> to secure your spot.</div>
+            <div class="txt">Complete <a href="mailto:movementconsultant@gmail.com?subject=Payment%20Confirmation%20%E2%80%93%20Strategy%20Call%20($250)&body=Hi%2C%20I%20just%20booked%20a%2060-minute%20call.%20Here%27s%20my%20payment%20confirmation." target="_blank" rel="noopener">payment confirmation</a> via email.</div>
           </div>
         </div>
         <a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener" class="card-cta">Book Now — $250</a>
@@ -135,11 +147,11 @@
         <div class="badge">Most Requested</div>
         <div class="name">Custom AI Project Consult</div>
         <div class="price">$2,500</div>
-        <div class="desc">End-to-end consulting on a specific AI initiative. From tool selection and workflow design through implementation and team onboarding. Built around your actual project, timeline, and constraints.</div>
+        <div class="desc">End-to-end consulting on a specific AI initiative. From tool selection and workflow design through implementation and team onboarding. Built around your actual project, timeline, and team structure.</div>
         <div class="flow">
           <div class="flow-step">
             <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=ai_project" target="_blank" rel="noopener">Book a scoping call</a> on Calendly to align on scope and timeline.</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=ai_project" target="_blank" rel="noopener">Book a scoping call</a> on Calendly to align on project scope.</div>
           </div>
           <div class="flow-step">
             <div class="num">2</div>
@@ -153,11 +165,11 @@
         <div class="badge">Retainer</div>
         <div class="name">TMC Elite Monthly Retainer</div>
         <div class="price">$7,500 <span>/ mo</span></div>
-        <div class="desc">Ongoing strategic partnership for organizations running AI initiatives at scale. Dedicated access, monthly systems reviews, and direct involvement in high-stakes decision-making and pivots.</div>
+        <div class="desc">Ongoing strategic partnership for organizations running AI initiatives at scale. Dedicated access, monthly systems reviews, and direct involvement in high-stakes decision-making.</div>
         <div class="flow">
           <div class="flow-step">
             <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=retainer" target="_blank" rel="noopener">Book a qualification call</a> on Calendly so we can assess fit and scope.</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=retainer" target="_blank" rel="noopener">Book a qualification call</a> on Calendly so we can confirm fit.</div>
           </div>
           <div class="flow-step">
             <div class="num">2</div>
@@ -170,15 +182,103 @@
     </div>
 
     <div class="note-box">
-      <strong>How payment works:</strong> For the 60-minute strategy call, payment is collected at booking to confirm your time. For the AI Project Consult and Elite Retainer, payment follows the scoping call once scope and timeline are locked in.
+      <strong>How payment works:</strong> For the 60-minute strategy call, payment is collected at booking to confirm your time. For the AI Project Consult and Elite Retainer, payment follows the scoping call — this ensures alignment before money changes hands.
     </div>
+  </section>
+
+  <section id="interest-form">
+    <h2>Tell us about your project</h2>
+    <p style="color:var(--mute);font-size:15px;line-height:1.7;margin-bottom:28px">Submit your project details below, and we'll follow up with a short call to see if a custom consulting package or retainer is the right fit for your organization.</p>
+    
+    <form
+      action="https://formspree.io/f/mpqewaod"
+      method="POST"
+      class="tm-form"
+    >
+      <!-- Honeypot / spam filter -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <!-- Email subject line -->
+      <input
+        type="hidden"
+        name="_subject"
+        value="New consulting interest from consulting.texasmovement.com"
+      >
+
+      <!-- TODO: Optionally add _next hidden field later to redirect to a local thank-you page. -->
+
+      <div class="tm-form-row">
+        <label for="name">Your name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="tm-form-row">
+        <label for="company">Business or organization *</label>
+        <input type="text" id="company" name="company" required>
+      </div>
+
+      <div class="tm-form-row">
+        <label for="website">Current website *</label>
+        <input
+          type="url"
+          id="website"
+          name="website"
+          placeholder="https://example.com"
+          required
+        >
+      </div>
+
+      <div class="tm-form-row">
+        <label for="email">Best email to reach you *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="tm-form-row">
+        <label for="phone">Phone / WhatsApp (optional)</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+
+      <div class="tm-form-row">
+        <label for="budget">Approximate monthly budget *</label>
+        <select id="budget" name="budget" required>
+          <option value="">Select an option</option>
+          <option value="under-1000">Under $1,000</option>
+          <option value="1000-3000">$1,000 – $3,000</option>
+          <option value="3000-5000">$3,000 – $5,000</option>
+          <option value="over-5000">Over $5,000</option>
+        </select>
+      </div>
+
+      <div class="tm-form-row">
+        <label for="help">What do you want help with? *</label>
+        <textarea
+          id="help"
+          name="help"
+          required
+        ></textarea>
+      </div>
+
+      <div class="tm-form-row">
+        <label for="timeline">How soon do you want to start? *</label>
+        <select id="timeline" name="timeline" required>
+          <option value="">Select an option</option>
+          <option value="asap">ASAP (this month)</option>
+          <option value="30-60">Within 30–60 days</option>
+          <option value="60-90">Within 60–90 days</option>
+          <option value="not-sure">Not sure / exploring options</option>
+        </select>
+      </div>
+
+      <button type="submit" class="tm-form-btn">Submit interest</button>
+      <div class="tm-form-footnote">We'll reply from movementconsultant@gmail.com to schedule a quick call.</div>
+    </form>
   </section>
 
   <section>
     <h2>About the Consultant</h2>
     <div class="cols">
       <div>
-        <p style="font-size:15px;line-height:1.7;color:var(--mute);margin:0 0 16px">Civil engineer (IIT) turned biomechanics consultant, turned AI project strategist. The through line across all three: systems thinking under load. I audit organizational structures the way I'd audit an athlete's movement—looking for where load isn't distributing cleanly, where compensations are masking bigger problems, and where small structural shifts unlock disproportionate gains.</p>
+        <p style="font-size:15px;line-height:1.7;color:var(--mute);margin:0 0 16px">Civil engineer (IIT) turned biomechanics consultant, turned AI project strategist. The through line across all three: finding where the system is breaking and rebuilding it to distribute load and enable flow.</p>
         <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener" class="cta" style="font-size:13px">View Full Profile →</a>
       </div>
       <div>
