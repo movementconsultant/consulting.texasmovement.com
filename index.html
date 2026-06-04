@@ -62,15 +62,18 @@
     .tm-form{display:flex;flex-direction:column;gap:24px;margin-top:28px;max-width:680px}
     .tm-form-row{display:flex;flex-direction:column;gap:8px}
     .tm-form-row label{font-size:14px;font-weight:600;color:var(--ink)}
-    .tm-form-row input,.tm-form-row textarea,.tm-form-row select{width:100%;padding:11px 14px;background:#0f0f0f;border:1px solid var(--line);border-radius:8px;color:var(--ink);font-family:inherit;font-size:14px;line-height:1.5;transition:border-color .2s}
+    .tm-form-row input,.tm-form-row textarea,.tm-form-row select{width:100%;padding:11px 14px;background:#0f0f0f;border:1px solid var(--line);border-radius:8px;color:var(--ink);font-family:inherit;font-size:14px}
     .tm-form-row input::placeholder,.tm-form-row textarea::placeholder{color:var(--mute)}
     .tm-form-row input:focus,.tm-form-row textarea:focus,.tm-form-row select:focus{outline:none;border-color:var(--accent);background:#0f0f0f}
     .tm-form-row textarea{resize:vertical;min-height:100px}
-    .tm-form-row select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239a9a9a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:12px;padding-right:36px}
+    .tm-form-row select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239a9a9a' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:32px}
     .tm-form-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s}
     .tm-form-btn:hover{background:#a50d24}
     .tm-form-btn:active{opacity:.9}
     .tm-form-footnote{font-size:13px;color:var(--mute);margin-top:12px;font-style:italic}
+    .topics-list{display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute);list-style:none;padding:0;margin:0}
+    .topics-list li{padding-left:20px;position:relative}
+    .topics-list li:before{content:"→";position:absolute;left:0;color:var(--accent)}
   </style>
 </head>
 <body>
@@ -83,12 +86,14 @@
   <div class="nav" style="margin-top:32px;margin-bottom:32px">
     <a href="/">Home</a>
     <span class="nav-sep">·</span>
+    <a href="/#speaking">Speaking</a>
+    <span class="nav-sep">·</span>
     <a href="/testimonials">Testimonials</a>
   </div>
 
   <div class="eyebrow">Texas Movement Consulting</div>
   <h1 style="margin-bottom:24px">Strategy that<br>moves the needle.</h1>
-  <p class="lede" style="margin-bottom:32px">AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. We don't just ask what tool you're using—we ask where it fits in your system.</p>
+  <p class="lede" style="margin-bottom:32px">AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. We don't just ask what tool you're using—we ask where the system is breaking.</p>
   <div class="cta-buttons" style="margin-top:0">
     <a href="https://calendly.com/movementconsultant/30min" target="_blank" rel="noopener" class="cta primary">Book a Strategy Call</a>
     <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener" class="cta">Connect on LinkedIn</a>
@@ -97,7 +102,7 @@
 
   <section>
     <h2>The TMC Framework</h2>
-    <p style="color:var(--mute);font-size:15px;max-width:680px;line-height:1.7">The same framework used to identify compensatory movement patterns in elite athletes—tensegrity, force distribution, and load tolerance—applies to organizational systems. We diagnose where your AI initiatives break down and rebuild them at the system level.</p>
+    <p style="color:var(--mute);font-size:15px;max-width:680px;line-height:1.7">The same framework used to identify compensatory movement patterns in elite athletes—tensegrity, force distribution, and systems redundancy—applies directly to organizational operations and AI integration.</p>
     <div class="cols" style="margin-top:24px">
       <div>
         <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">What We Diagnose</div>
@@ -129,7 +134,7 @@
         <div class="badge">Entry</div>
         <div class="name">60-Minute Strategy Call</div>
         <div class="price">$250</div>
-        <div class="desc">A focused diagnostic session to identify your highest-leverage constraint — whether that's an AI integration gap, a project flow problem, or a team structure issue. You leave with a clear priority.</div>
+        <div class="desc">A focused diagnostic session to identify your highest-leverage constraint — whether that's an AI integration gap, a project flow problem, or a team structure issue. You leave with a clear diagnosis and a plan.</div>
         <div class="flow">
           <div class="flow-step">
             <div class="num">1</div>
@@ -137,7 +142,7 @@
           </div>
           <div class="flow-step">
             <div class="num">2</div>
-            <div class="txt">Complete <a href="mailto:movementconsultant@gmail.com?subject=Payment%20Confirmation%20%E2%80%93%20Strategy%20Call%20($250)&body=Hi%2C%20I%20just%20booked%20a%2060-minute%20call.%20Here%27s%20my%20payment%20confirmation." target="_blank" rel="noopener">payment confirmation</a> via email.</div>
+            <div class="txt">Complete payment confirmation via email to confirm your time slot.</div>
           </div>
         </div>
         <a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener" class="card-cta">Book Now — $250</a>
@@ -147,11 +152,11 @@
         <div class="badge">Most Requested</div>
         <div class="name">Custom AI Project Consult</div>
         <div class="price">$2,500</div>
-        <div class="desc">End-to-end consulting on a specific AI initiative. From tool selection and workflow design through implementation and team onboarding. Built around your actual project, timeline, and team structure.</div>
+        <div class="desc">End-to-end consulting on a specific AI initiative. From tool selection and workflow design through implementation and team onboarding. Built around your actual project, timeline, and constraints.</div>
         <div class="flow">
           <div class="flow-step">
             <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=ai_project" target="_blank" rel="noopener">Book a scoping call</a> on Calendly to align on project scope.</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=ai_project" target="_blank" rel="noopener">Book a scoping call</a> on Calendly to align on scope.</div>
           </div>
           <div class="flow-step">
             <div class="num">2</div>
@@ -169,7 +174,7 @@
         <div class="flow">
           <div class="flow-step">
             <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=retainer" target="_blank" rel="noopener">Book a qualification call</a> on Calendly so we can confirm fit.</div>
+            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=retainer" target="_blank" rel="noopener">Book a qualification call</a> on Calendly so we can assess fit.</div>
           </div>
           <div class="flow-step">
             <div class="num">2</div>
@@ -182,13 +187,162 @@
     </div>
 
     <div class="note-box">
-      <strong>How payment works:</strong> For the 60-minute strategy call, payment is collected at booking to confirm your time. For the AI Project Consult and Elite Retainer, payment follows the scoping call — this ensures alignment before money changes hands.
+      <strong>How payment works:</strong> For the 60-minute strategy call, payment is collected at booking to confirm your time. For the AI Project Consult and Elite Retainer, payment follows the scoping conversation—we want to make sure it's aligned before invoicing.
+    </div>
+  </section>
+
+  <section id="speaking">
+    <h2>Speaking &amp; Live Sessions</h2>
+    <p style="color:var(--mute);font-size:15px;line-height:1.7;margin-bottom:24px">Book Alexander Mathai for high-leverage talks and working sessions. Texas Movement Consulting brings founder-level, AI-driven systems thinking to your team in a single session or ongoing series.</p>
+    
+    <div style="margin-bottom:32px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Who This Is For</div>
+      <p style="color:var(--mute);font-size:14px;line-height:1.6;max-width:680px">Founders, operators, executives, firm owners, leadership teams, and attorneys who want founder-level, economics-first talks and working sessions.</p>
+    </div>
+
+    <div style="margin-bottom:32px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Typical Contexts</div>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute)">
+        <li>→ Offsites and firm retreats</li>
+        <li>→ Team training and capability building</li>
+        <li>→ Conferences and industry events</li>
+        <li>→ Private dinners and working sessions</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom:32px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Formats</div>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute)">
+        <li>→ Keynote or featured talk (45–60 minutes)</li>
+        <li>→ Private working session (90–120 minutes with leadership team)</li>
+        <li>→ Panel participation or fireside chat</li>
+        <li>→ Ongoing advisory sessions (monthly or quarterly cadence)</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom:32px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Topics</div>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute)">
+        <li>→ AI-assisted operations for solo and small teams</li>
+        <li>→ Building a GitHub-native operating system for your firm</li>
+        <li>→ Cleaning up broken funnels and websites</li>
+        <li>→ Media and intake systems for attorneys, consultants, and founders</li>
+        <li>→ Systems thinking and organizational diagnostics</li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      <strong>Cost &amp; Expectations:</strong> Speaking and live sessions are priced based on format, duration, preparation required, and travel. As a baseline, we expect travel and lodging to be covered for in-person events, and an appropriate honorarium or day rate aligned with the scope of work. Exact numbers are confirmed once we understand your event, timeline, and expectations.
+    </div>
+
+    <div style="margin-top:32px">
+      <h3 style="font-size:18px;font-weight:700;margin:0 0 16px">Request a Speaking Slot</h3>
+      <p style="color:var(--mute);font-size:14px;margin:0 0 24px">Fill out the form below with event details. Speaking requests flow into the same intake system we use for consulting. We review every request and typically respond within 3–5 business days.</p>
+      
+      <form
+        action="https://formspree.io/f/mpqewaod"
+        method="POST"
+        class="tm-form"
+      >
+        <!-- Honeypot / spam filter -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <!-- Email subject line -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="Speaking Request from consulting.texasmovement.com"
+        >
+
+        <!-- Tag this as a speaking request -->
+        <input
+          type="hidden"
+          name="request_type"
+          value="Speaking Request"
+        >
+
+        <div class="tm-form-row">
+          <label for="speak_name">Your name *</label>
+          <input type="text" id="speak_name" name="name" required>
+        </div>
+
+        <div class="tm-form-row">
+          <label for="speak_organization">Organization *</label>
+          <input type="text" id="speak_organization" name="organization" required>
+        </div>
+
+        <div class="tm-form-row">
+          <label for="speak_website">Website (optional)</label>
+          <input
+            type="text"
+            id="speak_website"
+            name="website"
+            inputmode="url"
+            placeholder="example.com or https://example.com"
+          >
+        </div>
+
+        <div class="tm-form-row">
+          <label for="speak_email">Best email to reach you *</label>
+          <input type="email" id="speak_email" name="email" required>
+        </div>
+
+        <div class="tm-form-row">
+          <label for="speak_phone">Phone / WhatsApp (optional)</label>
+          <input type="tel" id="speak_phone" name="phone">
+        </div>
+
+        <div class="tm-form-row">
+          <label for="speak_date_window">Estimated event date or window *</label>
+          <input type="text" id="speak_date_window" name="date_window" placeholder="e.g., Q3 2024, June 15-20, TBD" required>
+        </div>
+
+        <div class="tm-form-row">
+          <label for="speak_format">Format *</label>
+          <select id="speak_format" name="format" required>
+            <option value="">Select an option</option>
+            <option value="keynote">Keynote / Featured Talk</option>
+            <option value="working_session">Private Working Session</option>
+            <option value="panel">Panel / Fireside Chat</option>
+            <option value="not_sure">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="tm-form-row">
+          <label for="speak_location">Location *</label>
+          <input type="text" id="speak_location" name="location" placeholder="City, State / Virtual" required>
+        </div>
+
+        <div class="tm-form-row">
+          <label for="speak_context">Brief event description *</label>
+          <textarea
+            id="speak_context"
+            name="context"
+            placeholder="Who will attend? What are your key goals? What problem are you trying to solve?"
+            required
+          ></textarea>
+        </div>
+
+        <div class="tm-form-row">
+          <label for="speak_budget">Approximate budget range *</label>
+          <select id="speak_budget" name="budget" required>
+            <option value="">Select an option</option>
+            <option value="under-5000">Under $5,000</option>
+            <option value="5000-10000">$5,000 – $10,000</option>
+            <option value="over-10000">$10,000+</option>
+            <option value="not_sure">Not sure yet</option>
+          </select>
+        </div>
+
+        <button type="submit" class="tm-form-btn">Submit speaking request</button>
+        <div class="tm-form-footnote">We'll reply from movementconsultant@gmail.com to discuss your event.</div>
+      </form>
     </div>
   </section>
 
   <section id="interest-form">
     <h2>Tell us about your project</h2>
-    <p style="color:var(--mute);font-size:15px;line-height:1.7;margin-bottom:28px">Submit your project details below, and we'll follow up with a short call to see if a custom consulting package or retainer is the right fit for your organization.</p>
+    <p style="color:var(--mute);font-size:15px;line-height:1.7;margin-bottom:28px">Submit your project details below, and we'll follow up with a short call to see if a custom consulting package or retainer makes sense for your situation.</p>
     
     <form
       action="https://formspree.io/f/mpqewaod"
@@ -278,7 +432,7 @@
     <h2>About the Consultant</h2>
     <div class="cols">
       <div>
-        <p style="font-size:15px;line-height:1.7;color:var(--mute);margin:0 0 16px">Civil engineer (IIT) turned biomechanics consultant, turned AI project strategist. The through line across all three: finding where the system is breaking and rebuilding it to distribute load and enable flow.</p>
+        <p style="font-size:15px;line-height:1.7;color:var(--mute);margin:0 0 16px">Civil engineer (IIT) turned biomechanics consultant, turned AI project strategist. The through line across all three: finding where systems break, then fixing them. Built and scaled TMI to 6 figures. Now consulting for teams and organizations running AI initiatives.</p>
         <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener" class="cta" style="font-size:13px">View Full Profile →</a>
       </div>
       <div>
