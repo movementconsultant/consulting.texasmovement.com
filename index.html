@@ -1,471 +1,804 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Texas Movement Consulting — AI Strategy &amp; Project Consulting</title>
-  <meta name="description" content="AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. Book a strategy session with Texas Movement Consulting.">
-  <meta property="og:title" content="Texas Movement Consulting">
-  <meta property="og:description" content="AI strategy and project consulting built on a systems-thinking framework.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://consulting.texasmovement.com">
+  <meta charset="UTF-8" />
+  <title>Texas Movement Consulting — AI Project Consulting & Inverted B2B Funnels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Texas Movement Consulting helps founders, agencies, and leadership teams build AI project workflows and inverted B2B funnels using a biomechanics-first diagnostic framework." />
+
   <style>
-    :root{--bg:#0a0a0a;--ink:#f5f5f5;--mute:#9a9a9a;--line:#1f1f1f;--accent:#c8102e}
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    a:hover{color:var(--accent)}
-    .wrap{max-width:920px;margin:0 auto;padding:64px 24px 96px}
-    .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:16px}
-    h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.02em;margin:0 0 16px;line-height:1.1}
-    h2{font-size:22px;font-weight:700;margin:0 0 20px;letter-spacing:-.01em}
-    .lede{font-size:18px;color:var(--mute);max-width:640px;margin:0 0 40px;line-height:1.6}
-    .cta{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:1px solid var(--line);border-radius:999px;font-size:14px}
-    .cta:hover{border-color:var(--accent);color:var(--accent)}
-    .cta.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-    .cta.primary:hover{background:#a50d24;border-color:#a50d24;color:#fff}
-    .cta.white{background:#f5f5f5;border-color:#f5f5f5;color:var(--bg);font-weight:500;transition:all .2s}
-    .cta.white:hover{background:#e8e8e8;border-color:#e8e8e8;color:var(--bg);transform:translateY(-1px)}
-    .cta-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;margin-bottom:32px}
-    .nav{margin-bottom:16px}
-    .nav a{font-size:14px;color:var(--mute);transition:color .2s}
-    .nav a:hover{color:var(--ink)}
-    .nav-sep{color:var(--line)}
-    .nav-back{margin-bottom:32px}
-    section{margin-top:56px;padding-top:32px;border-top:1px solid var(--line)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .card{padding:24px;border:1px solid var(--line);border-radius:14px;background:#0f0f0f;transition:all .15s;display:flex;flex-direction:column}
-    .card:hover{border-color:#333;transform:translateY(-2px)}
-    .card .name{font-weight:700;font-size:17px}
-    .card .price{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-top:4px}
-    .card .price span{font-size:13px;font-weight:400;color:var(--mute)}
-    .card .desc{font-size:14px;color:var(--mute);margin-top:12px;line-height:1.6;flex:1}
-    .card .badge{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:600}
-    .flow{display:flex;flex-direction:column;gap:8px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
-    .flow-step{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5}
-    .flow-step .num{background:var(--accent);color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
-    .flow-step .txt{color:var(--mute)}
-    .flow-step .txt a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-    .flow-step .txt a:hover{color:var(--accent)}
-    .card-cta{display:inline-block;margin-top:16px;background:var(--accent);color:#fff;padding:11px 20px;border-radius:8px;font-weight:600;font-size:14px;text-align:center;transition:opacity .2s}
-    .card-cta:hover{opacity:.88;color:#fff}
-    .card-cta.outline{background:transparent;border:1px solid var(--line);color:var(--ink)}
-    .card-cta.outline:hover{border-color:var(--accent);color:var(--accent)}
-    .note-box{background:#0f0f0f;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;margin-top:32px;font-size:14px;color:var(--mute);line-height:1.6}
-    .note-box strong{color:var(--ink)}
-    .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    @media(max-width:600px){.cols{grid-template-columns:1fr}}
-    .pill{display:inline-block;padding:3px 10px;background:var(--line);border-radius:999px;font-size:12px;color:var(--mute);margin-right:6px;margin-bottom:6px}
-    .connect-row{display:flex;flex-direction:column;gap:10px;margin-top:16px}
-    .connect-item{font-size:15px;color:var(--mute)}
-    .connect-item a{color:var(--ink)}
-    .connect-item a:hover{color:var(--accent)}
-    footer{border-top:1px solid var(--line);margin-top:80px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--mute)}
-    .tm-form{display:flex;flex-direction:column;gap:24px;margin-top:28px;max-width:680px}
-    .tm-form-row{display:flex;flex-direction:column;gap:8px}
-    .tm-form-row label{font-size:14px;font-weight:600;color:var(--ink)}
-    .tm-form-row input,.tm-form-row textarea,.tm-form-row select{width:100%;padding:11px 14px;background:#0f0f0f;border:1px solid var(--line);border-radius:8px;color:var(--ink);font-family:inherit;font-size:14px}
-    .tm-form-row input::placeholder,.tm-form-row textarea::placeholder{color:var(--mute)}
-    .tm-form-row input:focus,.tm-form-row textarea:focus,.tm-form-row select:focus{outline:none;border-color:var(--accent);background:#0f0f0f}
-    .tm-form-row textarea{resize:vertical;min-height:100px}
-    .tm-form-row select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239a9a9a' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:32px}
-    .tm-form-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s}
-    .tm-form-btn:hover{background:#a50d24}
-    .tm-form-btn:active{opacity:.9}
-    .tm-form-footnote{font-size:13px;color:var(--mute);margin-top:12px;font-style:italic}
-    .topics-list{display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute);list-style:none;padding:0;margin:0}
-    .topics-list li{padding-left:20px;position:relative}
-    .topics-list li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+    :root {
+      --bg: #050608;
+      --bg-alt: #0d1117;
+      --accent: #f97316;
+      --accent-soft: rgba(249, 115, 22, 0.12);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2933;
+      --card-bg: #0b1220;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top, #111827 0, #020617 50%, #000 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: conic-gradient(from 180deg, #f97316, #fb923c, #fde68a, #111827, #f97316);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: #020617;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-text span:first-child {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .brand-text span:last-child {
+      font-weight: 600;
+      font-size: 13px;
+      color: #e5e7eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--border);
+      color: #e5e7eb;
+      background: #020617;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .label-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .label-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 38px);
+      line-height: 1.1;
+      margin: 0 0 16px;
+    }
+
+    .hero h1 span.highlight {
+      color: #fed7aa;
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 20px;
+    }
+
+    .hero-sub strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .btn-primary {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid #f97316;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      color: #111827;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary span.arrow {
+      font-size: 16px;
+    }
+
+    .btn-secondary {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--muted);
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .hero-footnote {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      padding: 18px 18px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top left, #111827, #020617 55%);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      font-size: 13px;
+    }
+
+    .hero-card-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .hero-card-title span.label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .hero-card-title span.value {
+      font-size: 11px;
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: var(--accent-soft);
+      color: #fed7aa;
+    }
+
+    .hero-card-main {
+      font-size: 13px;
+      color: #e5e7eb;
+      margin-bottom: 12px;
+    }
+
+    .hero-card-main strong {
+      color: #fed7aa;
+    }
+
+    .card-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .metric {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .metric-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .metric-note {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      .card-metrics {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .pill-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      padding: 4px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(31, 41, 55, 0.7);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.1fr);
+      gap: 22px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 16px 16px 14px;
+      font-size: 13px;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin: 0 0 8px;
+    }
+
+    .card p {
+      margin: 0 0 8px;
+      color: var(--muted);
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .list li {
+      margin-bottom: 6px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .table-wrapper {
+      margin-top: 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    th, td {
+      padding: 9px 10px;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.7);
+      text-align: left;
+    }
+
+    th {
+      background: rgba(15, 23, 42, 1);
+      font-weight: 500;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover td {
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .three-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .three-columns {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(31, 41, 55, 0.7);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-color: rgba(148, 163, 184, 0.5);
+      text-underline-offset: 3px;
+    }
+
+    .badge-juneteenth {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .badge-juneteenth span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
   </style>
 </head>
 <body>
-<div class="wrap">
-
-  <div class="nav nav-back">
-    <a href="https://texasmovement.com" style="letter-spacing:.04em">← Texas Movement International</a>
-  </div>
-
-  <div class="nav" style="margin-top:32px;margin-bottom:32px">
-    <a href="/">Home</a>
-    <span class="nav-sep">·</span>
-    <a href="/#speaking">Speaking</a>
-    <span class="nav-sep">·</span>
-    <a href="/testimonials">Testimonials</a>
-  </div>
-
-  <div class="eyebrow">Texas Movement Consulting</div>
-  <h1 style="margin-bottom:24px">Strategy that<br>moves the needle.</h1>
-  <p class="lede" style="margin-bottom:32px">AI project consulting and organizational systems built on a biomechanics-first diagnostic framework. We don't just ask what tool you're using—we ask where the system is breaking.</p>
-  <div class="cta-buttons" style="margin-top:0">
-    <a href="https://calendly.com/movementconsultant/30min" target="_blank" rel="noopener" class="cta primary">Book a Strategy Call</a>
-    <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener" class="cta">Connect on LinkedIn</a>
-    <a href="/testimonials" class="cta">Read Testimonials</a>
-    <a href="#speaking" class="cta white">Speaking & Live Sessions</a>
-  </div>
-
-  <section>
-    <h2>The TMC Framework</h2>
-    <p style="color:var(--mute);font-size:15px;max-width:680px;line-height:1.7">The same framework used to identify compensatory movement patterns in elite athletes—tensegrity, force distribution, and systems redundancy—applies directly to organizational operations and AI integration.</p>
-    <div class="cols" style="margin-top:24px">
-      <div>
-        <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">What We Diagnose</div>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute)">
-          <li>→ AI tool integration gaps</li>
-          <li>→ Project flow and handoff failures</li>
-          <li>→ Organizational load distribution</li>
-          <li>→ Strategy-to-execution breakdowns</li>
-        </ul>
-      </div>
-      <div>
-        <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">What We Build</div>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute)">
-          <li>→ AI project roadmaps</li>
-          <li>→ Workflow architecture</li>
-          <li>→ Team capability audits</li>
-          <li>→ 30/60/90-day execution plans</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Services</h2>
-    <p style="color:var(--mute);font-size:14px;margin-bottom:24px">Three entry points. One systems approach. Book your call first — payment confirms your session.</p>
-    <div class="grid">
-
-      <div class="card">
-        <div class="badge">Entry</div>
-        <div class="name">60-Minute Strategy Call</div>
-        <div class="price">$250</div>
-        <div class="desc">A focused diagnostic session to identify your highest-leverage constraint — whether that's an AI integration gap, a project flow problem, or a team structure issue. You leave with a clear diagnosis and a plan.</div>
-        <div class="flow">
-          <div class="flow-step">
-            <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener">Book your 60-minute session</a> on Calendly.</div>
-          </div>
-          <div class="flow-step">
-            <div class="num">2</div>
-            <div class="txt">Complete payment confirmation via email to confirm your time slot.</div>
-          </div>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-mark">T</div>
+        <div class="brand-text">
+          <span>Texas Movement Consulting</span>
+          <span>AI project systems & B2B funnels</span>
         </div>
-        <a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=strategy_call" target="_blank" rel="noopener" class="card-cta">Book Now — $250</a>
       </div>
+      <nav class="nav-links">
+        <a href="#offer">Offer</a>
+        <a href="#entries">Entry points</a>
+        <a href="#funnel">Inverted funnel</a>
+        <a href="#speak">Speaking</a>
+        <a href="#book">Book</a>
+      </nav>
+    </header>
 
-      <div class="card" style="border-color:#c8102e30">
-        <div class="badge">Most Requested</div>
-        <div class="name">Custom AI Project Consult</div>
-        <div class="price">$2,500</div>
-        <div class="desc">End-to-end consulting on a specific AI initiative. From tool selection and workflow design through implementation and team onboarding. Built around your actual project, timeline, and constraints.</div>
-        <div class="flow">
-          <div class="flow-step">
-            <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=ai_project" target="_blank" rel="noopener">Book a scoping call</a> on Calendly to align on scope.</div>
-          </div>
-          <div class="flow-step">
-            <div class="num">2</div>
-            <div class="txt">After the scoping call, you'll receive a project invoice ($2,500) by email. Payment confirms the engagement and kicks off the project.</div>
-          </div>
-        </div>
-        <a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=ai_project" target="_blank" rel="noopener" class="card-cta">Start a Project</a>
-      </div>
-
-      <div class="card">
-        <div class="badge">Retainer</div>
-        <div class="name">TMC Elite Monthly Retainer</div>
-        <div class="price">$7,500 <span>/ mo</span></div>
-        <div class="desc">Ongoing strategic partnership for organizations running AI initiatives at scale. Dedicated access, monthly systems reviews, and direct involvement in high-stakes decision-making.</div>
-        <div class="flow">
-          <div class="flow-step">
-            <div class="num">1</div>
-            <div class="txt"><a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=retainer" target="_blank" rel="noopener">Book a qualification call</a> on Calendly so we can assess fit.</div>
-          </div>
-          <div class="flow-step">
-            <div class="num">2</div>
-            <div class="txt">If it's a fit, you'll receive a retainer agreement and first-month invoice ($7,500). Signing and payment confirm your spot.</div>
-          </div>
-        </div>
-        <a href="https://calendly.com/movementconsultant/30min?utm_source=tmc_site&utm_content=retainer" target="_blank" rel="noopener" class="card-cta outline">Apply</a>
-      </div>
-
-    </div>
-
-    <div class="note-box">
-      <strong>How payment works:</strong> For the 60-minute strategy call, payment is collected at booking to confirm your time. For the AI Project Consult and Elite Retainer, payment follows the scoping conversation—we want to make sure it's aligned before invoicing.
-    </div>
-  </section>
-
-  <section id="speaking">
-    <h2>Speaking &amp; Live Sessions</h2>
-    <p style="color:var(--mute);font-size:15px;line-height:1.7;margin-bottom:24px">Book Alexander Mathai for high-leverage talks and working sessions. Texas Movement Consulting brings founder-level, AI-driven systems thinking to your team in a single session or ongoing series.</p>
-    
-    <div style="margin-bottom:32px">
-      <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Who This Is For</div>
-      <p style="color:var(--mute);font-size:14px;line-height:1.6;max-width:680px">Founders, operators, executives, firm owners, leadership teams, and attorneys who want founder-level, economics-first talks and working sessions.</p>
-    </div>
-
-    <div style="margin-bottom:32px">
-      <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Typical Contexts</div>
-      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute)">
-        <li>→ Offsites and firm retreats</li>
-        <li>→ Team training and capability building</li>
-        <li>→ Conferences and industry events</li>
-        <li>→ Private dinners and working sessions</li>
-      </ul>
-    </div>
-
-    <div style="margin-bottom:32px">
-      <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Formats</div>
-      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute)">
-        <li>→ Keynote or featured talk (45–60 minutes)</li>
-        <li>→ Private working session (90–120 minutes with leadership team)</li>
-        <li>→ Panel participation or fireside chat</li>
-        <li>→ Ongoing advisory sessions (monthly or quarterly cadence)</li>
-      </ul>
-    </div>
-
-    <div style="margin-bottom:32px">
-      <div style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Topics</div>
-      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mute)">
-        <li>→ AI-assisted operations for solo and small teams</li>
-        <li>→ Building a GitHub-native operating system for your firm</li>
-        <li>→ Cleaning up broken funnels and websites</li>
-        <li>→ Media and intake systems for attorneys, consultants, and founders</li>
-        <li>→ Systems thinking and organizational diagnostics</li>
-      </ul>
-    </div>
-
-    <div class="note-box">
-      <strong>Cost &amp; Expectations:</strong> Speaking and live sessions are priced based on format, duration, preparation required, and travel. As a baseline, we expect travel and lodging to be covered for in-person events, and an appropriate honorarium or day rate aligned with the scope of work. Exact numbers are confirmed once we understand your event, timeline, and expectations.
-    </div>
-
-    <div style="margin-top:32px">
-      <h3 style="font-size:18px;font-weight:700;margin:0 0 16px">Request a Speaking Slot</h3>
-      <p style="color:var(--mute);font-size:14px;margin:0 0 24px">Fill out the form below with event details. Speaking requests flow into the same intake system we use for consulting. We review every request and typically respond within 3–5 business days.</p>
-      
-      <form
-        action="https://formspree.io/f/mpqewaod"
-        method="POST"
-        class="tm-form"
-      >
-        <!-- Honeypot / spam filter -->
-        <input type="text" name="_gotcha" style="display:none">
-
-        <!-- Email subject line -->
-        <input
-          type="hidden"
-          name="_subject"
-          value="Speaking Request from consulting.texasmovement.com"
-        >
-
-        <!-- Tag this as a speaking request -->
-        <input
-          type="hidden"
-          name="request_type"
-          value="Speaking Request"
-        >
-
-        <div class="tm-form-row">
-          <label for="speak_name">Your name *</label>
-          <input type="text" id="speak_name" name="name" required>
-        </div>
-
-        <div class="tm-form-row">
-          <label for="speak_organization">Organization *</label>
-          <input type="text" id="speak_organization" name="organization" required>
-        </div>
-
-        <div class="tm-form-row">
-          <label for="speak_website">Website (optional)</label>
-          <input
-            type="text"
-            id="speak_website"
-            name="website"
-            inputmode="url"
-            placeholder="example.com or https://example.com"
-          >
-        </div>
-
-        <div class="tm-form-row">
-          <label for="speak_email">Best email to reach you *</label>
-          <input type="email" id="speak_email" name="email" required>
-        </div>
-
-        <div class="tm-form-row">
-          <label for="speak_phone">Phone / WhatsApp (optional)</label>
-          <input type="tel" id="speak_phone" name="phone">
-        </div>
-
-        <div class="tm-form-row">
-          <label for="speak_date_window">Estimated event date or window *</label>
-          <input type="text" id="speak_date_window" name="date_window" placeholder="e.g., Q3 2024, June 15-20, TBD" required>
-        </div>
-
-        <div class="tm-form-row">
-          <label for="speak_format">Format *</label>
-          <select id="speak_format" name="format" required>
-            <option value="">Select an option</option>
-            <option value="keynote">Keynote / Featured Talk</option>
-            <option value="working_session">Private Working Session</option>
-            <option value="panel">Panel / Fireside Chat</option>
-            <option value="not_sure">Not sure yet</option>
-          </select>
-        </div>
-
-        <div class="tm-form-row">
-          <label for="speak_location">Location *</label>
-          <input type="text" id="speak_location" name="location" placeholder="City, State / Virtual" required>
-        </div>
-
-        <div class="tm-form-row">
-          <label for="speak_context">Brief event description *</label>
-          <textarea
-            id="speak_context"
-            name="context"
-            placeholder="Who will attend? What are your key goals? What problem are you trying to solve?"
-            required
-          ></textarea>
-        </div>
-
-        <div class="tm-form-row">
-          <label for="speak_budget">Approximate budget range *</label>
-          <select id="speak_budget" name="budget" required>
-            <option value="">Select an option</option>
-            <option value="under-5000">Under $5,000</option>
-            <option value="5000-10000">$5,000 – $10,000</option>
-            <option value="over-10000">$10,000+</option>
-            <option value="not_sure">Not sure yet</option>
-          </select>
-        </div>
-
-        <button type="submit" class="tm-form-btn">Submit speaking request</button>
-        <div class="tm-form-footnote">We'll reply from movementconsultant@gmail.com to discuss your event.</div>
-      </form>
-    </div>
-  </section>
-
-  <section id="interest-form">
-    <h2>Tell us about your project</h2>
-    <p style="color:var(--mute);font-size:15px;line-height:1.7;margin-bottom:28px">Submit your project details below, and we'll follow up with a short call to see if a custom consulting package or retainer makes sense for your situation.</p>
-    
-    <form
-      action="https://formspree.io/f/mpqewaod"
-      method="POST"
-      class="tm-form"
-    >
-      <!-- Honeypot / spam filter -->
-      <input type="text" name="_gotcha" style="display:none">
-
-      <!-- Email subject line -->
-      <input
-        type="hidden"
-        name="_subject"
-        value="New consulting interest from consulting.texasmovement.com"
-      >
-
-      <!-- TODO: Optionally add _next hidden field later to redirect to a local thank-you page. -->
-
-      <div class="tm-form-row">
-        <label for="name">Your name *</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-
-      <div class="tm-form-row">
-        <label for="company">Business or organization *</label>
-        <input type="text" id="company" name="company" required>
-      </div>
-
-      <div class="tm-form-row">
-        <label for="website">Current website *</label>
-        <input
-          type="url"
-          id="website"
-          name="website"
-          placeholder="https://example.com"
-          required
-        >
-      </div>
-
-      <div class="tm-form-row">
-        <label for="email">Best email to reach you *</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-
-      <div class="tm-form-row">
-        <label for="phone">Phone / WhatsApp (optional)</label>
-        <input type="tel" id="phone" name="phone">
-      </div>
-
-      <div class="tm-form-row">
-        <label for="budget">Approximate monthly budget *</label>
-        <select id="budget" name="budget" required>
-          <option value="">Select an option</option>
-          <option value="under-1000">Under $1,000</option>
-          <option value="1000-3000">$1,000 – $3,000</option>
-          <option value="3000-5000">$3,000 – $5,000</option>
-          <option value="over-5000">Over $5,000</option>
-        </select>
-      </div>
-
-      <div class="tm-form-row">
-        <label for="help">What do you want help with? *</label>
-        <textarea
-          id="help"
-          name="help"
-          required
-        ></textarea>
-      </div>
-
-      <div class="tm-form-row">
-        <label for="timeline">How soon do you want to start? *</label>
-        <select id="timeline" name="timeline" required>
-          <option value="">Select an option</option>
-          <option value="asap">ASAP (this month)</option>
-          <option value="30-60">Within 30–60 days</option>
-          <option value="60-90">Within 60–90 days</option>
-          <option value="not-sure">Not sure / exploring options</option>
-        </select>
-      </div>
-
-      <button type="submit" class="tm-form-btn">Submit interest</button>
-      <div class="tm-form-footnote">We'll reply from movementconsultant@gmail.com to schedule a quick call.</div>
-    </form>
-  </section>
-
-  <section>
-    <h2>About the Consultant</h2>
-    <div class="cols">
-      <div>
-        <p style="font-size:15px;line-height:1.7;color:var(--mute);margin:0 0 16px">Civil engineer (IIT) turned biomechanics consultant, turned AI project strategist. The through line across all three: finding where systems break, then fixing them. Built and scaled TMI to 6 figures. Now consulting for teams and organizations running AI initiatives.</p>
-        <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener" class="cta" style="font-size:13px">View Full Profile →</a>
-      </div>
-      <div>
-        <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:12px">Credentials</div>
+    <main>
+      <!-- HERO -->
+      <section class="hero">
         <div>
-          <span class="pill">IIT Civil Engineering</span>
-          <span class="pill">USATF Level 1</span>
-          <span class="pill">NFL / NBA / UFC Biomechanics</span>
-          <span class="pill">AI Project Consulting</span>
-          <span class="pill">TMI Founder &amp; CEO</span>
+          <div class="label-pill">
+            <span class="label-dot"></span>
+            <span>AI project consulting · Organizational systems</span>
+          </div>
+
+          <h1>
+            Less random traffic.<br />
+            <span class="highlight">More reliable AI projects & pipeline.</span>
+          </h1>
+
+          <p class="hero-sub">
+            Texas Movement Consulting helps founders, agencies, and leadership teams
+            build <strong>AI-assisted, evidence-first workflows</strong> so their
+            B2B funnels and operations stop leaking and start compounding.
+            The diagnostic lens comes from biomechanics: tensegrity, force distribution,
+            and systems redundancy applied to your org and your stack.
+          </p>
+
+          <div class="hero-cta" id="book">
+            <a class="btn-primary" href="mailto:movementconsultant@gmail.com?subject=Consulting%20Inquiry%20-%20AI%20Projects%20%26%20B2B%20Funnel">
+              <span>Book a working session</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="btn-secondary" href="https://www.linkedin.com/company/texas-movement-consulting" target="_blank" rel="noreferrer">
+              <span>View Texas Movement Consulting on LinkedIn</span>
+            </a>
+          </div>
+
+          <div class="hero-footnote">
+            Run by Alexander Varghese Mathai — civil engineer turned biomechanics consultant turned AI project strategist.
+            Built and scaled Texas Movement International to six figures. Now consulting for teams and organizations running AI initiatives.
+          </div>
+
+          <div class="badge-juneteenth">
+            <span class="dot"></span>
+            <span>Juneteenth 2026 update — systems, not slogans.</span>
+          </div>
         </div>
+
+        <!-- Hero right card -->
+        <aside class="hero-card">
+          <div class="hero-card-title">
+            <span class="label">Biomechanics-first diagnostics for AI & GTM</span>
+            <span class="value">Three entry points · One system</span>
+          </div>
+          <div class="hero-card-main">
+            The same framework used to identify compensatory movement patterns in elite athletes
+            — tensegrity, force distribution, and systems redundancy —
+            applies directly to <strong>organizational operations, AI integration, and B2B funnels</strong>.
+          </div>
+
+          <div class="card-metrics">
+            <div class="metric">
+              <div class="metric-label">Force distribution</div>
+              <div class="metric-value">Load</div>
+              <div class="metric-note">Where your AI projects, people, and campaigns are carrying too much weight.</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Tensegrity</div>
+              <div class="metric-value">Structure</div>
+              <div class="metric-note">Where the system collapses when one tool, model, or person is removed.</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Redundancy</div>
+              <div class="metric-value">Resilience</div>
+              <div class="metric-note">Where you need vendor-agnostic workflows and clean documentation.</div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div>We don't ask what tool you're using. We ask <strong>where the system is breaking</strong>.</div>
+            <div class="pill-stack">
+              <div class="pill">AI project audits</div>
+              <div class="pill">Inverted B2B funnels</div>
+              <div class="pill">Systems architecture</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- OFFER -->
+      <section class="section" id="offer">
+        <div class="section-header">
+          <h2>Core consulting offer</h2>
+          <div class="section-sub">
+            A focused, vendor-agnostic consulting engagement for B2B teams that want their AI projects and funnels to stop stalling and start generating measurable pipeline.
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>AI Project & Funnel Intensive (4–6 weeks)</h3>
+            <p>
+              We map your current AI initiatives and B2B funnel, locate the structural weaknesses, and rebuild around a smaller, more serious pipeline.
+            </p>
+            <ul class="list">
+              <li>• Identify where AI work is cosmetic vs. actually moving revenue</li>
+              <li>• Define clear ICPs and real buying journeys instead of generic personas</li>
+              <li>• Audit your site, content, and CRM for demand leaks and dead workflows</li>
+              <li>• Design lean AI workflows that can survive model outages and tool churn</li>
+              <li>• Document the system in plain English so teams can run it without you</li>
+            </ul>
+
+            <div class="tag-row">
+              <span class="tag">Ideal for: B2B founders, agency owners, leadership teams</span>
+              <span class="tag">Format: working sessions + implementation playbooks</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Ongoing Systems Advisory (quarterly)</h3>
+            <p>
+              For teams that want a quieter, more rigorous engine: we review your AI stack, funnel performance, and operations each quarter and help you adjust.
+            </p>
+            <ul class="list">
+              <li>• Quarterly review of pipeline, speed, and win rates</li>
+              <li>• AI workflow updates when major model or policy changes land</li>
+              <li>• Prioritization of channels and experiments based on signal, not hype</li>
+              <li>• Light training and office hours for your internal team</li>
+            </ul>
+
+            <div class="tag-row">
+              <span class="tag">Retainer: limited slots</span>
+              <span class="tag">Focus: resilience, precision, and cash flow</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THREE ENTRY POINTS -->
+      <section class="section" id="entries">
+        <div class="section-header">
+          <h2>Three entry points · One systems approach</h2>
+          <div class="section-sub">
+            Whether you come in through AI projects, GTM, or operations, the diagnostic lens stays the same: find where the system breaks, then fix it.
+          </div>
+        </div>
+
+        <div class="three-columns">
+          <div class="card">
+            <h3>01 · AI project consulting</h3>
+            <p>
+              For teams piloting or scaling AI across research, content, legal/ops, or product.
+            </p>
+            <ul class="list">
+              <li>• Clarify objectives and non-negotiable constraints</li>
+              <li>• Map critical workflows and single points of failure</li>
+              <li>• Design vendor-agnostic LLM workflows with tested fallbacks</li>
+              <li>• Build neutral, forensic-style documentation along the way</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>02 · Inverted B2B funnels</h3>
+            <p>
+              For B2B founders and agencies tired of chasing more traffic and MQLs while pipeline quality stalls.
+            </p>
+            <ul class="list">
+              <li>• Narrow your topics, ICPs, and channels</li>
+              <li>• Build evidence-first content that mirrors real research paths</li>
+              <li>• Clean up CRM definitions and handoffs between teams</li>
+              <li>• Shift focus from volume to fewer, better deals</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>03 · Organizational systems & ops</h3>
+            <p>
+              For leadership teams that feel like the company is one crisis or outage away from grinding to a halt.
+            </p>
+            <ul class="list">
+              <li>• Apply biomechanics-style tensegrity and redundancy to your org design</li>
+              <li>• Clarify decision paths and escalation flows</li>
+              <li>• Build documentation that can withstand audits and high-stress events</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- INVERTED FUNNEL TABLE -->
+      <section class="section" id="funnel">
+        <div class="section-header">
+          <h2>The B2B funnel, inverted</h2>
+          <div class="section-sub">
+            All the SEO/AEO/GEO/AIO/LLMO jargon rolls up to one reality: you need to be visible, understandable, and credible wherever your buyers ask questions.
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>Old model</th>
+                <th>Inverted, TMC-style</th>
+                <th>What we build with you</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Top of funnel</td>
+                <td>Maximize traffic, keywords, and impressions.</td>
+                <td>Constrain topics and ICP so only serious buyers show up.</td>
+                <td>Clear POV, topic map, and consistent presence in a few key channels.</td>
+              </tr>
+              <tr>
+                <td>Middle of funnel</td>
+                <td>Random MQLs and nurture flows.</td>
+                <td>Evidence-backed content that matches how buyers actually research.</td>
+                <td>Case-style narratives, diagnostic tools, and explicit next steps.</td>
+              </tr>
+              <tr>
+                <td>Bottom of funnel</td>
+                <td>Messy definitions, broken handoffs, and noisy CRM.</td>
+                <td>Fewer, higher-intent conversations and clean data.</td>
+                <td>Qualification rules, pipeline hygiene, and feedback loops.</td>
+              </tr>
+              <tr>
+                <td>Systems layer</td>
+                <td>Each AI tool is its own island.</td>
+                <td>Vendor-agnostic workflows and documentation.</td>
+                <td>Playbooks that survive model changes and team turnover.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SPEAKING -->
+      <section class="section" id="speak">
+        <div class="section-header">
+          <h2>Speaking & working sessions</h2>
+          <div class="section-sub">
+            Book Alexander Mathai for high-leverage talks and intensive team sessions on AI projects, systems thinking, and inverted funnels.
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Who this is for</h3>
+            <p>
+              Founders, operators, executives, firm owners, leadership teams, and attorneys who want
+              founder-level, economics-first sessions — not generic AI keynotes.
+            </p>
+            <ul class="list">
+              <li>• Company all-hands and leadership offsites</li>
+              <li>• Agency or firm training days</li>
+              <li>• Private masterminds and cohort-based programs</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>How to request a session</h3>
+            <p>
+              Speaking requests flow into the same intake system used for consulting.
+              We review every request and typically respond within 3–5 business days.
+            </p>
+            <ul class="list">
+              <li>• Send event details (format, audience, goals, date)</li>
+              <li>• We respond with fit, suggested topics, and pricing</li>
+              <li>• Booking is confirmed upon payment</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Book: movementconsultant@gmail.com</span>
+              <span class="tag">Topics: AI, systems, funnels, resilience</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        © <span id="year"></span> Texas Movement Consulting · A division of Texas Movement International LLC
       </div>
-    </div>
-  </section>
+      <div class="footer-links">
+        <a href="mailto:movementconsultant@gmail.com">movementconsultant@gmail.com</a>
+        <a href="https://texasmovement.com" target="_blank" rel="noreferrer">texasmovement.com</a>
+        <a href="https://www.linkedin.com/in/" target="_blank" rel="noreferrer">LinkedIn (Alexander)</a>
+      </div>
+    </footer>
+  </div>
 
-  <section>
-    <h2>Connect</h2>
-    <p style="color:var(--mute);font-size:14px;margin-bottom:0">Start the conversation.</p>
-    <div class="connect-row">
-      <div class="connect-item">Email — <a href="mailto:movementconsultant@gmail.com">movementconsultant@gmail.com</a></div>
-      <div class="connect-item">LinkedIn — <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener">Alexander Mathai</a></div>
-      <div class="connect-item">TMI — <a href="https://texasmovement.com" target="_blank" rel="noopener">texasmovement.com</a></div>
-    </div>
-  </section>
-
-  <footer>
-    <span>© Texas Movement Consulting · <a href="https://texasmovement.com">texasmovement.com</a></span>
-    <span>Part of Texas Movement International · Est. 2015</span>
-  </footer>
-
-</div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
