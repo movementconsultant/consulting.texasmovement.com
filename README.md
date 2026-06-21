@@ -1,50 +1,23 @@
-# consulting.texasmovement.com
+# OG kit — Texas Movement Consulting
 
-## Overview
-Static site hosted on GitHub Pages for Texas Movement Consulting. Built with vanilla HTML/CSS (no dependencies).
+Drop-in social / link-preview kit for **https://consulting.texasmovement.com/**
 
-## Interest Form
+## Files
+- `og-image.png` — 1200×630. Link preview (texts, LinkedIn, Facebook, X, Slack, Discord, WhatsApp).
+- `og-square.png` — 1200×1200. Square variant for feed posts / profile use.
+- `meta-tags.html` — paste inside the page `<head>`.
 
-The site includes a working contact form for project inquiries, located in the "Tell us about your project" section.
+## Install (this site's GitHub Pages repo)
+1. Commit `og-image.png` + `og-square.png` to the **repo root** (next to `index.html`).
+2. Paste `meta-tags.html` into the `<head>` of `index.html`.
+3. Push and let Pages publish.
 
-### How It Works
-- **Form handler**: [Formspree](https://formspree.io) (free tier)
-- **Endpoint**: `https://formspree.io/f/mpqewaod`
-- **Recipient email**: `movementconsultant@gmail.com` (configured in Formspree dashboard)
-- **Email forwarding**: Formspree emails are forwarded to `lexmathai@gmail.com` via Gmail filters (configured outside this repo)
+`og:image` is an absolute URL on purpose — crawlers need a full URL, so the PNG must sit at the domain root.
 
-### Form Fields
-The form collects:
-1. **Your name** (required)
-2. **Business or organization** (required)
-3. **Current website** (required)
-4. **Best email to reach you** (required)
-5. **Phone / WhatsApp** (optional)
-6. **Approximate monthly budget** (required, dropdown)
-7. **What do you want help with?** (required, textarea)
-8. **How soon do you want to start?** (required, dropdown)
+## After publishing — force a re-scrape (previews are cached)
+- LinkedIn → https://www.linkedin.com/post-inspector/
+- Facebook / Messenger / WhatsApp / iMessage → https://developers.facebook.com/tools/debug/
+- X → Card Validator, or post the link once
 
-### Security & Features
-- Honeypot field (`_gotcha`) prevents spam submissions
-- Custom email subject line set by hidden `_subject` field
-- Formspree handles CSRF protection automatically
-- No custom JavaScript required—vanilla HTML form submission
-- Responsive design works on mobile and desktop
-
-### To Update the Form
-1. **Change recipient**: Update the email configured in the Formspree dashboard at [formspree.io/f/mpqewaod](https://formspree.io/f/mpqewaod)
-2. **Change fields**: Edit the `.tm-form-row` divs in `index.html`; make sure field `name` attributes match what you want to see in the email
-3. **Add a thank-you page**: Uncomment the `_next` hidden field in the form and point it to a local thank-you page URL
-
-### Styling
-Form styling uses CSS custom properties and fits the existing design:
-- `.tm-form` — form container
-- `.tm-form-row` — field grouping
-- `.tm-form-btn` — submit button
-- `.tm-form-footnote` — disclaimer text below button
-
-All form styles are embedded in `<style>` in `index.html`.
-
----
-
-**Important**: Never expose or mention `lexmathai@gmail.com` in code or comments. Only `movementconsultant@gmail.com` appears in visible copy.
+## Edit the words
+Title / description / alt live in `meta-tags.html` (no regen needed). Image text is baked in — ask me to regenerate to change it.
