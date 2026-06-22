@@ -2,13 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Texas Movement Consulting — Systems & AI for Founders and Operators</title>
+  <title>Texas Movement Consulting — Systems &amp; AI for Founders and Operators</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Texas Movement Consulting helps founders and small operators turn messy operations into predictable systems using AI, biomechanics-first diagnostics, and clean operating models.">
-  <meta property="og:title" content="Texas Movement Consulting — Systems & AI for Founders and Operators">
-  <meta property="og:description" content="AI, funnels, and operations built like engineering systems — not experiments.">
-  <meta property="og:image" content="https://alexandermathai.com/og-alexander-mathai.png">
+
+  <!-- Primary description -->
+  <meta name="description" content="Texas Movement Consulting helps founders and operators turn messy operations, AI projects, and funnels into predictable systems that hold under load without founder dependence.">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#020617">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Texas Movement Consulting">
+  <meta property="og:title" content="Texas Movement Consulting — Systems &amp; AI for Founders and Operators">
+  <meta property="og:description" content="AI, funnels, and operations rebuilt the way an engineer designs for load — so the system holds without the founder in the room.">
+  <meta property="og:url" content="https://consulting.texasmovement.com">
+  <meta property="og:image" content="https://consulting.texasmovement.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Texas Movement Consulting logo and mark — systems for founders and operators.">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Texas Movement Consulting — Systems &amp; AI for Founders and Operators">
+  <meta name="twitter:description" content="Systems consulting for AI, funnels, and operations, built like engineering projects instead of experiments.">
+  <meta name="twitter:image" content="https://consulting.texasmovement.com/og-image.png">
+  <meta name="twitter:image:alt" content="Texas Movement Consulting logo and mark — systems for founders and operators.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       color-scheme: dark light;
@@ -23,11 +49,16 @@
       --chip-border: #1f2937;
       --link: #f97316;
       --link-hover: #fb923c;
-      --sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      --mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: "Inter", system-ui, -apple-system, "SF Pro Text", "Segoe UI", sans-serif;
+      --mono: "IBM Plex Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --display: "Space Grotesk", system-ui, sans-serif;
+      --shadow: 0 26px 80px -30px rgba(0, 0, 0, 0.9);
+      --maxw: 1040px;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
       margin: 0;
@@ -38,6 +69,7 @@
         radial-gradient(circle at 100% 100%, #111827 0, #020617 52%);
       color: var(--fg);
       -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
     }
 
     a {
@@ -50,8 +82,14 @@
       text-decoration: underline;
     }
 
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
     .page {
-      max-width: 1040px;
+      max-width: var(--maxw);
       margin: 0 auto;
       padding: 28px 20px 56px;
     }
@@ -82,6 +120,7 @@
     }
 
     h1 {
+      font-family: var(--display);
       font-size: 2rem;
       margin: 0;
       letter-spacing: 0.08em;
@@ -111,22 +150,28 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 7px 14px;
+      padding: 7px 16px;
       border-radius: 999px;
       font-size: 0.9rem;
       border: 1px solid transparent;
       cursor: pointer;
       text-decoration: none;
       white-space: nowrap;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
       color: #0b1020;
-      border-color: rgba(248,250,252,0.08);
+      border-color: rgba(248, 250, 252, 0.08);
       font-family: var(--mono);
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
     }
 
     .btn-secondary {
@@ -165,55 +210,55 @@
       background: var(--muted);
     }
 
-    .avatar-wrap {
-      position: relative;
+    .identity-wrap {
       justify-self: end;
     }
 
-    .avatar {
-      width: 112px;
-      height: 112px;
-      border-radius: 26px;
-      overflow: hidden;
-      border: 1px solid rgba(15,23,42,0.9);
-      box-shadow:
-        0 0 0 1px rgba(15,23,42,0.8),
-        0 20px 40px rgba(15,23,42,0.9);
+    .identity-card {
+      border-radius: 18px;
+      border: 1px solid var(--chip-border);
+      background: radial-gradient(circle at 0 0, rgba(249,115,22,0.16), transparent 65%), rgba(15,23,42,0.96);
+      box-shadow: var(--shadow);
+      padding: 14px 16px 12px;
+      width: 230px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .identity-logo {
+      border-radius: 12px;
       background: #020617;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .identity-logo img {
       display: block;
-      filter: saturate(1.05);
+      width: 100%;
+      height: auto;
     }
 
-    .avatar-tag {
-      position: absolute;
-      bottom: -6px;
-      right: -4px;
-      padding: 2px 9px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.96);
-      border: 1px solid rgba(148,163,184,0.4);
+    .identity-meta {
       font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .identity-meta strong {
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    .identity-tag {
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .avatar-tag-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34,197,94,0.16);
     }
 
     main {
@@ -434,7 +479,7 @@
         grid-template-columns: minmax(0, 1fr);
         align-items: flex-start;
       }
-      .avatar-wrap {
+      .identity-wrap {
         justify-self: flex-start;
       }
     }
@@ -445,10 +490,6 @@
         border-top: 1px solid var(--border);
         padding-left: 0;
         padding-top: 16px;
-      }
-      .avatar {
-        width: 92px;
-        height: 92px;
       }
       .strip {
         grid-template-columns: minmax(0, 1fr);
@@ -461,6 +502,10 @@
       }
       .term-grid {
         grid-template-columns: minmax(0, 1fr);
+      }
+      .identity-card {
+        width: 100%;
+        max-width: 260px;
       }
     }
   </style>
@@ -492,13 +537,17 @@
           </nav>
         </div>
       </div>
-      <div class="avatar-wrap">
-        <div class="avatar">
-          <img src="/AVM-Blue-turtleneck-standing-arm-cross.jpg" alt="Alexander Varghese Mathai">
-        </div>
-        <div class="avatar-tag">
-          <span class="avatar-tag-dot"></span>
-          Alexander · TMC
+
+      <div class="identity-wrap">
+        <div class="identity-card">
+          <div class="identity-logo">
+            <!-- Replace with your horizontal TMC logo -->
+            <img src="File1_Primary_Horizontal.png" alt="Texas Movement Consulting logo">
+          </div>
+          <div class="identity-meta">
+            <div class="identity-tag">TX MOVEMENT · CONSULTING VERTICAL</div>
+            <div><strong>Texas Movement Consulting</strong> is the systems &amp; AI arm of Texas Movement International — a platform for performance, media, and founder operations.</div>
+          </div>
         </div>
       </div>
     </header>
@@ -539,7 +588,7 @@
             <div class="offer-price">$1,500–$3,000</div>
             <p>We audit how leads, work, and money move through your business and identify the 3–5 systems that will unlock capacity and revenue.</p>
             <ul>
-              <li>Deep‑dive call on ops, lead flow, and delivery.</li>
+              <li>Deep‑dive call on operations, lead flow, and delivery.</li>
               <li>Biomechanics‑style diagnostic of your business: key “movement faults.”</li>
               <li>90‑day “Movement Map” with prioritized systems to implement.</li>
             </ul>
@@ -615,31 +664,32 @@
 
       <!-- About -->
       <section id="about">
-        <h2>About the Founder</h2>
-        <p>Texas Movement Consulting is the consulting arm of <a href="https://texasmovement.com" target="_blank" rel="noreferrer">Texas Movement International</a>, founded by Alexander Varghese Mathai — engineer, biomechanics specialist, and systems builder. [web:28][web:45][web:16]</p>
-        <p>Alexander’s original training is in civil engineering and biomechanics. The same lens that maps how force travels through a structure now maps how work, information, and money travel through a small business. [web:16][web:45]</p>
-        <p>His work spans AI systems, founder operations, performance consulting, and legal‑adjacent documentation — all under a single mandate: build systems that perform under load and keep working without him in the loop. [web:28][web:45][web:16]</p>
+        <h2>About the Founder &amp; Platform</h2>
+        <p>Texas Movement Consulting is the consulting arm of <a href="https://texasmovement.com" target="_blank" rel="noreferrer">Texas Movement International</a>, founded by Alexander Varghese Mathai — engineer, biomechanics specialist, and systems builder.</p>
+        <p>Alexander’s original training is in civil engineering and biomechanics. The same lens that maps how force travels through a structure now maps how work, information, and money travel through a small business.</p>
+        <p>His work spans AI systems, founder operations, performance consulting, and legal‑adjacent documentation — all under a single mandate: build systems that perform under load and keep working without him in the loop.</p>
 
         <div class="callout">
-          <p><strong>Platform‑backed, not solo freelance.</strong> Texas Movement International is the platform that packages this methodology into consulting, education, and performance systems — so the work runs through companies, not just individuals. [web:45][web:30]</p>
+          <p><strong>Platform‑backed, not solo freelance.</strong> Texas Movement International packages this methodology into consulting, education, and performance systems — so the work runs through companies, not just individuals.</p>
+          <p class="muted" style="margin-top:6px;">
+            Other verticals: <a href="https://performance.texasmovement.com" target="_blank" rel="noreferrer">Performance</a> ·
+            <a href="https://media.texasmovement.com" target="_blank" rel="noreferrer">Media</a> ·
+            <a href="https://alexandermathai.com" target="_blank" rel="noreferrer">Founder</a>
+          </p>
         </div>
       </section>
 
       <!-- Contact -->
       <section id="contact">
         <h2>Contact</h2>
-        <p>If you have a system that feels structurally wrong — a funnel, an AI project, or day‑to‑day operations — tell us what’s under load and where it’s failing. If it’s a fit, the next step is a scoped diagnostic, not an open‑ended retainer. [web:28]</p>
+        <p>If you have a system that feels structurally wrong — a funnel, an AI project, or day‑to‑day operations — tell us what’s under load and where it’s failing. If it’s a fit, the next step is a scoped diagnostic, not an open‑ended retainer.</p>
 
         <p class="mono">
-          <a href="mailto:movementconsultant@gmail.com?subject=30-Day%20Diagnostic%20-%20Texas%20Movement%20Consulting&body=What%20we%20sell%3A%0A%0AWho%20we%20serve%3A%0A%0AWhere%20the%20system%20is%20breaking%3A%0A%0AWhat%20we%20want%20instead%3A%0A">movementconsultant@gmail.com</a>
+          <a href="mailto:movementconsultant@gmail.com?subject=30-Day%20Diagnostic%20-%20Texas%20Movement%20Consulting&body=Tell%20us%20what%20you%20sell%2C%20who%20you%20serve%2C%20and%20where%20the%20system%20is%20breaking.">movementconsultant@gmail.com</a>
         </p>
-        <p class="muted">Subject line suggestion: “30‑Day Diagnostic – [Your business name]”. Include a short description of what you sell, who you serve, and where the system is breaking.</p>
+        <p class="muted">Suggested subject: “30‑Day Diagnostic – [Your business name]”. Include what you sell, who you serve, and where the system is breaking.</p>
 
         <p class="muted">If you only want a tool recommendation or a generic AI keynote, we’re not the right fit.</p>
-
-        <div class="callout">
-          <p><strong>Learn more about Alexander:</strong> <a href="https://alexandermathai.com" target="_blank" rel="noreferrer">alexandermathai.com ↗</a> [web:30]</p>
-        </div>
       </section>
     </main>
 
