@@ -24,9 +24,137 @@
 <meta name="twitter:image" content="https://consulting.texasmovement.com/og-image.png">
 <meta name="twitter:image:alt" content="Texas Movement Consulting logo and mark — systems for founders and operators.">
 
+<link rel="canonical" href="https://consulting.texasmovement.com/">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://consulting.texasmovement.com/#business",
+      "name": "Texas Movement Consulting",
+      "alternateName": "TMC",
+      "url": "https://consulting.texasmovement.com",
+      "image": "https://consulting.texasmovement.com/og-image.png",
+      "description": "Texas Movement Consulting helps founders and small operators turn messy operations, AI projects, and funnels into predictable systems that hold under load — without founder dependence.",
+      "email": "movementconsultant@gmail.com",
+      "areaServed": "US",
+      "priceRange": "$1,500–$25,000",
+      "knowsAbout": [
+        "Systems consulting",
+        "AI for operations",
+        "Business process design",
+        "Diagnostic consulting",
+        "Exit and scale readiness"
+      ],
+      "parentOrganization": { "@id": "https://consulting.texasmovement.com/#tmi" },
+      "founder": { "@id": "https://consulting.texasmovement.com/#founder" },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "30-Day Systems & AI Diagnostic",
+          "priceCurrency": "USD",
+          "url": "https://consulting.texasmovement.com/#tier1"
+        },
+        {
+          "@type": "Offer",
+          "name": "Systems & AI Operator Retainer",
+          "priceCurrency": "USD",
+          "url": "https://consulting.texasmovement.com/#tier2"
+        },
+        {
+          "@type": "Offer",
+          "name": "Exit & Scale Readiness",
+          "priceCurrency": "USD",
+          "url": "https://consulting.texasmovement.com/#tier3"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://consulting.texasmovement.com/#tmi",
+      "name": "Texas Movement International",
+      "url": "https://texasmovement.com"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://consulting.texasmovement.com/#founder",
+      "name": "Alexander Varghese Mathai",
+      "jobTitle": "Founder",
+      "url": "https://alexandermathai.com",
+      "worksFor": { "@id": "https://consulting.texasmovement.com/#business" },
+      "knowsAbout": [
+        "Civil engineering",
+        "Biomechanics",
+        "AI systems",
+        "Founder operations"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://consulting.texasmovement.com/#service",
+      "serviceType": "Systems & AI consulting for small service businesses",
+      "provider": { "@id": "https://consulting.texasmovement.com/#business" },
+      "areaServed": "US",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Founders and operators of 1–20 person service businesses"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://consulting.texasmovement.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Texas Movement Consulting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Texas Movement Consulting is a systems and AI consultancy that helps founders and small service businesses turn messy, owner-dependent operations into predictable systems. It is the consulting arm of Texas Movement International, founded by engineer and biomechanics specialist Alexander Varghese Mathai."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is Texas Movement Consulting for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is for founders and operators running 1–20 person service businesses — trades, local services, boutique agencies, and small clinics — typically doing $250K or more in annual revenue, where operations still depend on the owner's willpower."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Texas Movement Consulting cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Engagements start with a 30-Day Systems & AI Diagnostic at $1,500–$3,000. Ongoing work runs as a $2,500–$5,000 per month operator retainer (3-month minimum), and exit or scale-readiness projects run $12,000–$25,000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Texas Movement Consulting use AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI is used as an amplifier, not the product. It compresses documentation, follow-up, and routing so systems ship faster and run with fewer mistakes — without turning the business into a science project."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you start working with Texas Movement Consulting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every engagement begins with a scoped 30-Day Systems & AI Diagnostic rather than an open-ended retainer. You can book the diagnostic directly through the Calendly scheduler on the site."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <style>
 :root{
@@ -45,7 +173,9 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:84px}
 body{
-  font-family:var(--sans); color:var(--fg); line-height:1.6;
+  font-family:var(--sans);
+  color:var(--fg);
+  line-height:1.6;
   -webkit-font-smoothing:antialiased;
   background:
     radial-gradient(circle at 0 0,#0b1120 0,#020617 48%),
@@ -67,7 +197,12 @@ a:hover{color:var(--link-hover)}
   max-width:var(--maxw);margin:0 auto;padding:12px 20px;
   display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
-.brand-mini{font-family:var(--display);font-weight:700;letter-spacing:.01em;font-size:1.02rem}
+.brand-mini{
+  font-family:var(--display);
+  font-weight:700;
+  letter-spacing:.01em;
+  font-size:1.02rem;
+}
 .brand-mini span{color:var(--accent)}
 .brand-mini a{color:inherit;text-decoration:none}
 .nav{display:flex;gap:8px;flex-wrap:wrap}
@@ -82,7 +217,8 @@ a:hover{color:var(--link-hover)}
   font-family:var(--mono);font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;
   padding:11px 20px;border-radius:999px;border:1px solid transparent;
   background:var(--accent);color:#0b0f1a;font-weight:600;white-space:nowrap;
-  box-shadow:0 10px 30px -12px rgba(249,115,22,.7);transition:transform .12s ease,background .12s ease;
+  box-shadow:0 10px 30px -12px rgba(249,115,22,.7);
+  transition:transform .12s ease,background .12s ease;
 }
 .cta:hover{background:var(--accent-strong);color:#0b0f1a;transform:translateY(-1px)}
 .cta-ghost{
@@ -97,89 +233,231 @@ a:hover{color:var(--link-hover)}
 
 /* ---- Hero ---- */
 .hero{padding:54px 0 34px;border-bottom:1px solid var(--border)}
-.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-h1{font-family:var(--display);font-weight:700;line-height:1.04;letter-spacing:-.01em;
-   font-size:clamp(2.2rem,5.4vw,3.6rem);text-transform:uppercase;margin-bottom:18px}
-.hero .lede{font-size:clamp(1.05rem,2.2vw,1.28rem);color:#e5e7eb;max-width:50ch;margin-bottom:14px}
-.hero .sub{font-family:var(--mono);font-size:.9rem;color:var(--muted);max-width:60ch;margin-bottom:26px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
-.trust{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;color:var(--muted)}
+.eyebrow{
+  font-family:var(--mono);font-size:.78rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:18px;
+}
+h1{
+  font-family:var(--display);font-weight:700;
+  line-height:1.04;letter-spacing:-.01em;
+  font-size:clamp(2.2rem,5.4vw,3.6rem);
+  text-transform:uppercase;margin-bottom:18px;
+}
+.hero .lede{
+  font-size:clamp(1.05rem,2.2vw,1.28rem);
+  color:#e5e7eb;max-width:50ch;margin-bottom:14px;
+}
+.hero .sub{
+  font-family:var(--mono);font-size:.9rem;
+  color:var(--muted);max-width:60ch;margin-bottom:26px;
+}
+.hero-actions{
+  display:flex;gap:12px;flex-wrap:wrap;
+  align-items:center;margin-bottom:22px;
+}
+.trust{
+  display:flex;gap:18px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:.74rem;
+  letter-spacing:.05em;color:var(--muted);
+}
 .trust b{color:var(--fg);font-weight:600}
 
-/* ---- Section scaffold ---- */
+/* ---- Sections ---- */
 section{padding:48px 0;border-bottom:1px solid var(--border)}
-.sec-label{font-family:var(--mono);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-h2{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,3.2vw,2.1rem);text-transform:uppercase;letter-spacing:-.01em;margin-bottom:16px}
-h3{font-family:var(--display);font-weight:600;font-size:1.15rem;margin-bottom:8px}
+.sec-label{
+  font-family:var(--mono);font-size:.76rem;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+h2{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(1.5rem,3.2vw,2.1rem);
+  text-transform:uppercase;letter-spacing:-.01em;
+  margin-bottom:16px;
+}
+h3{
+  font-family:var(--display);font-weight:600;
+  font-size:1.15rem;margin-bottom:8px;
+}
 p.body{color:#cbd5e1;max-width:62ch;margin-bottom:14px}
 
+/* Answer-first block */
+.answer{
+  font-size:1.05rem;color:#e5e7eb;
+  max-width:68ch;line-height:1.7;
+  padding:16px 18px;
+  border-left:3px solid var(--accent);
+  background:rgba(249,115,22,.06);
+  border-radius:0 10px 10px 0;
+}
+
 /* ---- Three-up cards ---- */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.grid3{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin-top:8px;
+}
 @media(max-width:760px){.grid3{grid-template-columns:1fr}}
-.mini{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:20px}
-.mini .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.mini{
+  background:var(--card);
+  border:1px solid var(--card-border);
+  border-radius:14px;padding:20px;
+}
+.mini .k{
+  font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:10px;
+}
 .mini p{color:#cbd5e1;font-size:.95rem}
 
 /* ---- Offer tiers ---- */
 .tiertabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 22px}
-.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.offers{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
 @media(max-width:860px){.offers{grid-template-columns:1fr}}
 .tier{
-  position:relative;background:var(--card);border:1px solid var(--card-border);
-  border-radius:16px;padding:24px 22px;display:flex;flex-direction:column;
+  position:relative;
+  background:var(--card);border:1px solid var(--card-border);
+  border-radius:16px;padding:24px 22px;
+  display:flex;flex-direction:column;
 }
 .tier.featured{border-color:var(--accent);box-shadow:var(--shadow)}
 .tier .badge{
-  position:absolute;top:-11px;left:22px;font-family:var(--mono);font-size:.66rem;
-  letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:#0b0f1a;
+  position:absolute;top:-11px;left:22px;
+  font-family:var(--mono);font-size:.66rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  background:var(--accent);color:#0b0f1a;
   padding:4px 10px;border-radius:999px;font-weight:600;
 }
-.tier .stage{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.tier .stage{
+  font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:10px;
+}
 .tier h3{font-size:1.18rem;margin-bottom:6px}
-.tier .price{font-family:var(--display);font-weight:600;font-size:1.35rem;margin-bottom:6px}
-.tier .price small{font-family:var(--mono);font-size:.72rem;color:var(--muted);font-weight:400}
+.tier .price{
+  font-family:var(--display);font-weight:600;
+  font-size:1.35rem;margin-bottom:6px;
+}
+.tier .price small{
+  font-family:var(--mono);font-size:.72rem;
+  color:var(--muted);font-weight:400;
+}
 .tier .who{font-size:.86rem;color:var(--muted);margin-bottom:14px}
-.tier ul{list-style:none;margin:0 0 18px;display:flex;flex-direction:column;gap:9px}
-.tier li{position:relative;padding-left:20px;font-size:.92rem;color:#cbd5e1}
-.tier li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+.tier ul{
+  list-style:none;margin:0 0 18px;
+  display:flex;flex-direction:column;gap:9px;
+}
+.tier li{
+  position:relative;padding-left:20px;
+  font-size:.92rem;color:#cbd5e1;
+}
+.tier li::before{
+  content:"→";position:absolute;left:0;
+  color:var(--accent);
+}
 .tier .pick{margin-top:auto}
-.offer-note{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-top:18px;max-width:64ch}
+.offer-note{
+  font-family:var(--mono);font-size:.78rem;
+  color:var(--muted);margin-top:18px;max-width:64ch;
+}
 
 /* ---- Process spine ---- */
-.spine{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:step}
+.spine{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
 @media(max-width:820px){.spine{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.spine{grid-template-columns:1fr}}
-.step{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:18px}
-.step .n{font-family:var(--mono);font-size:.74rem;color:var(--accent);letter-spacing:.1em;margin-bottom:8px}
+.step{
+  background:var(--card);border:1px solid var(--card-border);
+  border-radius:14px;padding:18px;
+}
+.step .n{
+  font-family:var(--mono);font-size:.74rem;
+  color:var(--accent);letter-spacing:.1em;
+  margin-bottom:8px;
+}
 .step h3{font-size:1.02rem}
 .step p{font-size:.88rem;color:#cbd5e1}
 
 /* ---- Founder ---- */
-.founder{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+.founder{
+  display:grid;grid-template-columns:auto 1fr;
+  gap:22px;align-items:start;
+}
 @media(max-width:640px){.founder{grid-template-columns:1fr}}
-.avatar{width:84px;height:84px;border-radius:16px;border:1px solid var(--accent);
-  background:var(--accent-soft);display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--accent)}
+.avatar{
+  width:84px;height:84px;border-radius:16px;
+  border:1px solid var(--accent);
+  background:var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;
+  font-size:1.4rem;color:var(--accent);
+}
+
+/* ---- FAQ ---- */
+.faq details{
+  border:1px solid var(--card-border);
+  border-radius:12px;padding:4px 18px;
+  margin-bottom:10px;background:var(--card);
+}
+.faq summary{
+  font-family:var(--display);font-weight:600;
+  font-size:1.02rem;cursor:pointer;
+  padding:14px 0;list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";float:right;
+  color:var(--accent);font-weight:700;
+}
+.faq details[open] summary::after{content:"–"}
+.faq details p{
+  color:#cbd5e1;padding:0 0 16px;
+  margin:0;max-width:66ch;
+}
 
 /* ---- Contact / CTA band ---- */
 .band{
   background:linear-gradient(120deg,rgba(249,115,22,.12),rgba(2,6,23,0) 60%);
-  border:1px solid var(--card-border);border-radius:18px;padding:30px 26px;
+  border:1px solid var(--card-border);
+  border-radius:18px;padding:30px 26px;
 }
 .band h2{margin-bottom:10px}
-.band .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-.fine{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-top:16px}
+.band .actions{
+  display:flex;gap:12px;
+  flex-wrap:wrap;margin-top:18px;
+}
+.fine{
+  font-family:var(--mono);font-size:.78rem;
+  color:var(--muted);margin-top:16px;
+}
 
 /* ---- Sticky mobile CTA ---- */
 .stickycta{
-  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
-  padding:12px 16px;background:rgba(2,6,23,.92);border-top:1px solid var(--border);
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:none;padding:12px 16px;
+  background:rgba(2,6,23,.92);
+  border-top:1px solid var(--border);
   backdrop-filter:blur(8px);
 }
 .stickycta .cta{width:100%;justify-content:center}
-@media(max-width:720px){.stickycta{display:block} .page{padding-bottom:96px}}
+@media(max-width:720px){
+  .stickycta{display:block}
+  .page{padding-bottom:96px}
+}
 
-footer{padding:30px 0 8px;color:var(--muted);font-family:var(--mono);font-size:.76rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+/* ---- Footer ---- */
+footer{
+  padding:30px 0 8px;
+  color:var(--muted);
+  font-family:var(--mono);font-size:.76rem;
+  display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;
+}
 footer a{color:inherit;text-decoration:none}
 footer a:hover{color:var(--link-hover);text-decoration:underline}
 </style>
@@ -218,15 +496,30 @@ footer a:hover{color:var(--link-hover);text-decoration:underline}
     </div>
   </header>
 
+  <!-- Answer-first definition -->
+  <section id="what" aria-label="What is Texas Movement Consulting">
+    <p class="sec-label">In one paragraph</p>
+    <p class="answer"><strong>Texas Movement Consulting</strong> is a systems and AI consultancy that helps founders and small service businesses turn messy, owner-dependent operations into predictable systems that hold under load. It is the consulting arm of Texas Movement International, founded by engineer and biomechanics specialist Alexander Varghese Mathai. Every engagement starts with a fixed-scope diagnostic, not an open-ended retainer.</p>
+  </section>
+
   <!-- WHO IT'S FOR -->
   <section id="fit">
     <p class="sec-label">Who we work with</p>
     <h2>You're winging it on ops — and it's starting to cost you</h2>
     <p class="body">Best fit: founders and operators running 1–20 person service businesses — trades, local services, boutique agencies, small clinics — with real revenue at stake and operations held together by the owner's willpower. We come in when AI projects, B2B funnels, or back-office workflows feel structurally wrong.</p>
     <div class="grid3">
-      <div class="mini"><div class="k">Problems we see</div><p>Leads leak, follow-up is inconsistent, staff rely on you for every decision, and "AI" is a pile of half-finished automations.</p></div>
-      <div class="mini"><div class="k">What we do</div><p>We map how work, information, and money move through your company, then engineer simple systems that catch more revenue and free up the owner.</p></div>
-      <div class="mini"><div class="k">How AI fits</div><p>AI is an amplifier, not the show. We use it to compress documentation, follow-up, and routing — not to turn your business into a science project.</p></div>
+      <div class="mini">
+        <div class="k">Problems we see</div>
+        <p>Leads leak, follow-up is inconsistent, staff rely on you for every decision, and "AI" is a pile of half-finished automations.</p>
+      </div>
+      <div class="mini">
+        <div class="k">What we do</div>
+        <p>We map how work, information, and money move through your company, then engineer simple systems that catch more revenue and free up the owner.</p>
+      </div>
+      <div class="mini">
+        <div class="k">How AI fits</div>
+        <p>AI is an amplifier, not the show. We use it to compress documentation, follow-up, and routing — not to turn your business into a science project.</p>
+      </div>
     </div>
   </section>
 
@@ -291,10 +584,26 @@ footer a:hover{color:var(--link-hover);text-decoration:underline}
     <h2>Diagnose → Design → Implement → Transfer</h2>
     <p class="body">Every project moves through the same spine, so you always know what comes next.</p>
     <div class="spine">
-      <div class="step"><div class="n">01 · DIAGNOSE</div><h3>Read the system</h3><p>Map how work, information, and money move today — and where founder dependence is highest.</p></div>
-      <div class="step"><div class="n">02 · DESIGN</div><h3>Pick the 2–3 that matter</h3><p>Design workflows for pipeline, intake, scheduling, or follow-up that degrade safely under load.</p></div>
-      <div class="step"><div class="n">03 · IMPLEMENT</div><h3>Build with your tools</h3><p>Ship flows, automations, and SOPs using what you already have — adding AI only where it earns its place.</p></div>
-      <div class="step"><div class="n">04 · TRANSFER</div><h3>Hand it off</h3><p>Document decisions, train internal owners, and set a cadence so the system runs without us.</p></div>
+      <div class="step">
+        <div class="n">01 · DIAGNOSE</div>
+        <h3>Read the system</h3>
+        <p>Map how work, information, and money move today — and where founder dependence is highest.</p>
+      </div>
+      <div class="step">
+        <div class="n">02 · DESIGN</div>
+        <h3>Pick the 2–3 that matter</h3>
+        <p>Design workflows for pipeline, intake, scheduling, or follow-up that degrade safely under load.</p>
+      </div>
+      <div class="step">
+        <div class="n">03 · IMPLEMENT</div>
+        <h3>Build with your tools</h3>
+        <p>Ship flows, automations, and SOPs using what you already have — adding AI only where it earns its place.</p>
+      </div>
+      <div class="step">
+        <div class="n">04 · TRANSFER</div>
+        <h3>Hand it off</h3>
+        <p>Document decisions, train internal owners, and set a cadence so the system runs without us.</p>
+      </div>
     </div>
   </section>
 
@@ -303,9 +612,18 @@ footer a:hover{color:var(--link-hover);text-decoration:underline}
     <p class="sec-label">What you actually get</p>
     <h2>Fewer dropped leads. Less owner dependence. A business that holds.</h2>
     <div class="grid3">
-      <div class="mini"><div class="k">Revenue</div><p>Fewer dropped leads and lost inquiries; a shorter path from first contact to a decision.</p></div>
-      <div class="mini"><div class="k">Time</div><p>Fewer owner-dependent steps in everyday operations — your team knows what "good" looks like without you in the room.</p></div>
-      <div class="mini"><div class="k">Optionality</div><p>A cleaner, more legible business for buyers, lenders, and partners when you want to step back or sell.</p></div>
+      <div class="mini">
+        <div class="k">Revenue</div>
+        <p>Fewer dropped leads and lost inquiries; a shorter path from first contact to a decision.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Time</div>
+        <p>Fewer owner-dependent steps in everyday operations — your team knows what "good" looks like without you in the room.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Optionality</div>
+        <p>A cleaner, more legible business for buyers, lenders, and partners when you want to step back or sell.</p>
+      </div>
     </div>
   </section>
 
@@ -321,6 +639,37 @@ footer a:hover{color:var(--link-hover);text-decoration:underline}
         <p class="body" style="margin-bottom:0">More: <a href="https://alexandermathai.com" target="_blank" rel="noopener">alexandermathai.com ↗</a></p>
       </div>
     </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <p class="sec-label">FAQ</p>
+    <h2>Common questions</h2>
+
+    <details open>
+      <summary>What is Texas Movement Consulting?</summary>
+      <p>Texas Movement Consulting is a systems and AI consultancy that helps founders and small service businesses turn messy, owner-dependent operations into predictable systems. It is the consulting arm of Texas Movement International, founded by engineer and biomechanics specialist Alexander Varghese Mathai.</p>
+    </details>
+
+    <details>
+      <summary>Who is it for?</summary>
+      <p>Founders and operators running 1–20 person service businesses — trades, local services, boutique agencies, and small clinics — typically doing $250K or more in annual revenue, where operations still depend on the owner's willpower.</p>
+    </details>
+
+    <details>
+      <summary>How much does it cost?</summary>
+      <p>Engagements start with a 30-Day Systems &amp; AI Diagnostic at $1,500–$3,000. Ongoing work runs as a $2,500–$5,000 per month operator retainer (3-month minimum), and exit or scale-readiness projects run $12,000–$25,000.</p>
+    </details>
+
+    <details>
+      <summary>How do you use AI?</summary>
+      <p>AI is used as an amplifier, not the product. It compresses documentation, follow-up, and routing so systems ship faster and run with fewer mistakes — without turning the business into a science project.</p>
+    </details>
+
+    <details>
+      <summary>How do we start?</summary>
+      <p>Every engagement begins with a scoped 30-Day Systems &amp; AI Diagnostic rather than an open-ended retainer. You can book it directly through the scheduler.</p>
+    </details>
   </section>
 
   <!-- CONTACT / BOOK -->
@@ -343,7 +692,9 @@ footer a:hover{color:var(--link-hover);text-decoration:underline}
   </footer>
 </div>
 
-<div class="stickycta"><a class="cta" href="https://calendly.com/movementconsultant/30min" target="_blank" rel="noopener">Book a 30-Day Diagnostic ↗</a></div>
+<div class="stickycta">
+  <a class="cta" href="https://calendly.com/movementconsultant/30min" target="_blank" rel="noopener">Book a 30-Day Diagnostic ↗</a>
+</div>
 
 </body>
 </html>
