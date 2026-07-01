@@ -1,557 +1,736 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Texas Movement Consulting — Turn a messy problem into a system you can run.</title>
-    <meta
-      name="description"
-      content="Texas Movement Consulting helps serious founders and teams organize messy problems into workable systems. Strategy, AI-assisted workflows, and implementation support scoped to real constraints and timelines."
-    />
-    <link rel="canonical" href="https://consulting.texasmovement.com" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Texas Movement Consulting — Turn a messy problem into a system you can run.</title>
+  <meta
+    name="description"
+    content="Texas Movement Consulting helps founders, operators, and teams turn messy operations and AI projects into systems they can run—strategy, workflows, and implementation support that hold under review."
+  />
+  <link rel="canonical" href="https://consulting.texasmovement.com/" />
+  <meta name="theme-color" content="#15181E" />
 
-    <!-- Open Graph -->
-    <meta
-      property="og:title"
-      content="Texas Movement Consulting — Turn a messy problem into a system you can run."
-    />
-    <meta
-      property="og:description"
-      content="Strategy, systems, and AI-assisted workflows for founders and teams who need clearer execution and documented structure."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://consulting.texasmovement.com" />
-    <meta property="og:image" content="/og-texas-movement-consulting.png" />
-    <meta property="og:site_name" content="Texas Movement Consulting" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Texas Movement Consulting" />
+  <meta property="og:title" content="Texas Movement Consulting — Turn a messy problem into a system you can run." />
+  <meta
+    property="og:description"
+    content="Strategy, systems, AI-assisted workflows, and implementation support for founders and teams with real stakes."
+  />
+  <meta property="og:url" content="https://consulting.texasmovement.com/" />
+  <meta property="og:image" content="https://texasmovement.com/05_banner_header.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Texas Movement Consulting banner" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Texas Movement Consulting — Turn a messy problem into a system you can run."
-    />
-    <meta
-      name="twitter:description"
-      content="Systems-first consulting for founders and teams. Strategy, AI workflows, and implementation support, built to hold up under review."
-    />
-    <meta name="twitter:image" content="/og-texas-movement-consulting.png" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Texas Movement Consulting — Turn a messy problem into a system you can run." />
+  <meta
+    name="twitter:description"
+    content="Systems and AI consulting for founders and operators who want documented workflows and tighter execution."
+  />
+  <meta name="twitter:image" content="https://texasmovement.com/05_banner_header.png" />
+  <meta name="twitter:image:alt" content="Texas Movement Consulting banner" />
 
-    <!-- JSON-LD (sketched per blueprint) [file:153] -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
+  <!-- Schema.org: Organization, WebSite, Breadcrumbs [file:153][web:129][web:12] -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://consulting.texasmovement.com#org",
+      "name": "Texas Movement Consulting",
+      "url": "https://consulting.texasmovement.com/",
+      "logo": "https://texasmovement.com/01_primary_stacked_transparent.png",
+      "description": "Texas Movement Consulting is the consulting arm of Texas Movement International, focused on strategy, systems, AI-assisted workflows, and implementation support for founders, operators, and organizations.",
+      "parentOrganization": {
         "@type": "Organization",
-        "@id": "https://consulting.texasmovement.com#org",
-        "name": "Texas Movement Consulting",
-        "url": "https://consulting.texasmovement.com",
-        "parentOrganization": {
-          "@type": "Organization",
-          "@id": "https://texasmovement.com#org",
-          "name": "Texas Movement International"
-        },
-        "founder": {
-          "@type": "Person",
-          "@id": "https://alexandermathai.com/person",
-          "name": "Alexander Mathai"
-        },
-        "sameAs": [
-          "https://texasmovement.com"
-        ]
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://consulting.texasmovement.com#website",
-        "url": "https://consulting.texasmovement.com",
-        "name": "Texas Movement Consulting",
-        "publisher": {
-          "@id": "https://consulting.texasmovement.com#org"
+        "@id": "https://texasmovement.com#org",
+        "name": "Texas Movement International LLC"
+      },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://alexandermathai.com/person",
+        "name": "Alexander Varghese Mathai"
+      },
+      "sameAs": [
+        "https://texasmovement.com/",
+        "https://www.linkedin.com/company/texas-movement-consulting"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "Consulting Inquiries",
+          "email": "movementconsultant@gmail.com"
         }
+      ]
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://consulting.texasmovement.com#website",
+      "name": "Texas Movement Consulting",
+      "url": "https://consulting.texasmovement.com/",
+      "description": "Official site of Texas Movement Consulting, the systems and AI consulting arm of Texas Movement International.",
+      "publisher": {
+        "@id": "https://consulting.texasmovement.com#org"
       }
-    </script>
-    <!-- FAQPage will mirror the FAQ section below. [file:153] -->
+    }
+  </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://texasmovement.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Consulting",
+          "item": "https://consulting.texasmovement.com/"
+        }
+      ]
+    }
+  </script>
 
-    <style>
-      :root {
-        --bg: #020617;
-        --fg-primary: #e2e8f0;
-        --fg-secondary: #cbd5e1;
-        --fg-muted: #94a3b8;
-        --border-soft: rgba(148, 163, 184, 0.25);
-        --border-card: rgba(148, 163, 184, 0.22);
-        --accent: #38bdf8;
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --paper: #e7e8e2;
+      --panel: #ddded7;
+      --hero: #e9e0d5;
+      --hero-soft: #f3ebe2;
+      --hero-ink: #3c2a1d;
+      --hero-border: #b88d68;
+      --ink: #15181e;
+      --ink-soft: #454a54;
+      --line: #c4c6bd;
+      --line-strong: #a6a99f;
+      --graphite: #111217;
+      --white: #f4f5f0;
+      --compression: #274a78;
+      --tension: #bd3b22;
+      --wrap: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-size: 16.5px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--compression);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(231, 232, 226, 0.92);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .topbar {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand span {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .brand-mark img {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a:hover {
+      color: var(--ink);
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section--tight {
+      padding: 72px 0;
+    }
+
+    .section--panel {
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section--graphite {
+      background: var(--graphite);
+      color: var(--white);
+      border-top: 1px solid #2c313b;
+    }
+
+    .eyebrow {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--tension);
+      flex: none;
+    }
+
+    .eyebrow--light {
+      color: #9aa0ab;
+    }
+
+    .eyebrow--light::before {
+      background: var(--tension);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 3.1vw, 2.3rem);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    p {
+      color: var(--ink-soft);
+      max-width: 44em;
+    }
+
+    .hero {
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, var(--hero), var(--hero-soft));
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .hero-tagline {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ink-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-body {
+      font-size: 1.02rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ink);
+      color: var(--white);
+      transition: 0.18s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn--ghost:hover {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .btn .arrow {
+      transition: transform 0.18s ease;
+    }
+
+    .btn:hover .arrow {
+      transform: translateX(3px);
+    }
+
+    .hero-note {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .hero-figure {
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      padding: 18px 18px 14px;
+      background: rgba(255, 247, 238, 0.64);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+    }
+
+    .hero-node {
+      border-radius: 12px;
+      padding: 10px 10px 9px;
+      background: var(--paper);
+      border: 1px solid var(--line-strong);
+      min-height: 84px;
+    }
+
+    .hero-node-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.65rem;
+      margin-bottom: 4px;
+      color: var(--ink-soft);
+    }
+
+    .hero-node--source {
+      border-color: var(--tension);
+    }
+
+    .hero-node--terminal {
+      border-color: var(--compression);
+    }
+
+    .hero-caption {
+      margin-top: 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-align: right;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .card {
+      border-radius: 14px;
+      border: 1px solid var(--line-strong);
+      background: var(--paper);
+      padding: 18px 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .bullets {
+      display: grid;
+      gap: 0.75rem;
+      max-width: 44em;
+    }
+
+    .faq-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .faq-item {
+      border-radius: 14px;
+      border: 1px solid var(--line-strong);
+      background: var(--paper);
+      padding: 14px 16px 12px;
+    }
+
+    footer {
+      padding: 26px 0 32px;
+      background: var(--graphite);
+      color: #9aa0ab;
+      border-top: 1px solid #2c313b;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
       }
 
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--fg-secondary);
-        font-family: "Inter", system-ui, sans-serif;
-        line-height: 1.6;
-      }
-
-      .page {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 2rem 1.25rem 3rem;
-      }
-
-      .topbar,
-      .hero,
       .section,
-      .footer {
-        margin-bottom: 2rem;
+      .section--tight {
+        padding: 64px 0;
       }
 
-      .topbar {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        align-items: center;
-        border-bottom: 1px solid var(--border-soft);
-        padding-bottom: 1rem;
+      nav {
+        display: none;
       }
 
-      .brand {
-        display: flex;
-        gap: 0.75rem;
-        align-items: center;
+      .wrap {
+        padding: 0 20px;
       }
+    }
 
-      .brand-mark {
-        width: 2rem;
-        height: 2rem;
-        border: 1px solid rgba(148, 163, 184, 0.6);
-        border-radius: 999px;
-        display: grid;
-        place-items: center;
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
-
-      .brand-name {
-        font-weight: 700;
-        color: var(--fg-primary);
-      }
-
-      .brand-subtitle {
-        font-size: 0.9rem;
-        color: var(--fg-muted);
-      }
-
-      .nav {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      .nav a {
-        color: var(--accent);
-        text-decoration: none;
-        font-size: 0.9rem;
-      }
-
-      .nav a:hover {
-        text-decoration: underline;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
-        gap: 1.5rem;
-        align-items: start;
-        padding-top: 0.5rem;
-      }
-
-      .eyebrow {
-        color: #60a5fa;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        font-size: 0.78rem;
-      }
-
-      h1 {
-        font-size: clamp(2.3rem, 4.2vw, 3.8rem);
-        line-height: 1.05;
-        color: var(--fg-primary);
-        margin: 0 0 0.5rem;
-      }
-
-      .hero-sub {
-        font-size: clamp(1.7rem, 3.1vw, 2.8rem);
-        line-height: 1.1;
-        color: var(--fg-secondary);
-        margin: 0 0 1rem;
-      }
-
-      .hero-body {
-        font-size: 0.98rem;
-        color: var(--fg-secondary);
-        max-width: 60ch;
-      }
-
-      h2 {
-        font-size: 0.95rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--fg-muted);
-        margin-bottom: 1rem;
-      }
-
-      h3 {
-        margin: 0 0 0.4rem;
-        color: var(--fg-primary);
-        font-size: 0.92rem;
-      }
-
-      .hero-card,
-      .card,
-      .faq-item,
-      .contact {
-        border: 1px solid var(--border-card);
-        border-radius: 1rem;
-        background: rgba(15, 23, 42, 0.55);
-      }
-
-      .hero-card {
-        overflow: hidden;
-      }
-
-      .hero-card-body {
-        padding: 1rem;
-      }
-
-      .hero-card-title {
-        margin: 0 0 0.35rem;
-        color: var(--fg-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        font-size: 0.78rem;
-      }
-
-      .cta-row {
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        margin-top: 1.25rem;
-      }
-
-      .button {
-        padding: 0.75rem 1rem;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 0.9rem;
-      }
-
-      .button.primary {
-        background: var(--accent);
-        color: var(--bg);
-      }
-
-      .button.secondary {
-        border: 1px solid rgba(148, 163, 184, 0.5);
-        color: #e5e7eb;
-      }
-
-      .section {
-        padding-top: 0.5rem;
-      }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-      }
-
-      .card,
-      .faq-item {
-        padding: 1rem;
-      }
-
-      .bullets {
-        display: grid;
-        gap: 0.75rem;
-        max-width: 70ch;
-      }
-
-      .faq {
-        display: grid;
-        gap: 0.75rem;
-      }
-
-      .contact {
-        padding: 1rem;
-      }
-
-      .contact .fineprint {
-        font-size: 0.85rem;
-        color: var(--fg-muted);
-      }
-
-      .footer {
-        border-top: 1px solid var(--border-soft);
-        padding-top: 1rem;
-        color: var(--fg-muted);
-        font-size: 0.9rem;
-      }
-
-      .footer-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      .footer-links {
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        font-size: 0.85rem;
-      }
-
-      .footer-links a {
-        color: var(--fg-secondary);
-        text-decoration: none;
-      }
-
-      .footer-links a:hover {
-        text-decoration: underline;
-      }
-
-      .footer-separator {
-        color: #64748b;
-      }
-
-      @media (max-width: 800px) {
-        .hero,
-        .cards {
-          grid-template-columns: 1fr;
-        }
-
-        .topbar {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .footer-row {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <main class="page">
-      <header class="topbar">
-        <div class="brand">
-          <div class="brand-mark">TC</div>
-          <div class="brand-copy">
-            <div class="brand-name">Texas Movement Consulting</div>
-            <div class="brand-subtitle">Execution layer · Consulting</div>
-          </div>
-        </div>
-        <nav class="nav">
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <a href="#top" class="brand" aria-label="Texas Movement Consulting home">
+          <span class="brand-mark">
+            <img src="https://texasmovement.com/01_primary_stacked_transparent.png" alt="Texas Movement International logo" />
+          </span>
+          <span>TEXAS MOVEMENT CONSULTING</span>
+        </a>
+        <nav>
           <a href="#overview">Overview</a>
           <a href="#who">Who it’s for</a>
           <a href="#how">How I work</a>
           <a href="#engagements">Engagements</a>
           <a href="#ecosystem">Ecosystem</a>
           <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+          <a href="mailto:movementconsultant@gmail.com">Contact</a>
         </nav>
-      </header>
+      </div>
+    </div>
+  </header>
 
-      <section id="overview" class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">STRATEGY · SYSTEMS · AI WORKFLOWS</p>
+  <main id="top">
+    <!-- Hero / AEO block [file:153][web:129] -->
+    <section class="section hero" id="overview">
+      <div class="wrap hero-inner">
+        <div>
+          <div class="hero-tagline">STRATEGY · SYSTEMS · AI WORKFLOWS</div>
           <h1>Turn a messy problem into a system you can run.</h1>
-          <p class="hero-sub">
-            Consulting for founders and teams—strategy, AI-assisted workflows, and implementation support, scoped to real
-            constraints and timelines.
+          <p class="hero-body">
+            Texas Movement Consulting helps founders, operators, and organizations organize messy problems into workable systems. It is the consulting arm of Texas Movement International, focused on strategy, systems design, AI-assisted workflows, and implementation support. It exists for people with real stakes and a clear-enough brief who need structure and execution, not slideware.
           </p>
           <p class="hero-body">
-            Texas Movement Consulting helps serious people organize messy problems into workable systems. It is for
-            founders, operators, and organizations that need strategy, AI-assisted workflows, and implementation support.
-            It solves the problem of work that stalls because structure, sequencing, and ownership are unclear. It works
-            by mapping the current state, defining constraints and timelines, and building a system you can actually run,
-            then documenting it so it holds up under review. It connects to Media for signal, Performance for physical
-            systems, and FounderLink as the front door. The output is a system and a record, not a deck.
+            Work starts by mapping the current state, defining constraints and timelines, and building a system you can actually run—then documenting it so it holds up under review. It connects to Media for signal, Performance for physical systems, and FounderLink as the front door. The output is a system and a record, not just a deck.
           </p>
-          <div class="cta-row">
-            <a class="button primary" href="#contact">Start a brief</a>
-            <a class="button secondary" href="#how">See how I work</a>
+          <div class="hero-ctas">
+            <a class="btn" href="#engagements">
+              See engagements <span class="arrow">→</span>
+            </a>
+            <a class="btn btn--ghost" href="mailto:movementconsultant@gmail.com">
+              Start a brief <span class="arrow">→</span>
+            </a>
+          </div>
+          <div class="hero-note">
+            SYSTEMS FIRST · DOCUMENT BEFORE NARRATIVE · LEGALLY IN-BOUNDS · BUILT FOR SERIOUS WORK
           </div>
         </div>
 
-        <aside class="hero-card">
-          <div class="hero-card-body">
-            <p class="hero-card-title">What this page is</p>
-            <p>
-              This is the execution layer of Texas Movement. It shows how consulting turns complex situations into
-              systems, and how engagements are scoped and documented.
-            </p>
+        <aside class="hero-figure">
+          <div class="hero-grid">
+            <div class="hero-node hero-node--source">
+              <div class="hero-node-label">Systems audit</div>
+              <div>Map workflows, find friction, return a prioritized plan with timelines and owners.</div>
+            </div>
+            <div class="hero-node">
+              <div class="hero-node-label">AI workflows</div>
+              <div>Design and stand up assisted workflows that reduce friction and improve execution.</div>
+            </div>
+            <div class="hero-node hero-node--terminal">
+              <div class="hero-node-label">Decision support</div>
+              <div>Turn complex situations into clear decisions, sequencing, and a record that holds up.</div>
+            </div>
+          </div>
+          <div class="hero-caption">
+            FIG. 02 — CONSULTING UNDER LOAD · TEXAS MOVEMENT CONSULTING
           </div>
         </aside>
-      </section>
+      </div>
+    </section>
 
-      <section id="who" class="section">
-        <h2>Who it’s for</h2>
+    <!-- Who it’s for [file:153][web:129] -->
+    <section class="section section--tight" id="who">
+      <div class="wrap">
+        <div class="eyebrow">WHO IT’S FOR</div>
+        <h2>Serious founders, operators, and teams.</h2>
         <div class="bullets">
           <p>
-            Founders and operators who think in constraints and want durable execution, not motivation. The work is
-            built for people whose stakes are real.
+            Founders and operators who think in constraints and want durable execution, not motivation—people with real stakes and real timelines.
           </p>
           <p>
-            Teams carrying a complex situation—a launch, a legal matter’s operational side, a workflow that keeps
-            breaking—that need it turned into clear decisions and steps.
+            Teams carrying complex situations—a launch, an AI project, a legal matter’s operational side, or a workflow that keeps breaking—that need it turned into clear decisions and steps.
           </p>
           <p>
-            It is a fit when the brief is clear enough to scope. It is not a fit for open-ended “help us figure out
-            everything” with no context.
+            It is a fit when the brief is clear enough and the stakes are real. It is not a fit for vague, no-context “help us figure out everything” requests.
           </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="how" class="section">
-        <h2>How I work</h2>
+    <!-- How I work (principles) [file:153] -->
+    <section class="section section--panel" id="how">
+      <div class="wrap">
+        <div class="eyebrow">HOW I WORK</div>
+        <h2>Systems first. Document before narrative.</h2>
         <div class="bullets">
-          <p><strong>Systems first.</strong> Structure, timelines, and ownership come before tactics or narrative.</p>
-          <p><strong>Document before narrative.</strong> The record must hold up under review—internally and externally.</p>
-          <p><strong>Legally in-bounds.</strong> Work supports your counsel; it does not act as counsel or provide legal advice.</p>
-          <p><strong>Built for serious work.</strong> Engagements are scoped to real constraints and outcomes, not vague wishes.</p>
+          <p><strong>Systems first.</strong> Work starts with how information, decisions, and execution actually move through your company—then we design structure around that reality.</p>
+          <p><strong>Document before narrative.</strong> The record comes first so the work holds up under review. Narrative sits on top of a clear, documented system.</p>
+          <p><strong>Legally in-bounds.</strong> Consulting supports your counsel; it does not replace legal advice. Engagements stay inside operational and strategic lanes.</p>
+          <p><strong>Built for serious work.</strong> The posture is calm, direct, and disciplined. This is for people who treat their company like infrastructure, not a campaign.</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="engagements" class="section">
-        <h2>Engagements</h2>
-        <div class="cards">
+    <!-- Engagements / cards [file:153][web:129] -->
+    <section class="section" id="engagements">
+      <div class="wrap">
+        <div class="eyebrow">ENGAGEMENTS</div>
+        <h2>Ways we can work together.</h2>
+        <div class="cards-grid">
           <article class="card">
             <h3>Systems audit</h3>
             <p>
-              I map your current workflow, locate the friction, and return a prioritized plan—timelines, decisions, and
-              owners. You get a clear picture of what to fix first and why, in a form you can execute against immediately.
+              Map your current workflow, locate friction, and return a prioritized plan with timelines, decisions, and owners. You get a clear picture of what to fix first and why, in a form you can execute against immediately.
             </p>
           </article>
           <article class="card">
             <h3>AI-workflow build</h3>
             <p>
-              I design and stand up GPT, Claude, Gemini-assisted workflows that reduce friction and improve execution,
-              grounded in your actual constraints and tools.
+              Design and stand up GPT/Claude/Gemini-assisted workflows that reduce friction and improve execution—embedded in your existing systems, not bolted on as a gimmick.
             </p>
           </article>
           <article class="card">
             <h3>Ops decision support</h3>
             <p>
-              I turn a complex situation into clear decisions, sequencing, and a record that holds up under review so
-              you are not deciding in a fog.
+              Turn a complex situation into clear decisions, sequencing, and a documented record. The goal is confidence that holds up when someone asks, “Why did you do it that way?”
             </p>
           </article>
           <article class="card">
             <h3>Embedded retainer</h3>
             <p>
-              Ongoing execution support for founders who need a systems partner across lanes—strategy, workflows, and
-              documentation over time.
+              Ongoing execution support for founders who need a systems partner across lanes—steady work on structure, workflows, and decisions, not one-off campaigns.
             </p>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ecosystem" class="section">
-        <h2>Ecosystem connections</h2>
+    <!-- Ecosystem connections [file:153][web:12] -->
+    <section class="section section--tight" id="ecosystem">
+      <div class="wrap">
+        <div class="eyebrow">ECOSYSTEM</div>
+        <h2>Where Consulting sits in Texas Movement.</h2>
         <div class="bullets">
           <p>
-            Consulting draws on
-            <a href="https://media.texasmovement.com" target="_blank" rel="noreferrer">Texas Movement Media</a> to
-            document the work and build signal where needed.
+            Consulting is the execution lane of Texas Movement International. It shares systems thinking with the hub at
+            <a href="https://texasmovement.com/" target="_blank" rel="noreferrer">texasmovement.com</a>.
           </p>
           <p>
             It connects to
-            <a href="https://performance.texasmovement.com" target="_blank" rel="noreferrer">Texas Movement Performance</a>
-            and Health when physical and recovery systems are part of the brief.
+            <a href="https://media.texasmovement.com/" target="_blank" rel="noreferrer">Texas Movement Media</a> for documentation and durable signal, and to
+            <a href="https://performance.texasmovement.com/" target="_blank" rel="noreferrer">Texas Movement Performance</a> on the physical systems side where relevant.
           </p>
           <p>
-            Intake can start directly here or through
-            <a href="https://founderlink.texasmovement.com" target="_blank" rel="noreferrer">FounderLink</a>, the front
-            door for founders entering the ecosystem.
+            Intake can start here or through
+            <a href="https://founderlink.texasmovement.com/" target="_blank" rel="noreferrer">FounderLink</a>, the front door for founders, if you would rather be routed across lanes.
           </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="faq" class="section">
-        <h2>Frequently asked questions</h2>
-        <div class="faq">
+    <!-- FAQ [file:153] -->
+    <section class="section section--panel" id="faq">
+      <div class="wrap">
+        <div class="eyebrow">FAQ</div>
+        <h2>Frequently asked questions.</h2>
+        <div class="faq-grid">
           <div class="faq-item">
             <h3>What kind of work is this?</h3>
             <p>
-              Strategy, systems design, AI-assisted workflows, and implementation support. It is structure and
-              execution, not slideware.
+              Strategy, systems design, AI-assisted workflows, and implementation support. It is structure and execution, not motivational speaking or slide decks.
             </p>
           </div>
           <div class="faq-item">
             <h3>Who is it a fit for?</h3>
             <p>
-              Founders, operators, and teams with real stakes and a clear-enough brief. It is a poor fit for vague,
-              no-context requests.
+              Founders, operators, and teams with real stakes and a clear brief. It is a poor fit for vague, no-context requests or projects with no decision-maker.
             </p>
           </div>
           <div class="faq-item">
             <h3>Do you provide legal advice?</h3>
             <p>
-              No. Work stays in-bounds and supports your counsel; it does not replace it or act as legal representation.
+              No. Consulting stays in-bounds and supports your counsel; it does not replace legal advice or representation.
             </p>
           </div>
           <div class="faq-item">
             <h3>How does an engagement start?</h3>
             <p>
-              Send a brief with context, constraints, and what a good outcome looks like. The first step is scope and
-              fit, not a pitch.
+              Send a brief with context, constraints, and what a good outcome looks like. First step is scope and fit—not a generic discovery call.
             </p>
           </div>
           <div class="faq-item">
             <h3>How is this different from generic consulting?</h3>
             <p>
-              It is systems-first and documented, built to compound with the rest of Texas Movement rather than sit as a
-              one-off project.
+              It is systems-first and documented, built to compound with the rest of Texas Movement rather than sit as a one-off. The record is part of the deliverable.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Where can I learn more about the founder?</h3>
+            <p>
+              The authority profile for Alexander Varghese Mathai lives at
+              <a href="https://alexandermathai.com/" target="_blank" rel="noreferrer">AlexanderMathai.com</a>, which anchors the ecosystem’s person layer.
             </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section id="contact" class="section contact">
-        <h2>Contact</h2>
-        <p>Send a brief with context, constraints, and what a good outcome would look like.</p>
-        <a href="mailto:movementconsultant@gmail.com" class="email">movementconsultant@gmail.com</a>
-        <p class="fineprint">
-          Texas Movement Consulting does not provide legal advice. No attorney-client relationship is formed through this site.
-        </p>
-      </section>
-
-      <footer class="footer">
-        <div class="footer-row">
-          <p>© 2026 Texas Movement International · Systems for people who move.</p>
-          <div class="footer-links">
-            <a href="#overview">Back to top ↑</a>
-            <span class="footer-separator">·</span>
-            <a href="https://alexandermathai.com" target="_blank" rel="noreferrer">Founder</a>
-            <span class="footer-separator">·</span>
-            <a href="https://texasmovement.com" target="_blank" rel="noreferrer">TMI</a>
-            <span class="footer-separator">·</span>
-            <a href="https://distribution.texasmovement.com" target="_blank" rel="noreferrer">Distribution</a>
-            <span class="footer-separator">·</span>
-            <a href="https://hero.texasmovement.com" target="_blank" rel="noreferrer">HERO</a>
-          </div>
-        </div>
-      </footer>
-    </main>
-  </body>
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <span>© Texas Movement International · Consulting lane — consulting.texasmovement.com</span>
+        <span>Systems for people who move.</span>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>
