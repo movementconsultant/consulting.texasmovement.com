@@ -23,7 +23,7 @@
   <meta property="og:image" content="https://texasmovement.com/05_banner_header.png" />
   <meta property="og:image:type" content="image/png" />
 
-  <!-- Fonts (reuse main site stack) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -382,6 +382,24 @@
       color: #9ca3af;
     }
 
+    .director-cta {
+      margin-top: 10px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4b5563;
+    }
+
+    .director-cta a {
+      border-bottom: 1px solid #4b5563;
+    }
+
+    .director-cta a:hover {
+      color: #111827;
+      border-bottom-color: #111827;
+    }
+
     @media (max-width: 840px) {
       .layout-two,
       .tool-grid {
@@ -416,7 +434,7 @@
         </a>
         <nav aria-label="Primary">
           <a href="index.html">Consulting home</a>
-          <a href="early-childhood-ai-toolkit.html">Early Childhood AI</a>
+          <a href="early-childhood-ai-toolkit.html" aria-current="page">Early Childhood AI</a>
           <a href="testimonials.html">Testimonials</a>
         </nav>
       </div>
@@ -471,12 +489,28 @@
               </div>
             </div>
             <ol class="steps">
-              <li>Open Claude (or your AI tool) in your browser.</li>
-              <li>Scroll to the tool you need and copy the full prompt box.</li>
-              <li>Paste it into Claude, replace the [brackets] with your classroom details.</li>
-              <li>Read the output, adjust anything that doesn’t fit, and use it in your planning.</li>
+              <li>Choose one classroom or one week as your pilot.</li>
+              <li>Pick one tool below (weekly plan, activities, or parent update).</li>
+              <li>Open Claude (or your AI tool), copy the prompt box, and add your classroom details.</li>
+              <li>Try the output for a day, then meet for 10–15 minutes to adjust and decide what to keep.</li>
             </ol>
           </div>
+        </div>
+
+        <!-- Director-focused start here -->
+        <div class="panel" style="margin-top: 14px;">
+          <div class="panel-header">
+            <div>
+              <div class="eyebrow">START HERE · DIRECTORS</div>
+              <div class="panel-title">Pilot this in one room before going center-wide.</div>
+            </div>
+          </div>
+          <ol class="steps">
+            <li>Pick one lead teacher who is curious and has a stable classroom.</li>
+            <li>Ask them to use the Weekly Curriculum Generator for one upcoming theme week.</li>
+            <li>Have them circle or highlight the parts they actually used and what they changed.</li>
+            <li>Decide together if you’ll keep using the toolkit and how often.</li>
+          </ol>
         </div>
       </div>
     </section>
@@ -503,6 +537,11 @@
               return a week-long plan with daily goals, activities, differentiation, and simple observation notes.
             </p>
             <p class="tool-meta">Use 1–2 times a month to sketch upcoming weeks.</p>
+            <p class="note">
+              Example: A preschool teacher uses the Weekly Curriculum Generator for an “All About Me” week with only
+              paper, crayons, blocks, and a playground. She keeps 3–4 activities each day, tweaks the rest, and reuses
+              the prompt for “Community Helpers” next month.
+            </p>
           </div>
 
           <div>
@@ -744,6 +783,13 @@ Be warm and inclusive of all families, cultures, and home languages. Avoid teach
 
         <p class="footer-note">
           TEXAS MOVEMENT EARLY CHILDHOOD AI TOOLKIT · V1.0 (BETA) · © TEXAS MOVEMENT INTERNATIONAL LLC
+        </p>
+        <p class="director-cta">
+          Directors: to run this toolkit across your center, email
+          <a href="mailto:Consulting@TexasMovement.com?subject=Early%20Childhood%20AI%20Toolkit">
+            Consulting@TexasMovement.com
+          </a>
+          with “Early Childhood AI Toolkit” in the subject line for a short onboarding call.
         </p>
       </div>
     </section>
