@@ -391,13 +391,13 @@
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--ink-soft); /* darker for contrast */
+      color: var(--ink-soft);
     }
 
     .copy-note {
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.7rem;
-      color: var(--ink-soft); /* darker for contrast */
+      color: var(--ink-soft);
     }
 
     .btn-copy {
@@ -442,7 +442,7 @@
     .proof .fine-print {
       margin-top: 10px;
       font-size: 0.8rem;
-      color: #6b7280; /* darker for contrast */
+      color: #6b7280;
     }
 
     .safety-panel {
@@ -474,7 +474,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #6b7280; /* darker for contrast */
+      color: #6b7280;
     }
 
     .director-cta {
@@ -517,7 +517,7 @@
         display: inline-flex;
       }
 
-      /* No-JS fallback: visible by default; JS will hide when active */
+      /* No-JS fallback: show menu by default; JS will override */
       .nav-menu {
         display: block;
         margin-top: 8px;
@@ -1017,13 +1017,13 @@ Be warm and inclusive of all families, cultures, and home languages. Avoid teach
     <div id="copy-status" class="sr-only" role="status" aria-live="polite"></div>
 
     <script>
-      // Mobile nav toggle with JS-aware closed state
+      // Mobile nav toggle with no-JS fallback behavior
       (function () {
         const toggle = document.querySelector('.nav-toggle');
         const menu = document.getElementById('nav-menu');
         if (!toggle || !menu) return;
 
-        // JS is present: start closed on small screens
+        // JS present: start closed on small screens
         if (window.matchMedia && window.matchMedia('(max-width: 840px)').matches) {
           menu.classList.remove('is-open');
           menu.style.display = 'none';
