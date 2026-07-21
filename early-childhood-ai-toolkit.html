@@ -515,6 +515,31 @@
       border-bottom-color: #111827;
     }
 
+    .back-to-top {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft-strong);
+      cursor: pointer;
+    }
+
+    .back-to-top:hover {
+      color: var(--ink);
+      border-color: var(--accent);
+    }
+
     .sr-only {
       position: absolute;
       width: 1px;
@@ -557,7 +582,8 @@
       .nav-toggle,
       .btn-print,
       .director-cta,
-      .proof {
+      .proof,
+      .back-to-top {
         display: none !important;
       }
 
@@ -594,7 +620,7 @@
   </style>
 </head>
 <body>
-  <header>
+  <header id="page-top">
     <div class="wrap">
       <div class="topbar">
         <a href="index.html" class="brand" aria-label="Back to Texas Movement Consulting home">
@@ -618,7 +644,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Hero -->
     <section class="hero">
       <div class="wrap">
@@ -1042,6 +1068,11 @@ Be warm and inclusive of all families, cultures, and home languages. Avoid teach
     <!-- Copy status live region -->
     <div id="copy-status" class="sr-only" role="status" aria-live="polite"></div>
 
+    <!-- Back to top button -->
+    <button type="button" class="back-to-top" aria-label="Back to top">
+      Back to top
+    </button>
+
     <script>
       // Mobile nav toggle with no-JS fallback behavior
       (function () {
@@ -1083,6 +1114,22 @@ Be warm and inclusive of all families, cultures, and home languages. Avoid teach
               status.textContent = 'Copy failed — select and copy manually.';
             }
           });
+        });
+      })();
+
+      // Back to top behavior: scroll to top and move focus to main
+      (function () {
+        const backToTop = document.querySelector('.back-to-top');
+        const main = document.getElementById('main-content');
+        if (!backToTop || !main) return;
+
+        backToTop.addEventListener('click', function () {
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+          // After a short delay, move focus to main for keyboard/screen reader users
+          setTimeout(function () {
+            main.setAttribute('tabindex', '-1');
+            main.focus();
+          }, 300);
         });
       })();
     </script>
