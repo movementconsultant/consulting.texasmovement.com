@@ -1,52 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Early Childhood AI Toolkit — Texas Movement Consulting</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="canonical" href="https://consulting.texasmovement.com/early-childhood-ai-toolkit.html" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Texas Movement Early Childhood AI Toolkit</h1>
-      <p>
-        AI tools that give early childhood teachers their planning time back.
-        Copy a prompt, add your details, and get a full week of play-based learning, fresh theme activities,
-        or a warm family newsletter — in minutes, no AI experience needed.
-      </p>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="early-childhood-ai-toolkit.html">Early Childhood AI Toolkit</a>
-        <a href="testimonials.html">Testimonials</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <title>Early Childhood AI Toolkit — Texas Movement Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="A practical AI toolkit for daycare and preschool teachers. Copy a prompt, add your classroom details, and get play-based curriculum, activities, and family updates in minutes."
+  />
+  <link rel="canonical" href="https://consulting.texasmovement.com/early-childhood-ai-toolkit.html" />
+  <meta name="theme-color" content="#1f2937" />
 
-    <main>
-      <section>
-        <h2>What’s inside</h2>
-        <ul>
-          <li><strong>Weekly Curriculum Generator</strong> — One theme in, a full play-based week out.</li>
-          <li><strong>Theme-Based Activity Builder</strong> — Any theme, filled with ready-to-run activities.</li>
-          <li><strong>Adaptation &amp; Parent Communication Assistant</strong> — Adapt for every child; update every family.</li>
-        </ul>
-      </section>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Texas Movement Consulting" />
+  <meta property="og:title" content="Early Childhood AI Toolkit — Texas Movement Consulting" />
+  <meta
+    property="og:description"
+    content="Play-based AI tools for early childhood programs. Weekly curriculum, theme activities, adaptations, and family messages — all from copy-and-paste prompts."
+  />
+  <meta property="og:url" content="https://consulting.texasmovement.com/early-childhood-ai-toolkit.html" />
+  <meta property="og:image" content="https://texasmovement.com/05_banner_header.png" />
+  <meta property="og:image:type" content="image/png" />
 
-      <section>
-        <h2>Who this is for</h2>
-        <p>
-          Preschool and daycare teachers, directors, and program leaders who want practical, play-based curriculum
-          support that respects real-world constraints: limited prep time, mixed abilities, and mixed staffing.
+  <!-- Fonts (reuse main site stack) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --paper: #f4f5f0;
+      --panel: #e7e8e2;
+      --ink: #111827;
+      --ink-soft: #4b5563;
+      --line: #d1d5db;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --danger: #b91c1c;
+      --wrap: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .topbar {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark img {
+      height: 26px;
+      width: auto;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    nav a:hover {
+      color: var(--ink);
+    }
+
+    main {
+      padding: 32px 0 40px;
+    }
+
+    .hero {
+      padding: 32px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-tagline {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .hero-lead {
+      max-width: 40rem;
+      color: var(--ink-soft);
+      margin-bottom: 12px;
+    }
+
+    .hero-sub {
+      max-width: 40rem;
+      color: #6b7280;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-meta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    .hero-meta span {
+      display: inline-block;
+      margin-right: 12px;
+    }
+
+    .layout-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: 28px;
+      align-items: flex-start;
+      margin-top: 18px;
+    }
+
+    .panel {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      padding: 16px 16px 14px;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .panel-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .eyebrow {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1d4ed8;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .pill span {
+      font-size: 0.76rem;
+    }
+
+    .list-tight {
+      margin-top: 8px;
+      padding-left: 18px;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    .list-tight li + li {
+      margin-top: 4px;
+    }
+
+    .section {
+      padding: 28px 0 4px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      color: var(--ink-soft);
+      font-size: 0.96rem;
+      max-width: 40rem;
+      margin-bottom: 14px;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .tool-card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      padding: 14px 16px 14px;
+    }
+
+    .tool-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+
+    .tool-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .tool-body {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+
+    .tool-meta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    .steps {
+      list-style: decimal;
+      padding-left: 18px;
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+    }
+
+    .steps li + li {
+      margin-top: 4px;
+    }
+
+    .prompt-block {
+      background: #0f172a;
+      color: #e5e7eb;
+      border-radius: 10px;
+      padding: 12px 12px 12px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .prompt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .prompt-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+
+    .copy-note {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      color: #d1d5db;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+
+    .safety-panel {
+      background: #fef2f2;
+      border-radius: 10px;
+      border: 1px solid #fecaca;
+      padding: 12px 14px 12px;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .safety-panel strong {
+      color: var(--danger);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 840px) {
+      .layout-two,
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <a href="index.html" class="brand" aria-label="Back to Texas Movement Consulting home">
+          <span class="brand-mark">
+            <img src="https://texasmovement.com/01_primary_stacked_transparent.png" alt="Texas Movement International logo" />
+          </span>
+          <span>Texas Movement Consulting</span>
+        </a>
+        <nav aria-label="Primary">
+          <a href="index.html">Consulting home</a>
+          <a href="early-childhood-ai-toolkit.html">Early Childhood AI</a>
+          <a href="testimonials.html">Testimonials</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-tagline">EARLY CHILDHOOD · AI TOOLKIT</div>
+        <h1>Play-based AI tools for real daycare classrooms.</h1>
+        <p class="hero-lead">
+          AI tools that give early childhood teachers their planning time back. Copy a prompt, add your details, and
+          get a full week of play-based learning, fresh theme activities, or a warm family newsletter — in minutes, no
+          AI experience needed.
         </p>
-      </section>
+        <p class="hero-sub">
+          Use these prompts with Claude (or another trusted AI assistant) to support curriculum, differentiation, and
+          family communication. You stay in charge of your classroom and your professional judgment.
+        </p>
+        <div class="hero-meta">
+          <span>BUILT FOR · PRESCHOOL · DAYCARE · PRE-K</span>
+          <span>VERSION 1.0 · BETA</span>
+        </div>
 
-      <section>
-        <h2>Weekly Curriculum Generator — Master Prompt</h2>
-        <p><em>Teacher instructions: Copy everything in the box. Paste it into Claude. Replace the [bracketed parts] with your own details, then send.</em></p>
-        <pre>
-You are an early childhood curriculum assistant for play-based daycare and
-preschool classrooms. You design warm, practical, developmentally appropriate
-weekly plans that a busy teacher can run with minimal prep and everyday materials.
+        <div class="layout-two">
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <div class="eyebrow">WHAT’S INSIDE</div>
+                <div class="panel-title">Three tools, one page.</div>
+              </div>
+              <div class="pill">
+                <span>Copy &amp; paste</span>
+              </div>
+            </div>
+            <ul class="list-tight">
+              <li><strong>Weekly Curriculum Generator</strong> — One theme in, a full play-based week out.</li>
+              <li><strong>Theme-Based Activity Builder</strong> — Any theme, filled with ready-to-run activities.</li>
+              <li>
+                <strong>Adaptation &amp; Parent Communication Assistant</strong> — Adapt for every child; update every family.
+              </li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <div class="eyebrow">HOW TO USE THIS PAGE</div>
+                <div class="panel-title">Four quick steps.</div>
+              </div>
+            </div>
+            <ol class="steps">
+              <li>Open Claude (or your AI tool) in your browser.</li>
+              <li>Scroll to the tool you need and copy the full prompt box.</li>
+              <li>Paste it into Claude, replace the [brackets] with your classroom details.</li>
+              <li>Read the output, adjust anything that doesn’t fit, and use it in your planning.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly Curriculum Generator -->
+    <section class="section">
+      <div class="wrap">
+        <h2>Weekly Curriculum Generator</h2>
+        <p class="section-intro">
+          Turn one theme into a full week of play-based learning. This tool helps you build a Monday–Friday plan that
+          fits your classroom, materials, and children.
+        </p>
+
+        <div class="tool-grid">
+          <div class="tool-card">
+            <div class="tool-label">Tool overview</div>
+            <div class="tool-title">One theme, one week, one prompt.</div>
+            <p class="tool-body">
+              Best for lead teachers and directors who want a complete weekly plan they can tweak instead of starting
+              from a blank page.
+            </p>
+            <p class="tool-body">
+              You’ll tell the AI your age group, theme, materials, group size, and any special considerations. It will
+              return a week-long plan with daily goals, activities, differentiation, and simple observation notes.
+            </p>
+            <p class="tool-meta">Use 1–2 times a month to sketch upcoming weeks.</p>
+          </div>
+
+          <div>
+            <div class="prompt-header">
+              <div class="prompt-title">TEACHER MASTER PROMPT</div>
+              <div class="copy-note">Copy everything inside the box.</div>
+            </div>
+            <div class="prompt-block">
+Teacher instructions: Copy everything in this box. Paste it into Claude. Replace the [bracketed parts] with your own details, then send.
+
+You are an early childhood curriculum assistant for play-based daycare and preschool classrooms. You design warm, practical, developmentally appropriate weekly plans that a busy teacher can run with minimal prep and everyday materials.
 
 Please create a full week of curriculum using the details below.
 
@@ -54,18 +521,15 @@ MY DETAILS:
 - Age group: [e.g., preschoolers, 3-5 years]
 - Weekly theme: [e.g., All About Me]
 - Number of days: [e.g., 5 days, Mon-Fri]
-- Materials I have: [e.g., paper, crayons, glue, blocks, dress-up clothes,
-  playground; skip anything I don't list]
+- Materials I have: [e.g., paper, crayons, glue, blocks, dress-up clothes, playground; skip anything I don't list]
 - Group size and staffing: [e.g., 16 kids, 2 teachers]
-- Special considerations: [e.g., 2 kids who are new to English, 1 child with
-  an IEP for speech, several kids who need help sharing; write "none" if none]
+- Special considerations: [e.g., 2 kids who are new to English, 1 child with an IEP for speech, several kids who need help sharing; write "none" if none]
 
 Please format the plan EXACTLY like this:
 
 1. WEEKLY OVERVIEW
    - One short paragraph on the theme and what children will explore.
-   - The main skills we'll grow this week (social-emotional, language,
-     early literacy, early numeracy, motor, sensory).
+   - The main skills we'll grow this week (social-emotional, language, early literacy, early numeracy, motor, sensory).
 
 2. DAILY GOALS
    - One clear, plain-language goal for each day.
@@ -95,19 +559,50 @@ Please format the plan EXACTLY like this:
    - 2-3 simple things I can watch for this week to see what children learned.
    - Keep it to what a teacher can notice during normal play.
 
-Keep the tone warm and professional. Use plain English. Keep paragraphs short
-and easy to scan. If any of my details are missing, make a reasonable choice
-and note it briefly.
-        </pre>
-      </section>
+Keep the tone warm and professional. Use plain English. Keep paragraphs short and easy to scan. If any of my details are missing, make a reasonable choice and note it briefly.
+            </div>
+            <p class="note">
+              Tip: Run this once, then highlight or print the parts you want to keep. You can ask Claude to shorten or
+              simplify any section.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Theme-Based Activity Builder — Master Prompt</h2>
-        <p><em>Teacher instructions: Copy the box, paste into Claude, fill in the [brackets], and send.</em></p>
-        <pre>
-You are an early childhood activity designer for play-based daycare and
-preschool classrooms. You create hands-on, developmentally appropriate
-activities that use everyday materials and keep children engaged and safe.
+    <!-- Theme-Based Activity Builder -->
+    <section class="section">
+      <div class="wrap">
+        <h2>Theme-Based Activity Builder</h2>
+        <p class="section-intro">
+          Need fresh ideas for a theme you’ve done a hundred times? This prompt helps you fill a theme with circle,
+          center, movement, and art/sensory activities that use everyday materials.
+        </p>
+
+        <div class="tool-grid">
+          <div class="tool-card">
+            <div class="tool-label">Tool overview</div>
+            <div class="tool-title">New activities for familiar themes.</div>
+            <p class="tool-body">
+              Best for teachers planning one day or one theme at a time. You choose the theme, age range, and materials;
+              the AI suggests varied activities with clear steps.
+            </p>
+            <p class="tool-body">
+              Each activity comes with an objective, simple steps, suggested teacher language, ideas to make it simpler
+              or more challenging, and a safety note.
+            </p>
+            <p class="tool-meta">Use weekly when you want variety without extra prep.</p>
+          </div>
+
+          <div>
+            <div class="prompt-header">
+              <div class="prompt-title">TEACHER MASTER PROMPT</div>
+              <div class="copy-note">Copy everything inside the box.</div>
+            </div>
+            <div class="prompt-block">
+Teacher instructions: Copy this whole box. Paste it into Claude. Fill in the [brackets] with your details, then send.
+
+You are an early childhood activity designer for play-based daycare and preschool classrooms. You create hands-on, developmentally appropriate activities that use everyday materials and keep children engaged and safe.
 
 Please build a set of activities for the theme below.
 
@@ -116,8 +611,7 @@ MY DETAILS:
 - Age range: [e.g., preschoolers, 3-5 years]
 - Group size: [e.g., 12 children]
 - Indoor or outdoor: [e.g., mostly indoor, playground for movement]
-- Materials I have / constraints: [e.g., paper, glue, blocks, water table;
-  no screens; low budget]
+- Materials I have / constraints: [e.g., paper, glue, blocks, water table; no screens; low budget]
 
 Please give me AT LEAST these 4 activity types:
 1. Circle time / story
@@ -134,20 +628,51 @@ For EACH activity, format it exactly like this:
 - Differentiation (one simpler + one more challenging idea)
 - Safety / supervision note
 
-Keep it warm, plain-English, and easy to scan. If I left out a detail,
-make a sensible choice and note it briefly.
-        </pre>
-      </section>
+Keep it warm, plain-English, and easy to scan. If I left out a detail, make a sensible choice and note it briefly.
+            </div>
+            <p class="note">
+              Tip: You can ask for “3 more art ideas” or “only activities that work in a small space” if your first
+              answer doesn’t fit your room.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Adaptation &amp; Parent Communication — Master Prompts</h2>
+    <!-- Adaptation & Parent Communication -->
+    <section class="section">
+      <div class="wrap">
+        <h2>Adaptations and Parent Communication</h2>
+        <p class="section-intro">
+          Use these prompts to adapt plans for different learners and write warm, plain-language messages for families.
+          You bring the professional judgment; the AI helps with wording and options.
+        </p>
 
-        <h3>Adaptation Prompt</h3>
-        <p><em>Teacher instructions: Copy the box, paste your existing plan where shown, check the adaptations you need, and send.</em></p>
-        <pre>
-You are an inclusive early childhood specialist. You adapt existing activities
-so every child can take part, and you suggest specific, practical scaffolds a
-teacher can use right away.
+        <div class="tool-grid">
+          <div class="tool-card">
+            <div class="tool-label">Tool overview</div>
+            <div class="tool-title">Adapt for every child, update every family.</div>
+            <p class="tool-body">
+              The adaptation prompt starts from activities you already have and helps you make them more accessible for
+              younger children, older children, multilingual learners, and children with specific supports.
+            </p>
+            <p class="tool-body">
+              The parent update prompt helps you write newsletters and short text messages that explain what you’re
+              doing in class and how families can support learning at home.
+            </p>
+            <p class="tool-meta">Use as needed when adapting plans or communicating with families.</p>
+          </div>
+
+          <div>
+            <!-- Adaptation prompt -->
+            <div class="prompt-header">
+              <div class="prompt-title">ADAPTATION PROMPT</div>
+              <div class="copy-note">Copy everything inside the box.</div>
+            </div>
+            <div class="prompt-block">
+Teacher instructions: Copy this box. Paste your existing activity or plan where shown. Keep the adaptations you need, delete the rest, then send.
+
+You are an inclusive early childhood specialist. You adapt existing activities so every child can take part, and you suggest specific, practical scaffolds a teacher can use right away.
 
 HERE IS MY ACTIVITY OR PLAN:
 [Paste your activity or plan here.]
@@ -156,65 +681,72 @@ I NEED IT ADAPTED FOR (keep any that apply, delete the rest):
 - Younger children
 - Older children
 - Multilingual / dual-language learners
-- Children with an IEP or a suspected delay (area: [e.g., speech, motor,
-  attention])
+- Children with an IEP or a suspected delay (area: [e.g., speech, motor, attention])
 - Children who need behavior / self-regulation support
 
 Please give me:
-1. ADAPTED VERSIONS — a short reworked version of the activity for each group
-   I selected above.
-2. SPECIFIC SCAFFOLDS & SUPPORTS — concrete tools (visuals, gestures, sentence
-   starters, seating, breaks, peer buddies, etc.).
-3. WHAT TO OBSERVE — 2-3 simple things to watch to see if the support is
-   working.
+1. ADAPTED VERSIONS — a short reworked version of the activity for each group I selected above.
+2. SPECIFIC SCAFFOLDS & SUPPORTS — concrete tools (visuals, gestures, sentence starters, seating, breaks, peer buddies, etc.).
+3. WHAT TO OBSERVE — 2-3 simple things to watch to see if the support is working.
 
-Keep it warm, plain-English, and realistic for a busy classroom. Do not
-diagnose any child; offer supports a teacher can try while following their
-program's process for concerns.
-        </pre>
+Keep it warm, plain-English, and realistic for a busy classroom. Do not diagnose any child; offer supports a teacher can try while following their program's process for concerns.
+            </div>
 
-        <h3>Parent Update Prompt</h3>
-        <p><em>Teacher instructions: Copy the box, fill the [brackets], and send. You'll get a newsletter and a short text version.</em></p>
-        <pre>
-You are a warm, family-friendly early childhood communicator. You write clear,
-jargon-free messages that help families feel welcome and know how to support
-learning at home.
+            <!-- Parent update prompt -->
+            <div class="prompt-header" style="margin-top: 14px;">
+              <div class="prompt-title">PARENT UPDATE PROMPT</div>
+              <div class="copy-note">Copy everything inside the box.</div>
+            </div>
+            <div class="prompt-block">
+Teacher instructions: Copy this box. Fill in the [brackets] with your week’s details, then send. You’ll get a newsletter and a short text version.
+
+You are a warm, family-friendly early childhood communicator. You write clear, jargon-free messages that help families feel welcome and know how to support learning at home.
 
 Please write a parent update using these details:
 - Theme: [e.g., All About Me]
 - Age group: [e.g., preschoolers, 3-5 years]
-- Main skills / goals this week: [e.g., naming feelings, recognizing their
-  name, celebrating families]
-- Special events or reminders: [e.g., please send a family photo Monday;
-  no school Friday]
+- Main skills / goals this week: [e.g., naming feelings, recognizing their name, celebrating families]
+- Special events or reminders: [e.g., please send a family photo Monday; no school Friday]
 
 Please give me:
-1. A short, friendly NEWSLETTER MESSAGE (about 120-180 words) that explains
-   the theme, what children are learning, and why it matters — in warm,
-   everyday language.
-2. AT-HOME EXTENSION IDEAS (2-3 quick ideas) families can do with everyday
-   items, at no cost.
-3. A SHORT TEXT / SMS VERSION (under 300 characters) with the key message
-   and any reminder.
+1. A short, friendly NEWSLETTER MESSAGE (about 120-180 words) that explains the theme, what children are learning, and why it matters — in warm, everyday language.
+2. AT-HOME EXTENSION IDEAS (2-3 quick ideas) families can do with everyday items, at no cost.
+3. A SHORT TEXT / SMS VERSION (under 300 characters) with the key message and any reminder.
 
-Be warm and inclusive of all families, cultures, and home languages. Avoid
-teacher jargon. Keep it easy to read for busy parents.
-        </pre>
-      </section>
+Be warm and inclusive of all families, cultures, and home languages. Avoid teacher jargon. Keep it easy to read for busy parents.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>How to use this page</h2>
-        <ol>
-          <li>Open Claude in your browser.</li>
-          <li>Copy the prompt you need from this page.</li>
-          <li>Paste it into Claude, replace the [brackets] with your classroom details.</li>
-          <li>Read the output, adjust any details, and use it in your planning.</li>
-        </ol>
-      </section>
-    </main>
+    <!-- Safety & ethics -->
+    <section class="section">
+      <div class="wrap">
+        <h2>Safety, ethics, and fit for your program.</h2>
+        <p class="section-intro">
+          These tools are designed to support, not replace, your professional judgment and your program’s policies.
+          Always follow your center’s guidance and local regulations.
+        </p>
 
-    <footer>
-      <p>Texas Movement Early Childhood AI Toolkit — v1.0 (beta). © Texas Movement International LLC.</p>
-    </footer>
-  </body>
+        <div class="safety-panel">
+          <p>
+            <strong>Important:</strong> Do not paste children's full names, addresses, or sensitive information into any
+            AI tool. Use initials or anonymized descriptions when needed, and keep any saved plans in line with your
+            center’s data and privacy rules.
+          </p>
+          <p style="margin-top: 8px;">
+            These prompts do not give medical, diagnostic, or legal advice. They are intended to help you generate
+            curriculum ideas, adaptations, and messages that you review and adjust before using with children and
+            families.
+          </p>
+        </div>
+
+        <p class="footer-note">
+          TEXAS MOVEMENT EARLY CHILDHOOD AI TOOLKIT · V1.0 (BETA) · © TEXAS MOVEMENT INTERNATIONAL LLC
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
