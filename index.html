@@ -36,7 +36,7 @@
   <meta name="twitter:image" content="https://texasmovement.com/05_banner_header.png" />
   <meta name="twitter:image:alt" content="Texas Movement International consulting banner" />
 
-  <!-- Schema.org [file:153][web:129][web:3] -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -217,7 +217,7 @@
       justify-content: flex-end;
     }
 
-    nav a:hover {
+    nav[role="navigation"] a:hover {
       color: var(--ink);
     }
 
@@ -584,10 +584,6 @@
         grid-template-columns: 1fr;
       }
 
-      nav {
-        display: none;
-      }
-
       .wrap {
         padding: 0 20px;
       }
@@ -610,7 +606,7 @@
           </span>
           <span>TEXAS MOVEMENT CONSULTING</span>
         </a>
-        <nav>
+        <nav role="navigation" aria-label="Main">
           <a href="#overview">Overview</a>
           <a href="#who">Who it’s for</a>
           <a href="#how">How it works</a>
@@ -625,7 +621,7 @@
   </header>
 
   <main id="top">
-    <!-- Hero / AEO block [file:153][web:129] -->
+    <!-- Hero -->
     <section id="overview" class="section hero">
       <div class="wrap hero-inner">
         <div>
@@ -679,7 +675,7 @@
       </div>
     </section>
 
-    <!-- Who it’s for [file:153][web:129] -->
+    <!-- Who it’s for -->
     <section id="who" class="section section--tight">
       <div class="wrap grid-2">
         <div>
@@ -699,7 +695,7 @@
           </p>
         </div>
 
-        <aside class="panel-highlight">
+        <aside id="keynote" class="panel-highlight">
           <h3>Keynote speaking at the systems layer.</h3>
           <p>
             For conferences, company offsites, and serious rooms that need live systems thinking, keynote speaking
@@ -710,16 +706,16 @@
             that compound instead of fragment. Keynotes are scoped like consulting work—clear constraints, outcomes, and
             accountability.
           </p>
-         <p class="cta-link">
-  <a href="https://alexandermathai.com" target="_blank" rel="noopener noreferrer">
-    Go to AlexanderMathai.com for keynote speaking →
-  </a>
-</p>
+          <p class="cta-link">
+            <a href="https://alexandermathai.com" target="_blank" rel="noopener noreferrer">
+              Go to AlexanderMathai.com for keynote speaking →
+            </a>
+          </p>
         </aside>
       </div>
     </section>
 
-    <!-- How it works [file:153][web:129] -->
+    <!-- How it works -->
     <section id="how" class="section section--panel">
       <div class="wrap">
         <div class="eyebrow">HOW IT WORKS</div>
@@ -761,7 +757,7 @@
       </div>
     </section>
 
-    <!-- Engagements & tiered pricing [file:153][web:129] -->
+    <!-- Engagements & pricing -->
     <section id="engagements" class="section">
       <div class="wrap">
         <div class="eyebrow">ENGAGEMENTS & PRICING</div>
@@ -814,7 +810,7 @@
       </div>
     </section>
 
-    <!-- Ecosystem connections [file:153] -->
+    <!-- Ecosystem connections -->
     <section id="ecosystem" class="section section--tight section--panel">
       <div class="wrap">
         <div class="eyebrow">ECOSYSTEM CONNECTIONS</div>
@@ -831,7 +827,7 @@
       </div>
     </section>
 
-    <!-- FAQ [file:153][web:129] -->
+    <!-- FAQ -->
     <section id="faq" class="section section--tight">
       <div class="wrap">
         <div class="eyebrow">FAQ</div>
@@ -884,7 +880,7 @@
       </div>
     </section>
 
-    <!-- Contact [file:153][web:129][web:3] -->
+    <!-- Contact -->
     <section id="contact" class="section section--tight section--panel">
       <div class="wrap">
         <div class="eyebrow">CONTACT</div>
@@ -894,10 +890,10 @@
           Include your company size, lane, and any deadlines that matter.
         </p>
         <p class="cta-link">
-  <a href="mailto:Consulting@TexasMovement.com?subject=Consulting%20brief">
-    Email Consulting@TexasMovement.com with “Consulting brief” in the subject →
-  </a> 
-</p>
+          <a href="mailto:Consulting@TexasMovement.com?subject=Consulting%20brief">
+            Email Consulting@TexasMovement.com with “Consulting brief” in the subject →
+          </a>
+        </p>
         <p style="margin-top:12px; font-size:0.9rem; color:#6b7280;">
           Please do not send confidential legal, medical, or tax information. Consulting work stays inside systems and
           operations and is meant to support, not replace, professional counsel.
