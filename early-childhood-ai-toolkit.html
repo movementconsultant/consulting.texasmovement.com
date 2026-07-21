@@ -193,7 +193,7 @@
       max-width: 40rem;
       color: var(--ink-soft-strong);
       font-size: 0.95rem;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .hero-meta {
@@ -207,6 +207,26 @@
     .hero-meta span {
       display: inline-block;
       margin-right: 12px;
+    }
+
+    .hero-offer {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: #ffffff;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .hero-offer span {
+      display: inline-block;
     }
 
     .btn-print {
@@ -407,7 +427,7 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       border-radius: 999px;
-      border: 1px solid #9ca3af;
+      border: 1px solid var(--ink-soft);
       padding: 4px 10px;
       background: #111827;
       color: #f9fafb;
@@ -416,7 +436,7 @@
 
     .note {
       font-size: 0.85rem;
-      color: #6b7280;
+      color: var(--ink-soft);
       margin-top: 6px;
     }
 
@@ -602,12 +622,11 @@
     <!-- Hero -->
     <section class="hero">
       <div class="wrap">
-        <div class="hero-tagline">EARLY CHILDHOOD · AI TOOLKIT</div>
+        <div class="hero-tagline">EARLY CHILDHOOD · AI TOOLKIT · PILOT EDITION</div>
         <h1>Play-based AI tools for real daycare classrooms.</h1>
         <p class="hero-lead">
-          AI tools that give early childhood teachers their planning time back. Copy a prompt, add your details, and
-          get a full week of play-based learning, fresh theme activities, or a warm family newsletter — in minutes, no
-          AI experience needed.
+          A practical AI toolkit for daycare and preschool programs. Copy a prompt, add your classroom details, and get
+          play-based curriculum, activities, and family updates in minutes — no AI experience needed.
         </p>
         <p class="hero-sub">
           Use these prompts with Claude (or another trusted AI assistant) to support curriculum, differentiation, and
@@ -615,8 +634,15 @@
         </p>
         <div class="hero-meta">
           <span>BUILT FOR · PRESCHOOL · DAYCARE · PRE-K</span>
-          <span>VERSION 1.0 · BETA</span>
+          <span>VERSION 1.0 · PILOT</span>
         </div>
+        <a
+          href="mailto:Consulting@TexasMovement.com?subject=Early%20Childhood%20AI%20Toolkit%20Pilot&body=Hi%20Texas%20Movement%2C%0D%0A%0D%0AWe%E2%80%99d%20like%20to%20claim%20the%20one-room%20Early%20Childhood%20AI%20Toolkit%20Pilot.%20Our%20center%20details%3A%0D%0A%0D%0A-%20Program%20name%3A%0D%0A-%20Location%20(city%2Fstate)%3A%0D%0A-%20Age%20group%20for%20pilot%20room%3A%0D%0A-%20Approx.%20start%20week%3A%0D%0A%0D%0AThanks!"
+          class="hero-offer"
+        >
+          <span>Toolkit Pilot · Free for one room</span>
+          <span>(limited pilot cohort)</span>
+        </a>
 
         <button type="button" class="btn-print" onclick="window.print()">Print / Save as PDF</button>
 
@@ -624,8 +650,8 @@
           <div class="panel">
             <div class="panel-header">
               <div>
-                <div class="eyebrow">WHAT’S INSIDE</div>
-                <div class="panel-title">Three tools, one page.</div>
+                <div class="eyebrow">WHAT’S IN THE TOOLKIT</div>
+                <div class="panel-title">Three tools, one workflow.</div>
               </div>
               <div class="pill">
                 <span>Copy &amp; paste</span>
@@ -643,8 +669,8 @@
           <div class="panel">
             <div class="panel-header">
               <div>
-                <div class="eyebrow">HOW TO USE THIS PAGE</div>
-                <div class="panel-title">Four quick steps.</div>
+                <div class="eyebrow">HOW THE PILOT WORKS</div>
+                <div class="panel-title">Four steps to try it safely.</div>
               </div>
             </div>
             <ol class="steps">
@@ -656,19 +682,19 @@
           </div>
         </div>
 
-        <!-- Director-focused start here -->
+        <!-- Director-focused pilot -->
         <div class="panel" style="margin-top: 14px;">
           <div class="panel-header">
             <div>
               <div class="eyebrow">START HERE · DIRECTORS</div>
-              <div class="panel-title">Pilot this in one room before going center-wide.</div>
+              <div class="panel-title">Run a one-room Early Childhood AI Pilot.</div>
             </div>
           </div>
           <ol class="steps">
             <li>Pick one lead teacher who is curious and has a stable classroom.</li>
             <li>Ask them to use the Weekly Curriculum Generator for one upcoming theme week.</li>
             <li>Have them circle or highlight the parts they actually used and what they changed.</li>
-            <li>Decide together if you’ll keep using the toolkit and how often.</li>
+            <li>Schedule a short debrief to decide if and how you’ll keep using the toolkit.</li>
           </ol>
         </div>
       </div>
@@ -697,9 +723,9 @@
             </p>
             <p class="tool-meta">Use 1–2 times a month to sketch upcoming weeks.</p>
             <section class="proof" aria-labelledby="proof-heading">
-              <p class="eyebrow">WHAT TO EXPECT</p>
+              <p class="eyebrow">WHAT A PILOT WEEK LOOKS LIKE</p>
               <h3 id="proof-heading" style="font-size:1.1rem; margin-bottom:4px;">
-                What a first pilot week usually looks like.
+                One week, one teacher, one follow-up.
               </h3>
               <p>
                 In a typical first pilot, one lead teacher runs the Weekly Curriculum Generator for a single upcoming
@@ -1001,14 +1027,14 @@ Be warm and inclusive of all families, cultures, and home languages. Avoid teach
         </p>
 
         <p class="footer-note">
-          TEXAS MOVEMENT EARLY CHILDHOOD AI TOOLKIT · V1.0 (BETA) · © TEXAS MOVEMENT INTERNATIONAL LLC
+          TEXAS MOVEMENT EARLY CHILDHOOD AI TOOLKIT · PILOT EDITION · © TEXAS MOVEMENT INTERNATIONAL LLC
         </p>
         <p class="director-cta">
-          Directors: to run this toolkit across your center, email
-          <a href="mailto:Consulting@TexasMovement.com?subject=Early%20Childhood%20AI%20Toolkit">
+          Directors: to run a one-room Early Childhood AI Pilot across your center, email
+          <a href="mailto:Consulting@TexasMovement.com?subject=Early%20Childhood%20AI%20Toolkit%20Pilot">
             Consulting@TexasMovement.com
           </a>
-          with “Early Childhood AI Toolkit” in the subject line for a short onboarding call.
+          with “Early Childhood AI Toolkit Pilot” in the subject line for a short onboarding call.
         </p>
       </div>
     </section>
