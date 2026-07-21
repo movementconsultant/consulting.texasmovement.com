@@ -37,6 +37,7 @@
       --panel: #e7e8e2;
       --ink: #111827;
       --ink-soft: #4b5563;
+      --ink-soft-strong: #374151;
       --line: #d1d5db;
       --accent: #2563eb;
       --accent-soft: #dbeafe;
@@ -170,7 +171,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #6b7280;
+      color: var(--ink-soft-strong);
       margin-bottom: 8px;
     }
 
@@ -190,7 +191,7 @@
 
     .hero-sub {
       max-width: 40rem;
-      color: #6b7280;
+      color: var(--ink-soft-strong);
       font-size: 0.95rem;
       margin-bottom: 16px;
     }
@@ -200,7 +201,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #6b7280;
+      color: var(--ink-soft-strong);
     }
 
     .hero-meta span {
@@ -255,7 +256,7 @@
       font-size: 0.68rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #6b7280;
+      color: var(--ink-soft-strong);
       margin-bottom: 4px;
     }
 
@@ -330,7 +331,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #6b7280;
+      color: var(--ink-soft);
       margin-bottom: 4px;
     }
 
@@ -351,7 +352,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #6b7280;
+      color: var(--ink-soft);
     }
 
     .steps {
@@ -390,13 +391,13 @@
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #9ca3af;
+      color: var(--ink-soft); /* darker for contrast */
     }
 
     .copy-note {
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.7rem;
-      color: #d1d5db;
+      color: var(--ink-soft); /* darker for contrast */
     }
 
     .btn-copy {
@@ -441,7 +442,7 @@
     .proof .fine-print {
       margin-top: 10px;
       font-size: 0.8rem;
-      color: #9ca3af;
+      color: #6b7280; /* darker for contrast */
     }
 
     .safety-panel {
@@ -460,7 +461,7 @@
     .safety-guidance {
       margin-top: 8px;
       font-size: 0.85rem;
-      color: #6b7280;
+      color: var(--ink-soft-strong);
     }
 
     .safety-guidance a {
@@ -473,7 +474,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #9ca3af;
+      color: #6b7280; /* darker for contrast */
     }
 
     .director-cta {
@@ -516,8 +517,9 @@
         display: inline-flex;
       }
 
+      /* No-JS fallback: visible by default; JS will hide when active */
       .nav-menu {
-        display: none;
+        display: block;
         margin-top: 8px;
       }
 
@@ -696,9 +698,9 @@
             <p class="tool-meta">Use 1–2 times a month to sketch upcoming weeks.</p>
             <section class="proof" aria-labelledby="proof-heading">
               <p class="eyebrow">WHAT TO EXPECT</p>
-              <h2 id="proof-heading" style="font-size:1.1rem; margin-bottom:4px;">
+              <h3 id="proof-heading" style="font-size:1.1rem; margin-bottom:4px;">
                 What a first pilot week usually looks like.
-              </h2>
+              </h3>
               <p>
                 In a typical first pilot, one lead teacher runs the Weekly Curriculum Generator for a single upcoming
                 theme, keeps the parts that fit their room, and adjusts the rest in a short follow-up. Directors use
@@ -1015,13 +1017,21 @@ Be warm and inclusive of all families, cultures, and home languages. Avoid teach
     <div id="copy-status" class="sr-only" role="status" aria-live="polite"></div>
 
     <script>
-      // Mobile nav toggle
+      // Mobile nav toggle with JS-aware closed state
       (function () {
         const toggle = document.querySelector('.nav-toggle');
         const menu = document.getElementById('nav-menu');
         if (!toggle || !menu) return;
+
+        // JS is present: start closed on small screens
+        if (window.matchMedia && window.matchMedia('(max-width: 840px)').matches) {
+          menu.classList.remove('is-open');
+          menu.style.display = 'none';
+        }
+
         toggle.addEventListener('click', function () {
           const isOpen = menu.classList.toggle('is-open');
+          menu.style.display = isOpen ? 'block' : 'none';
           toggle.setAttribute('aria-expanded', String(isOpen));
         });
       })();
