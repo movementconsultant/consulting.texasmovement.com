@@ -42,6 +42,22 @@ language are used instead, per the ecosystem's launch-safety rules.
         prefilled subject/body like the old toolkit page had), and update
         `docs/MIGRATION_INVENTORY.md`.
 
+- [ ] **`/testimonials`'s embedded Google Form** (`docs.google.com/forms/d/e/...`,
+      in `src/pages/testimonials.astro`) is a live, functioning third-party
+      submission endpoint with no verified destination confirmed by the site
+      owner. It was carried forward unchanged from the legacy
+      `testimonials.html` on the reasoning that a third-party form isn't
+      gated by the *texasmovement.com inbox* verification rule (see
+      `docs/MIGRATION_INVENTORY.md`) — but that reasoning was made without
+      the owner's explicit sign-off, and under the current safety policy any
+      live submission endpoint without a verified destination is suspect
+      regardless of who hosts it. Left in place (not removed) because
+      pulling a previously-existing, possibly-already-approved mechanism
+      without confirmation risks the opposite mistake. **Needs an explicit
+      owner decision**: confirm this form's destination/ownership and that
+      it's approved to stay live, or replace it with the same
+      honest-not-live treatment used on `/start`.
+
 - [ ] `hello@texasmovement.com` (INBOXES.general) — not in
       `VERIFIED_INBOXES` either. `verifiedGeneralContact()` in
       `src/lib/site.ts` currently always returns `null` because of this;
