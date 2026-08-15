@@ -1,0 +1,683 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Early Childhood AI Toolkit"
+  description="A practical AI toolkit for daycare and preschool teachers: copy a prompt, add classroom details, get play-based curriculum and family updates in minutes."
+  path="/early-childhood-ai-toolkit"
+>
+  <style>
+    .toolkit-hero {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-meta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin: 10px 0;
+    }
+
+    .hero-meta span {
+      display: inline-block;
+      margin-right: 12px;
+    }
+
+    .pilot-status {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: var(--panel);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .pilot-status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--tension);
+      flex: none;
+    }
+
+    .btn-print {
+      margin-top: 16px;
+      margin-left: 10px;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 20px;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tool-meta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: 8px;
+    }
+
+    .steps {
+      list-style: decimal;
+      padding-left: 18px;
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+      margin-top: 8px;
+    }
+
+    .steps li + li {
+      margin-top: 4px;
+    }
+
+    .prompt-block {
+      background: var(--graphite);
+      color: #e5e7eb;
+      border-radius: 10px;
+      padding: 14px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin-top: 8px;
+    }
+
+    .prompt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 18px;
+      margin-bottom: 6px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .prompt-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .copy-note {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      color: var(--ink-soft);
+    }
+
+    .btn-copy {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      border: 1px solid var(--ink);
+      padding: 5px 12px;
+      background: var(--ink);
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .btn-copy:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-top: 8px;
+    }
+
+    .proof {
+      margin-top: 18px;
+    }
+
+    .proof ul {
+      margin-top: 8px;
+      padding-left: 18px;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    .proof ul li + li {
+      margin-top: 4px;
+    }
+
+    .fine-print {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+
+    .safety-panel {
+      background: #fdeceb;
+      border-radius: 12px;
+      border: 1px solid #e3a89e;
+      padding: 16px 18px;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+
+    .safety-panel strong {
+      color: var(--tension);
+    }
+
+    .safety-guidance {
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+    }
+
+    .safety-guidance a {
+      text-decoration: underline;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--paper);
+      border: 1px solid var(--line-strong);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      cursor: pointer;
+    }
+
+    .back-to-top:hover {
+      color: var(--ink);
+      border-color: var(--compression);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media print {
+      .btn-print,
+      .back-to-top,
+      .proof {
+        display: none !important;
+      }
+
+      body {
+        background: #ffffff;
+        color: #000000;
+      }
+
+      .prompt-block {
+        border: 1pt solid #000000;
+        color: #000000;
+        background: #ffffff;
+      }
+    }
+  </style>
+
+  <!-- Hero -->
+  <section class="section toolkit-hero">
+    <div class="wrap">
+      <div class="eyebrow">EARLY CHILDHOOD &middot; AI TOOLKIT &middot; PILOT EDITION</div>
+      <h1>Play-based AI tools for real daycare classrooms.</h1>
+      <p>
+        A practical AI toolkit for daycare and preschool programs. Copy a prompt, add your classroom details, and get
+        play-based curriculum, activities, and family updates in minutes &mdash; no AI experience needed.
+      </p>
+      <p>
+        Use these prompts with Claude (or another trusted AI assistant) to support curriculum, differentiation, and
+        family communication. You stay in charge of your classroom and your professional judgment.
+      </p>
+      <div class="hero-meta">
+        <span>BUILT FOR &middot; PRESCHOOL &middot; DAYCARE &middot; PRE-K</span>
+        <span>VERSION 1.0 &middot; PILOT</span>
+      </div>
+
+      <div class="pilot-status">Pilot enrollment opens once diagnostic intake is verified</div>
+      <p style="margin-top: 8px;">
+        We&rsquo;re holding the one-room pilot cohort until the consulting inbox this site would route requests to is
+        verified &mdash; see <a href="/start">Start a diagnostic</a> for the current status. The three tools below are
+        free to use right now with no sign-up.
+      </p>
+
+      <button type="button" class="btn-print" id="print-btn">Print / Save as PDF</button>
+
+      <div class="tool-grid" style="margin-top: 18px;">
+        <div class="card">
+          <div class="card-label">WHAT&rsquo;S IN THE TOOLKIT</div>
+          <div class="card-title">Three tools, one workflow.</div>
+          <ul class="steps" style="list-style: disc;">
+            <li><strong>Weekly Curriculum Generator</strong> &mdash; One theme in, a full play-based week out.</li>
+            <li><strong>Theme-Based Activity Builder</strong> &mdash; Any theme, filled with ready-to-run activities.</li>
+            <li>
+              <strong>Adaptation &amp; Parent Communication Assistant</strong> &mdash; Adapt for every child; update
+              every family.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-label">HOW THE PILOT WORKS</div>
+          <div class="card-title">Four steps to try it safely.</div>
+          <ol class="steps">
+            <li>Choose one classroom or one week as your pilot.</li>
+            <li>Pick one tool below (weekly plan, activities, or parent update).</li>
+            <li>Open Claude (or your AI tool), copy the prompt box, and add your classroom details.</li>
+            <li>Try the output for a day, then meet for 10&ndash;15 minutes to adjust and decide what to keep.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 14px;">
+        <div class="card-label">START HERE &middot; DIRECTORS</div>
+        <div class="card-title">Run a one-room Early Childhood AI Pilot.</div>
+        <ol class="steps">
+          <li>Pick one lead teacher who is curious and has a stable classroom.</li>
+          <li>Ask them to use the Weekly Curriculum Generator for one upcoming theme week.</li>
+          <li>Have them circle or highlight the parts they actually used and what they changed.</li>
+          <li>Schedule a short debrief to decide if and how you&rsquo;ll keep using the toolkit.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weekly Curriculum Generator -->
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="eyebrow">TOOL 1</div>
+      <h2>Weekly Curriculum Generator</h2>
+      <p>
+        Turn one theme into a full week of play-based learning. This tool helps you build a Monday&ndash;Friday plan
+        that fits your classroom, materials, and children.
+      </p>
+
+      <div class="tool-grid">
+        <div class="card">
+          <div class="card-label">Tool overview</div>
+          <div class="card-title">One theme, one week, one prompt.</div>
+          <p class="card-body">
+            Best for lead teachers and directors who want a complete weekly plan they can tweak instead of starting
+            from a blank page.
+          </p>
+          <p class="card-body">
+            You&rsquo;ll tell the AI your age group, theme, materials, group size, and any special considerations. It
+            will return a week-long plan with daily goals, activities, differentiation, and simple observation notes.
+          </p>
+          <p class="tool-meta">Use 1&ndash;2 times a month to sketch upcoming weeks.</p>
+
+          <div class="proof">
+            <p class="eyebrow" style="margin-bottom: 4px;">WHAT A PILOT WEEK LOOKS LIKE</p>
+            <h3>One week, one teacher, one follow-up.</h3>
+            <p>
+              In a typical first pilot, one lead teacher runs the Weekly Curriculum Generator for a single upcoming
+              theme, keeps the parts that fit their room, and adjusts the rest in a short follow-up. Directors use
+              that week to decide whether to expand.
+            </p>
+            <ul>
+              <li>Planning shifts from a blank page to editing a near-complete draft.</li>
+              <li>Teachers keep a few activities per day and reword the rest in their own voice.</li>
+              <li>The follow-up focuses on what&rsquo;s worth standardizing across rooms.</li>
+            </ul>
+            <p class="fine-print">Illustrative example for planning purposes. Results vary by classroom.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="prompt-header">
+            <div class="prompt-title">TEACHER MASTER PROMPT</div>
+            <div class="copy-note">Copy everything inside the box.</div>
+          </div>
+          <button type="button" class="btn-copy" data-copy-target="#prompt-weekly" aria-label="Copy the Weekly Curriculum Generator prompt">
+            Copy prompt
+          </button>
+          <div id="prompt-weekly" class="prompt-block">Teacher instructions: Copy everything in this box. Paste it into Claude. Replace the [bracketed parts] with your own details, then send.
+
+You are an early childhood curriculum assistant for play-based daycare and preschool classrooms. You design warm, practical, developmentally appropriate weekly plans that a busy teacher can run with minimal prep and everyday materials.
+
+Please create a full week of curriculum using the details below.
+
+MY DETAILS:
+- Age group: [e.g., preschoolers, 3-5 years]
+- Weekly theme: [e.g., All About Me]
+- Number of days: [e.g., 5 days, Mon-Fri]
+- Materials I have: [e.g., paper, crayons, glue, blocks, dress-up clothes, playground; skip anything I don't list]
+- Group size and staffing: [e.g., 16 kids, 2 teachers]
+- Special considerations: [e.g., 2 kids who are new to English, 1 child with an IEP for speech, several kids who need help sharing; write "none" if none]
+
+Please format the plan EXACTLY like this:
+
+1. WEEKLY OVERVIEW
+   - One short paragraph on the theme and what children will explore.
+   - The main skills we'll grow this week (social-emotional, language, early literacy, early numeracy, motor, sensory).
+
+2. DAILY GOALS
+   - One clear, plain-language goal for each day.
+
+3. DAY-BY-DAY SCHEDULE
+   For each day, give a simple flow:
+   - Arrival / free play
+   - Circle time (song + theme intro)
+   - Small group or centers
+   - Movement / outdoor
+   - Story time
+   - Closing / reflection
+
+4. ACTIVITY DESCRIPTIONS (the 2-3 key activities each day)
+   For each activity include:
+   - Objective (what the child is learning)
+   - Materials (everyday, low-cost)
+   - Steps (short and numbered)
+   - Teacher language (exact phrases I can say out loud)
+
+5. DIFFERENTIATION
+   - "Make it simpler" ideas for younger or still-developing children.
+   - "Make it bigger" ideas for children who need more challenge.
+   - One note for multilingual learners.
+
+6. OBSERVATION / ASSESSMENT NOTES
+   - 2-3 simple things I can watch for this week to see what children learned.
+   - Keep it to what a teacher can notice during normal play.
+
+Keep the tone warm and professional. Use plain English. Keep paragraphs short and easy to scan. If any of my details are missing, make a reasonable choice and note it briefly.</div>
+          <p class="note">
+            Tip: Run this once, then highlight or print the parts you want to keep. You can ask Claude to shorten or
+            simplify any section.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theme-Based Activity Builder -->
+  <section class="section section--tight section--panel">
+    <div class="wrap">
+      <div class="eyebrow">TOOL 2</div>
+      <h2>Theme-Based Activity Builder</h2>
+      <p>
+        Need fresh ideas for a theme you&rsquo;ve done a hundred times? This prompt helps you fill a theme with circle,
+        center, movement, and art/sensory activities that use everyday materials.
+      </p>
+
+      <div class="tool-grid">
+        <div class="card">
+          <div class="card-label">Tool overview</div>
+          <div class="card-title">New activities for familiar themes.</div>
+          <p class="card-body">
+            Best for teachers planning one day or one theme at a time. You choose the theme, age range, and materials;
+            the AI suggests varied activities with clear steps.
+          </p>
+          <p class="card-body">
+            Each activity comes with an objective, simple steps, suggested teacher language, ideas to make it simpler
+            or more challenging, and a safety note.
+          </p>
+          <p class="tool-meta">Use weekly when you want variety without extra prep.</p>
+        </div>
+
+        <div>
+          <div class="prompt-header">
+            <div class="prompt-title">TEACHER MASTER PROMPT</div>
+            <div class="copy-note">Copy everything inside the box.</div>
+          </div>
+          <button type="button" class="btn-copy" data-copy-target="#prompt-activities" aria-label="Copy the Theme-Based Activity Builder prompt">
+            Copy prompt
+          </button>
+          <div id="prompt-activities" class="prompt-block">Teacher instructions: Copy this whole box. Paste it into Claude. Fill in the [brackets] with your details, then send.
+
+You are an early childhood activity designer for play-based daycare and preschool classrooms. You create hands-on, developmentally appropriate activities that use everyday materials and keep children engaged and safe.
+
+Please build a set of activities for the theme below.
+
+MY DETAILS:
+- Theme: [e.g., Animals]
+- Age range: [e.g., preschoolers, 3-5 years]
+- Group size: [e.g., 12 children]
+- Indoor or outdoor: [e.g., mostly indoor, playground for movement]
+- Materials I have / constraints: [e.g., paper, glue, blocks, water table; no screens; low budget]
+
+Please give me AT LEAST these 4 activity types:
+1. Circle time / story
+2. Small group or center
+3. Movement / gross motor
+4. Art / sensory
+
+For EACH activity, format it exactly like this:
+- Activity name
+- Objective (what the child learns)
+- Materials (everyday, low-cost)
+- Steps (short, numbered)
+- Teacher language (exact phrases I can say)
+- Differentiation (one simpler + one more challenging idea)
+- Safety / supervision note
+
+Keep it warm, plain-English, and easy to scan. If I left out a detail, make a sensible choice and note it briefly.</div>
+          <p class="note">
+            Tip: You can ask for &ldquo;3 more art ideas&rdquo; or &ldquo;only activities that work in a small
+            space&rdquo; if your first answer doesn&rsquo;t fit your room.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Adaptation & Parent Communication -->
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="eyebrow">TOOL 3</div>
+      <h2>Adaptations and Parent Communication</h2>
+      <p>
+        Use these prompts to adapt plans for different learners and write warm, plain-language messages for families.
+        You bring the professional judgment; the AI helps with wording and options.
+      </p>
+
+      <div class="tool-grid">
+        <div class="card">
+          <div class="card-label">Tool overview</div>
+          <div class="card-title">Adapt for every child, update every family.</div>
+          <p class="card-body">
+            The adaptation prompt starts from activities you already have and helps you make them more accessible for
+            younger children, older children, multilingual learners, and children with specific supports.
+          </p>
+          <p class="card-body">
+            The parent update prompt helps you write newsletters and short text messages that explain what you&rsquo;re
+            doing in class and how families can support learning at home.
+          </p>
+          <p class="tool-meta">Use as needed when adapting plans or communicating with families.</p>
+        </div>
+
+        <div>
+          <div class="prompt-header">
+            <div class="prompt-title">ADAPTATION PROMPT</div>
+            <div class="copy-note">Copy everything inside the box.</div>
+          </div>
+          <button type="button" class="btn-copy" data-copy-target="#prompt-adapt" aria-label="Copy the Adaptation prompt">
+            Copy prompt
+          </button>
+          <div id="prompt-adapt" class="prompt-block">Teacher instructions: Copy this box. Paste your existing activity or plan where shown. Keep the adaptations you need, delete the rest, then send.
+
+You are an inclusive early childhood specialist. You adapt existing activities so every child can take part, and you suggest specific, practical scaffolds a teacher can use right away.
+
+HERE IS MY ACTIVITY OR PLAN:
+[Paste your activity or plan here.]
+
+I NEED IT ADAPTED FOR (keep any that apply, delete the rest):
+- Younger children
+- Older children
+- Multilingual / dual-language learners
+- Children with an IEP or a suspected delay (area: [e.g., speech, motor, attention])
+- Children who need behavior / self-regulation support
+
+Please give me:
+1. ADAPTED VERSIONS — a short reworked version of the activity for each group I selected above.
+2. SPECIFIC SCAFFOLDS & SUPPORTS — concrete tools (visuals, gestures, sentence starters, seating, breaks, peer buddies, etc.).
+3. WHAT TO OBSERVE — 2-3 simple things to watch to see if the support is working.
+
+Keep it warm, plain-English, and realistic for a busy classroom. Do not diagnose any child; offer supports a teacher can try while following their program's process for concerns.</div>
+
+          <div class="prompt-header">
+            <div class="prompt-title">PARENT UPDATE PROMPT</div>
+            <div class="copy-note">Copy everything inside the box.</div>
+          </div>
+          <button type="button" class="btn-copy" data-copy-target="#prompt-parent" aria-label="Copy the Parent Update prompt">
+            Copy prompt
+          </button>
+          <div id="prompt-parent" class="prompt-block">Teacher instructions: Copy this box. Fill in the [brackets] with your week&rsquo;s details, then send. You&rsquo;ll get a newsletter and a short text version.
+
+You are a warm, family-friendly early childhood communicator. You write clear, jargon-free messages that help families feel welcome and know how to support learning at home.
+
+Please write a parent update using these details:
+- Theme: [e.g., All About Me]
+- Age group: [e.g., preschoolers, 3-5 years]
+- Main skills / goals this week: [e.g., naming feelings, recognizing their name, celebrating families]
+- Special events or reminders: [e.g., please send a family photo Monday; no school Friday]
+
+Please give me:
+1. A short, friendly NEWSLETTER MESSAGE (about 120-180 words) that explains the theme, what children are learning, and why it matters — in warm, everyday language.
+2. AT-HOME EXTENSION IDEAS (2-3 quick ideas) families can do with everyday items, at no cost.
+3. A SHORT TEXT / SMS VERSION (under 300 characters) with the key message and any reminder.
+
+Be warm and inclusive of all families, cultures, and home languages. Avoid teacher jargon. Keep it easy to read for busy parents.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety & ethics -->
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="eyebrow">SAFETY &amp; FIT</div>
+      <h2>Safety, ethics, and fit for your program.</h2>
+      <p>
+        These tools are designed to support, not replace, your professional judgment and your program&rsquo;s policies.
+        Always follow your center&rsquo;s guidance and local regulations.
+      </p>
+
+      <div class="safety-panel">
+        <p>
+          <strong>Important:</strong> Do not paste children's full names, addresses, or sensitive information into any
+          AI tool. Use initials or anonymized descriptions when needed, and keep any saved plans in line with your
+          center&rsquo;s data and privacy rules.
+        </p>
+        <p style="margin-top: 8px;">
+          These prompts do not give medical, diagnostic, or legal advice. They are intended to help you generate
+          curriculum ideas, adaptations, and messages that you review and adjust before using with children and
+          families.
+        </p>
+      </div>
+
+      <p class="safety-guidance">
+        These tools follow widely recognized guidance on using AI and technology with children. See the National
+        Association for the Education of Young Children (NAEYC) on
+        <a href="https://www.naeyc.org/resources/topics/technology-and-media" target="_blank" rel="noopener noreferrer">
+          technology and media in early learning
+        </a>, the
+        <a href="https://www.teachai.org/toolkit" target="_blank" rel="noopener noreferrer">TeachAI AI Guidance for Schools Toolkit</a>, and UNICEF&rsquo;s
+        <a href="https://www.unicef.org/innocenti/reports/policy-guidance-ai-children" target="_blank" rel="noopener noreferrer">
+          Policy guidance on AI for children
+        </a>.
+      </p>
+
+      <p class="footer-note">TEXAS MOVEMENT EARLY CHILDHOOD AI TOOLKIT &middot; PILOT EDITION</p>
+      <p class="cta-link" style="margin-top: 10px;">
+        Directors: to run a one-room Early Childhood AI Pilot across your center, see
+        <a href="/start">Start a diagnostic</a> for how to reach us once intake is verified.
+      </p>
+    </div>
+  </section>
+
+  <!-- Copy status live region -->
+  <div id="copy-status" class="sr-only" role="status" aria-live="polite"></div>
+
+  <!-- Back to top button -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top"> Back to top </button>
+
+  <script>
+    // Print button
+    document.getElementById("print-btn")?.addEventListener("click", () => window.print());
+
+    // Copy-to-clipboard buttons
+    (function () {
+      const status = document.getElementById("copy-status");
+      if (!status) return;
+      document.querySelectorAll(".btn-copy").forEach(function (btn) {
+        btn.addEventListener("click", async function () {
+          const targetSelector = btn.getAttribute("data-copy-target");
+          const target = targetSelector ? document.querySelector(targetSelector) : null;
+          if (!target) return;
+          try {
+            await navigator.clipboard.writeText((target as HTMLElement).innerText);
+            status.textContent = "Prompt copied to clipboard.";
+            const original = btn.textContent;
+            btn.textContent = "Copied!";
+            setTimeout(function () {
+              btn.textContent = original;
+            }, 2000);
+          } catch (e) {
+            status.textContent = "Copy failed — select and copy manually.";
+          }
+        });
+      });
+    })();
+
+    // Back to top behavior: scroll to top and move focus to main
+    (function () {
+      const backToTop = document.getElementById("back-to-top");
+      const main = document.getElementById("main");
+      if (!backToTop || !main) return;
+
+      backToTop.addEventListener("click", function () {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        setTimeout(function () {
+          main.focus();
+        }, 300);
+      });
+    })();
+  </script>
+</BaseLayout>
