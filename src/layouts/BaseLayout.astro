@@ -1,0 +1,89 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { PUBLIC_PREVIEW } from "../lib/site";
+import { PROPERTIES, canonical, ROBOTS, pageTitle, ogImage, TITLE_MAX, DESCRIPTION_MAX } from "@tmi/constants";
+import "../styles/tokens.css";
+
+interface Props {
+  /** Page-specific title fragment, e.g. "Start a diagnostic". Combined with
+   *  the brand name via @tmi/constants' pageTitle(). Pass "" for the home page. */
+  title: string;
+  /** Meta description. Must be <= DESCRIPTION_MAX (155 chars). */
+  description: string;
+  /** Route path, e.g. "/", "/start" — used to build the canonical URL. */
+  path: string;
+}
+
+const { title, description, path } = Astro.props;
+
+const consulting = PROPERTIES.consulting;
+const fullTitle = pageTitle("consulting", title);
+const ogImg = ogImage("consulting");
+const canonicalUrl = canonical("consulting", path);
+
+if (fullTitle.length > TITLE_MAX) {
+  console.warn(`[seo] title exceeds TITLE_MAX (${TITLE_MAX}): "${fullTitle}" (${fullTitle.length})`);
+}
+if (description.length > DESCRIPTION_MAX) {
+  console.warn(`[seo] description exceeds DESCRIPTION_MAX (${DESCRIPTION_MAX}) on ${path}: ${description.length} chars`);
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+
+    <!-- Preview convention: this build is noindex by design while
+         PUBLIC_PREVIEW is true. No canonical is emitted pointing at the
+         production domain while unresolved as a live preview. -->
+    <meta name="robots" content={PUBLIC_PREVIEW ? ROBOTS.staging : ROBOTS.production} />
+    {!PUBLIC_PREVIEW && <link rel="canonical" href={canonicalUrl} />}
+
+    <meta name="theme-color" content="#15181E" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={consulting.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImg} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content={`${consulting.name} — ${consulting.role}`} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImg} />
+
+    <!--
+      No Organization JSON-LD on this page by design: per the @tmi/constants
+      seo.ts contract, organizationJsonLd() is emitted exactly ONCE, on the
+      TMI parent hub property. This property (and every other lane) gets
+      ordinary per-page metadata only — no duplicate Organization block.
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Nav currentPath={path} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

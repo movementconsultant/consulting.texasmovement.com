@@ -1,0 +1,79 @@
+---
+import { liveFooterFor, LEGAL_LINKS, PROPERTIES } from "../lib/site";
+
+const items = liveFooterFor("consulting");
+const consulting = PROPERTIES.consulting;
+---
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>
+      &copy; {PROPERTIES.tmi.name} &middot; {consulting.label} lane &mdash; {consulting.domain}
+    </span>
+
+    <nav aria-label="Texas Movement ecosystem">
+      <ul class="footer-links">
+        {
+          items.map((item) =>
+            item.isCurrent ? (
+              <li>
+                <span aria-current="page">{item.label}</span>
+              </li>
+            ) : (
+              <li>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ),
+          )
+        }
+      </ul>
+    </nav>
+
+    <nav aria-label="Legal">
+      <ul class="footer-links">
+        {
+          LEGAL_LINKS.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding: 26px 0 32px;
+    background: var(--graphite);
+    color: #9aa0ab;
+    border-top: 1px solid #2c313b;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px 24px;
+    align-items: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    list-style: none;
+  }
+
+  .footer-links a:hover {
+    color: #e5e7eb;
+  }
+
+  .footer-links span[aria-current="page"] {
+    color: #e5e7eb;
+  }
+</style>
