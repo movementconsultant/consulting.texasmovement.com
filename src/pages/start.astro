@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { PROPERTIES } from "../lib/site";
+---
+
+<BaseLayout
+  title="Start a diagnostic"
+  description="Diagnostic intake for Texas Movement Consulting opens soon. Here's what the 30-Day Systems & AI Diagnostic covers and how to reach us once intake is live."
+  path="/start"
+>
+  <style>
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: var(--panel);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 20px;
+    }
+
+    .status-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--tension);
+      flex: none;
+    }
+
+    /* Semantically an h2 (no h2 precedes it on this page, so h1 -> h2 keeps
+       heading order valid) but sized like the .panel-highlight h3 treatment
+       used elsewhere on this site. */
+    .panel-highlight-title {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+  </style>
+
+  <section id="start-status" class="section">
+    <div class="wrap grid-2">
+      <div>
+        <div class="eyebrow">START A DIAGNOSTIC</div>
+        <h1>Diagnostic intake opens soon.</h1>
+        <div class="status-badge">Not yet accepting live submissions</div>
+        <p>
+          We&rsquo;re still finishing verification of the consulting inbox this site would route requests to, so this
+          page does not have a working intake form yet. We&rsquo;d rather show you that plainly than collect a brief
+          that goes nowhere.
+        </p>
+        <p>
+          When intake opens, starting an engagement will work the same way it does today in conversation: a short
+          scoped brief covering your context, constraints, and what a good outcome looks like, followed by a 30-Day
+          Systems &amp; AI Diagnostic.
+        </p>
+        <p>
+          In the meantime, the fastest way to see if this is a fit is to review how engagements are structured below,
+          or read the <a href="/#faq">FAQ</a> for how the work is scoped.
+        </p>
+        <p class="cta-link">
+          <a href="/#engagements">See engagement tiers &rarr;</a>
+        </p>
+      </div>
+
+      <aside class="panel-highlight">
+        <h2 class="panel-highlight-title">What the 30-Day Diagnostic covers.</h2>
+        <p>
+          Maps how work, information, and money move through your company. Identifies friction, owner-dependence, and
+          critical failure points. Returns a prioritized systems plan with timelines, owners, and key decisions.
+        </p>
+        <p class="price-line" style="color:#5c4029;">$1,500&ndash;$3,000 &middot; one-time &middot; 30 days.</p>
+        <p>
+          This is a description of the offer, not a live order form &mdash; nothing submitted on this page is sent
+          anywhere yet.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--tight section--panel">
+    <div class="wrap">
+      <div class="eyebrow">KEYNOTE SPEAKING</div>
+      <h2>Looking for a keynote instead?</h2>
+      <p>
+        Keynote and live speaking engagements run through founder Alexander Mathai&rsquo;s own site, which has its own
+        contact process.
+      </p>
+      <p class="cta-link">
+        <a href={PROPERTIES.founder.url} target="_blank" rel="noopener noreferrer">
+          Go to AlexanderMathai.com for keynote speaking &rarr;
+        </a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
