@@ -42,6 +42,24 @@ export function isVerifiedInbox(address: string | undefined | null): boolean {
   return !!address && VERIFIED_INBOXES.includes(address);
 }
 
+/**
+ * Third-party data-collection embeds (Google Forms, Typeform, etc.) explicitly
+ * confirmed by the site owner as approved, live, and safe to embed.
+ * EMPTY by default — nothing is verified until a human confirms it, same
+ * pattern as VERIFIED_INBOXES. Exact URL match required, not a domain match.
+ *
+ * The legacy `/testimonials` Google Form was disabled and removed pending
+ * this confirmation — see docs/LAUNCH_BLOCKERS.md for the original URL, the
+ * reason it was disabled, and what's required before it can return.
+ */
+export const VERIFIED_THIRD_PARTY_EMBEDS: readonly string[] = [
+  // "https://docs.google.com/forms/d/e/.../viewform", <- uncomment only after confirming ownership + destination
+];
+
+export function isVerifiedThirdPartyEmbed(src: string | undefined | null): boolean {
+  return !!src && VERIFIED_THIRD_PARTY_EMBEDS.includes(src);
+}
+
 /** Live-only nav/footer — filters out "building"/"planned"/"retired" properties
  *  even though raw footerFor() would include them if inGlobalNav is true. */
 export function liveFooterFor(current: PropertyKey) {

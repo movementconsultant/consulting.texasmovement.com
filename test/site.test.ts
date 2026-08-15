@@ -3,7 +3,9 @@ import {
   liveFooterFor,
   isVerifiedInbox,
   verifiedGeneralContact,
+  isVerifiedThirdPartyEmbed,
   VERIFIED_INBOXES,
+  VERIFIED_THIRD_PARTY_EMBEDS,
   PROPERTIES,
 } from "../src/lib/site";
 
@@ -42,6 +44,22 @@ describe("VERIFIED_INBOXES / isVerifiedInbox", () => {
     expect(isVerifiedInbox("hello@texasmovement.com")).toBe(false);
     expect(isVerifiedInbox(undefined)).toBe(false);
     expect(isVerifiedInbox(null)).toBe(false);
+  });
+});
+
+describe("VERIFIED_THIRD_PARTY_EMBEDS / isVerifiedThirdPartyEmbed", () => {
+  it("starts empty — nothing is verified until a human confirms it", () => {
+    expect(VERIFIED_THIRD_PARTY_EMBEDS).toHaveLength(0);
+  });
+
+  it("treats every embed URL as unverified while the list is empty, including the disabled testimonials form", () => {
+    expect(
+      isVerifiedThirdPartyEmbed(
+        "https://docs.google.com/forms/d/e/1FAIpQLScOE5a1cfs76S8cLXH_xvT27IW_QOH4iKNUhajD57oSUOEKiQ/viewform?embedded=true",
+      ),
+    ).toBe(false);
+    expect(isVerifiedThirdPartyEmbed(undefined)).toBe(false);
+    expect(isVerifiedThirdPartyEmbed(null)).toBe(false);
   });
 });
 

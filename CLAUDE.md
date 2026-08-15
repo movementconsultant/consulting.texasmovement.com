@@ -28,8 +28,11 @@ These apply to every page this site renders, checked automatically by
 - **No contact/newsletter/booking form or submission endpoint** without a
   verified destination on Alexander's side. This includes third-party
   embeds (e.g. Google Forms) — a live iframe pointing at a real submission
-  URL counts as a live endpoint even if TMI doesn't host the backend. See
-  the open testimonials-form question in `docs/LAUNCH_BLOCKERS.md`.
+  URL counts as a live endpoint even if TMI doesn't host the backend.
+  Enforced by `check-public-output.mjs` check 6 against
+  `VERIFIED_THIRD_PARTY_EMBEDS` in `src/lib/site.ts` (empty by default). The
+  legacy `/testimonials` Google Form was found and disabled under this rule
+  — see `docs/LAUNCH_BLOCKERS.md`.
 - No literal `TBD` in rendered output.
 - No fabricated legal, social, or contact data.
 - No unresolved social link, and no non-live TMI property linked as a
@@ -69,9 +72,10 @@ merges: `git checkout main` returns to the original four-file static site.
 Full detail, kept up to date, lives in `docs/LAUNCH_BLOCKERS.md` — don't
 duplicate it here. Headline items: `consulting@texasmovement.com` (and
 `hello@texasmovement.com`) unverified; `/privacy` and `/terms` are honest
-stubs with no real legal text; no Cloudflare dashboard access; the
-`/testimonials` embedded Google Form's approval status is unconfirmed (see
-below).
+stubs with no real legal text; no Cloudflare dashboard access. The
+`/testimonials` Google Form was an unverified submission endpoint — it has
+been disabled and replaced with a non-submitting notice (resolved, see
+below and `docs/LAUNCH_BLOCKERS.md`).
 
 ## What needs owner approval
 
@@ -79,14 +83,10 @@ below).
   `/start` can go live with a real submission path.
 - Real `/privacy` and `/terms` legal text (needs counsel, not engineering).
 - Cloudflare Pages project connection / DNS.
-- Whether the `/testimonials` embedded Google Form
-  (`docs.google.com/forms/d/e/...`) is an approved, intentional exception to
-  the "no submission endpoint without a verified destination" rule, or
-  whether it should come down like the old `mailto:` CTAs did. It was
-  carried forward from the legacy static HTML on the assumption that a
-  third-party form isn't gated by *inbox* verification, but that's a
-  judgment call, not a documented owner sign-off — flagged in
-  `docs/LAUNCH_BLOCKERS.md`, unresolved.
+- Re-enabling the `/testimonials` Google Form: confirm who owns/administers
+  it and where responses go, then add its exact URL to
+  `VERIFIED_THIRD_PARTY_EMBEDS` in `src/lib/site.ts` — full detail in
+  `docs/LAUNCH_BLOCKERS.md`.
 - The one design-consistency judgment call already flagged in
   `docs/LAUNCH_BLOCKERS.md` (unifying the toolkit/testimonials pages onto
   the shared design tokens instead of preserving their original bespoke

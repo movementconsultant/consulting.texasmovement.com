@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Client Results & Testimonials"
-  description="Client results and testimonials for Texas Movement Consulting engagements, plus a short form to share how your engagement went."
+  description="Client results and testimonials for Texas Movement Consulting engagements."
   path="/testimonials"
 >
   <style>
@@ -37,35 +37,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       margin-bottom: 0.25rem;
     }
 
-    .form-frame-wrapper {
+    .notice-card {
       border-radius: 14px;
       border: 1px solid var(--line-strong);
       background: var(--paper);
-      padding: 16px;
-    }
-
-    .form-frame-shell {
-      position: relative;
-      width: 100%;
-      padding-top: 140%;
-      overflow: hidden;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-    }
-
-    .form-frame-shell iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    @media (min-width: 768px) {
-      .form-frame-shell {
-        padding-top: 120%;
-      }
+      padding: 24px;
     }
   </style>
 
@@ -75,34 +51,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h1>Client results &amp; testimonials.</h1>
       <p>
         Every TMC engagement is a founder or operator going from stuck to moving forward. These stories help the next
-        builder decide whether TMC is right for them &mdash; and they&rsquo;re a two-way street: when you share what
-        changed, we feature your brand and link people straight back to you.
+        builder decide whether TMC is right for them.
       </p>
-    </div>
-  </section>
-
-  <section class="section section--tight section--panel">
-    <div class="wrap">
-      <h2>How your words get used</h2>
-      <ul class="steps" style="list-style: disc; margin-top: 0;">
-        <li>We only share your words publicly if you explicitly opt in inside the form and choose how you&rsquo;re credited.</li>
-        <li>When we feature you, we link to your site and main social handle so people can find, follow, and buy from you.</li>
-        <li>Your testimonial may appear on this site, in sales decks, or in private proposals &mdash; always attributed the way you asked.</li>
-        <li>If you prefer to stay anonymous or want something removed later, we honor that, no drama.</li>
-      </ul>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="wrap">
-      <p style="margin-bottom: 0.75rem;">
+      <p style="margin-bottom: 24px;">
         <strong>First featured client:</strong> Diamond Kouture Beauty &mdash; vegan lip cosmetics, now live and shoppable
         at
         <a href="https://diamondkbeauty.com" target="_blank" rel="noopener noreferrer">diamondkbeauty.com</a>.
-      </p>
-      <p style="margin-bottom: 24px;">
-        Worked with TMC? Take 3&ndash;5 minutes to share how it went below. It helps the next founder make a confident
-        decision &mdash; and gets your brand a feature with a link back to you.
       </p>
 
       <article class="testimonial-card">
@@ -124,18 +83,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="section section--tight section--panel">
     <div class="wrap">
-      <div class="form-frame-wrapper">
-        <h2>Share your results</h2>
-        <p style="margin-bottom: 12px;">This short form covers what changed, what stood out, and how you&rsquo;d like to be featured.</p>
-        <div class="form-frame-shell">
-          <iframe
-            title="Texas Movement Consulting testimonial submission form"
-            src="https://docs.google.com/forms/d/e/1FAIpQLScOE5a1cfs76S8cLXH_xvT27IW_QOH4iKNUhajD57oSUOEKiQ/viewform?embedded=true"
-            loading="lazy"
-          >
-            Loading&hellip;
-          </iframe>
-        </div>
+      <div class="notice-card">
+        <h2>Sharing your results</h2>
+        <p>
+          A verified process for collecting and featuring client testimonials is still being finalized. This page
+          doesn&rsquo;t collect submissions yet.
+        </p>
       </div>
     </div>
   </section>

@@ -12,6 +12,9 @@
  *   4. Global nav/footer markup links to a non-live property's origin.
  *   5. A build made with PUBLIC_PREVIEW=true is missing the noindex robots
  *      meta tag on any page.
+ *   6. Any <iframe> (or href) pointing at a docs.google.com/forms endpoint —
+ *      or another known third-party form-hosting domain — unless that exact
+ *      URL is listed in VERIFIED_THIRD_PARTY_EMBEDS (src/lib/site.ts).
  *
  * This script intentionally does NOT `import` the TypeScript constants
  * package (avoids requiring a TS loader for a zero-dependency script) — it
@@ -71,6 +74,13 @@ const verifiedBlockMatch = siteTs.match(/VERIFIED_INBOXES:[^=]*=\s*\[([\s\S]*?)\
 const verifiedInboxes = new Set(
   verifiedBlockMatch
     ? [...verifiedBlockMatch[1].matchAll(/^\s*"([^"]+)"/gm)].map((m) => m[1])
+    : [],
+);
+
+const verifiedEmbedsBlockMatch = siteTs.match(/VERIFIED_THIRD_PARTY_EMBEDS:[^=]*=\s*\[([\s\S]*?)\];/);
+const verifiedThirdPartyEmbeds = new Set(
+  verifiedEmbedsBlockMatch
+    ? [...verifiedEmbedsBlockMatch[1].matchAll(/^\s*"([^"]+)"/gm)].map((m) => m[1])
     : [],
 );
 
@@ -152,6 +162,19 @@ if (PUBLIC_PREVIEW) {
     const text = readFileSync(file, "utf8");
     if (!NOINDEX_RE.test(text)) {
       err(`${file.replace(REPO + "/", "")}: PUBLIC_PREVIEW build is missing a noindex robots meta tag`);
+    }
+  }
+}
+
+/* 6. third-party form embeds -> must be explicitly verified ---------------*/
+const THIRD_PARTY_FORM_RE = /docs\.google\.com\/forms|forms\.google\.com|typeform\.com|jotform\.com/i;
+const EMBED_SRC_RE = /(?:<iframe[^>]+src|href)\s*=\s*["']([^"']+)["']/gi;
+for (const file of htmlFiles) {
+  const text = readFileSync(file, "utf8");
+  for (const m of text.matchAll(EMBED_SRC_RE)) {
+    const src = m[1];
+    if (THIRD_PARTY_FORM_RE.test(src) && !verifiedThirdPartyEmbeds.has(src)) {
+      err(`${file.replace(REPO + "/", "")}: unverified third-party form embed "${src}" (not in VERIFIED_THIRD_PARTY_EMBEDS)`);
     }
   }
 }

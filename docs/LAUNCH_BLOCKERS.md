@@ -42,21 +42,31 @@ language are used instead, per the ecosystem's launch-safety rules.
         prefilled subject/body like the old toolkit page had), and update
         `docs/MIGRATION_INVENTORY.md`.
 
-- [ ] **`/testimonials`'s embedded Google Form** (`docs.google.com/forms/d/e/...`,
-      in `src/pages/testimonials.astro`) is a live, functioning third-party
-      submission endpoint with no verified destination confirmed by the site
-      owner. It was carried forward unchanged from the legacy
-      `testimonials.html` on the reasoning that a third-party form isn't
-      gated by the *texasmovement.com inbox* verification rule (see
-      `docs/MIGRATION_INVENTORY.md`) — but that reasoning was made without
-      the owner's explicit sign-off, and under the current safety policy any
-      live submission endpoint without a verified destination is suspect
-      regardless of who hosts it. Left in place (not removed) because
-      pulling a previously-existing, possibly-already-approved mechanism
-      without confirmation risks the opposite mistake. **Needs an explicit
-      owner decision**: confirm this form's destination/ownership and that
-      it's approved to stay live, or replace it with the same
-      honest-not-live treatment used on `/start`.
+- [x] **`/testimonials`'s embedded Google Form — resolved, disabled.** The
+      live `docs.google.com/forms` iframe carried forward from the legacy
+      `testimonials.html` has been removed from public output. It was an
+      unverified third-party data-collection endpoint (no confirmed
+      ownership or destination) and, under the current safety policy, no
+      live submission endpoint may ship without explicit owner verification
+      — the same rule already applied to `/start`.
+      - **Original form URL (preserved for reference only, not rendered
+        anywhere public):**
+        `https://docs.google.com/forms/d/e/1FAIpQLScOE5a1cfs76S8cLXH_xvT27IW_QOH4iKNUhajD57oSUOEKiQ/viewform`
+      - **Reason disabled:** unverified third-party data-collection
+        endpoint; ownership/destination of submitted responses was never
+        confirmed by the site owner.
+      - **Replaced with:** an honest, non-submitting "Sharing your results"
+        notice on `/testimonials` — no form, no email address, no external
+        link, collects nothing.
+      - **What's required before it can return:** explicit owner
+        confirmation of (1) who owns/administers this Google Form and where
+        responses go, (2) that it's approved to be publicly embedded again.
+        Once both are confirmed, add the exact form URL to
+        `VERIFIED_THIRD_PARTY_EMBEDS` in `src/lib/site.ts` — the postbuild
+        guard (`scripts/check-public-output.mjs`, check 6) will fail the
+        build on any `docs.google.com/forms` (or other known form-host)
+        embed that isn't in that list, so re-adding the iframe without that
+        step will fail CI.
 
 - [ ] `hello@texasmovement.com` (INBOXES.general) — not in
       `VERIFIED_INBOXES` either. `verifiedGeneralContact()` in
