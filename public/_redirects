@@ -1,0 +1,8 @@
+# Netlify / Cloudflare Pages redirects syntax.
+# Old static-HTML paths -> new Astro routes, so bookmarked/indexed old URLs
+# don't 404 once this rebuild goes live.
+
+/early-childhood-ai-toolkit.html   /early-childhood-ai-toolkit   301
+/testimonials.html                 /testimonials                 301
+/meta-tags.html                    /                              301
+/index.html                        /                              301
