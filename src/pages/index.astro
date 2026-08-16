@@ -1,0 +1,428 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { PROPERTIES } from "../lib/site";
+
+const consulting = PROPERTIES.consulting;
+---
+
+<BaseLayout
+  title=""
+  description="Texas Movement Consulting turns messy operations and AI projects into predictable systems. Scoped diagnostics, systems builds, and retainers for founders."
+  path="/"
+>
+  <style>
+    .hero {
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, var(--hero), var(--hero-soft));
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .hero-tagline {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ink-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-body {
+      font-size: 1.02rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .hero-note {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .hero-figure {
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      padding: 18px 18px 14px;
+      background: rgba(255, 247, 238, 0.64);
+    }
+
+    .hero-figure-inner {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 10px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+    }
+
+    .hero-node {
+      border-radius: 12px;
+      padding: 10px 10px 9px;
+      background: var(--paper);
+      border: 1px solid var(--line-strong);
+      min-height: 84px;
+    }
+
+    .hero-node-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.65rem;
+      margin-bottom: 4px;
+      color: var(--ink-soft);
+    }
+
+    .hero-node--source {
+      border-color: var(--tension);
+    }
+
+    .hero-node--terminal {
+      border-color: var(--compression);
+    }
+
+    .hero-caption {
+      margin-top: 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-align: right;
+    }
+  </style>
+
+  <!-- Hero -->
+  <section id="overview" class="section hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="hero-tagline">STRATEGY &middot; SYSTEMS &middot; AI WORKFLOWS.</div>
+        <h1>Turn a messy problem into a system you can run.</h1>
+        <p class="hero-body">
+          Texas Movement Consulting is the systems and AI consulting arm of Texas Movement International. It is for
+          founders, operators, and organizations with real stakes who need clearer workflows, better decisions, and
+          tighter execution.
+        </p>
+        <p class="hero-body">
+          It reduces founder-dependence and stalled projects by starting with a scoped diagnostic, engineering systems
+          that hold under load, and documenting decisions so they stand up to scrutiny. It connects directly to Texas
+          Movement&rsquo;s media, performance, and IP defense lanes, so consulting output compounds instead of sitting as
+          a one-off deck.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn" href="#engagements"> See engagement tiers <span class="arrow">&rarr;</span> </a>
+          <a class="btn btn--ghost" href="/start">
+            {consulting.primaryCta.label} <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+        <div class="hero-note">SYSTEMS-FIRST &middot; DOCUMENTED &middot; BUILT TO COMPOUND WITH TEXAS MOVEMENT INTERNATIONAL</div>
+      </div>
+
+      <aside class="hero-figure">
+        <div class="hero-figure-inner">
+          <div class="hero-grid">
+            <div class="hero-node hero-node--source">
+              <div class="hero-node-label">Diagnostics</div>
+              <div>30-day systems and AI diagnostic to map how work, information, and money move through your company.</div>
+            </div>
+            <div class="hero-node">
+              <div class="hero-node-label">Systems build</div>
+              <div>Engineer workflows, AI-assisted processes, and decision paths that hold under review and under load.</div>
+            </div>
+            <div class="hero-node hero-node--terminal">
+              <div class="hero-node-label">Operator retainer</div>
+              <div>Embedded execution partner for founders who need ongoing decision support and systems stewardship.</div>
+            </div>
+          </div>
+          <div class="hero-caption">FIG. 02 &mdash; CONSULTING LANE &middot; DIAGNOSTIC &rarr; SYSTEM &rarr; OPERATIONS</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section id="who" class="section section--tight">
+    <div class="wrap grid-2">
+      <div>
+        <div class="eyebrow">WHO IT&rsquo;S FOR</div>
+        <h2>Serious founders and operators with real stakes.</h2>
+        <p>
+          Best fit: founders and operators running 1&ndash;20 person companies&mdash;service businesses, boutiques, clinics,
+          agencies, and teams&mdash;with real revenue at stake and operations held together by willpower instead of
+          systems.
+        </p>
+        <p>
+          It is for organizations already in motion that need structure, not for idea-stage projects or vague &ldquo;help
+          us figure out everything&rdquo; requests. Work here is scoped around constraints, timelines, and measurable
+          outcomes.
+        </p>
+        <p>It is a poor fit for hype-driven campaigns, endless discovery, or engagements with no clear owner or outcome.</p>
+      </div>
+
+      <aside id="keynote" class="panel-highlight">
+        <h3>Keynote speaking at the systems layer.</h3>
+        <p>
+          For conferences, company offsites, and serious rooms that need live systems thinking, keynote speaking runs
+          through founder Alexander Mathai&rsquo;s authority profile.
+        </p>
+        <p>
+          Topics cover systems for founders, AI and operations, economic leverage, and building multi-lane companies
+          that compound instead of fragment. Keynotes are scoped like consulting work&mdash;clear constraints, outcomes,
+          and accountability.
+        </p>
+        <p class="cta-link">
+          <a href={PROPERTIES.founder.url} target="_blank" rel="noopener noreferrer">
+            Go to AlexanderMathai.com for keynote speaking &rarr;
+          </a>
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="section section--panel">
+    <div class="wrap">
+      <div class="eyebrow">HOW IT WORKS</div>
+      <h2>Systems-first. Documented. Built to hold under load.</h2>
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-label">Principle</div>
+          <div class="card-title">Systems before narrative.</div>
+          <p class="card-body">
+            We map the actual flows&mdash;work, information, money&mdash;before telling a story about them. The narrative
+            follows the system, not the other way around.
+          </p>
+        </article>
+        <article class="card">
+          <div class="card-label">Principle</div>
+          <div class="card-title">Document the decisions.</div>
+          <p class="card-body">
+            Every engagement produces a record that explains why decisions were made, how they connect, and what needs
+            to be monitored so the system keeps working.
+          </p>
+        </article>
+        <article class="card">
+          <div class="card-label">Principle</div>
+          <div class="card-title">Legally in-bounds.</div>
+          <p class="card-body">
+            Work stays inside systems and operations. It supports your counsel; it does not replace legal, tax, or
+            medical advice.
+          </p>
+        </article>
+        <article class="card">
+          <div class="card-label">Principle</div>
+          <div class="card-title">Built for serious work.</div>
+          <p class="card-body">
+            Engagements are scoped with real constraints, stakes, and timelines. This is not casual coaching or
+            speculative brainstorming.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagements & pricing -->
+  <section id="engagements" class="section">
+    <div class="wrap">
+      <div class="eyebrow">ENGAGEMENTS &amp; PRICING</div>
+      <h2>Three clear tiers for systems and AI work.</h2>
+      <p>
+        Engagements start with a scoped diagnostic, then move into systems build and, where it makes sense, an operator
+        retainer. Pricing reflects the depth of work and the stakes involved.
+      </p>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-label">Tier 1 &middot; Diagnostic</div>
+          <div class="card-title">30-Day Systems &amp; AI Diagnostic.</div>
+          <p class="card-body">
+            Map how work, information, and money move through your company. Identify friction, owner-dependence, and
+            critical failure points. Return a prioritized systems plan with timelines, owners, and key decisions.
+          </p>
+          <div class="price-line">$1,500&ndash;$3,000 &middot; one-time &middot; 30 days.</div>
+          <div class="cta-link">
+            <a href="/start">See how a diagnostic starts &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Tier 2 &middot; Systems build</div>
+          <div class="card-title">Implementation sprints &amp; AI workflows.</div>
+          <p class="card-body">
+            Design and stand up systems and AI-assisted workflows based on the diagnostic findings. We co-own
+            implementation with your team and document the system so it can be audited and adjusted.
+          </p>
+          <div class="price-line">$12,000&ndash;$25,000 &middot; scoped project, based on complexity.</div>
+          <div class="cta-link">
+            <a href="/start">See how a systems build starts &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Tier 3 &middot; Operator retainer</div>
+          <div class="card-title">Embedded systems &amp; decision support.</div>
+          <p class="card-body">
+            Ongoing partner for founders who need a systems-focused operator in their corner. We steward workflows, help
+            sequence major decisions, and keep the operating record current.
+          </p>
+          <div class="price-line">$2,500&ndash;$5,000 / month &middot; 3-month minimum.</div>
+          <div class="cta-link">
+            <a href="/start">See how a retainer starts &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem connections -->
+  <section id="ecosystem" class="section section--tight section--panel">
+    <div class="wrap">
+      <div class="eyebrow">ECOSYSTEM CONNECTIONS</div>
+      <h2>Consulting as one lane in a larger system.</h2>
+      <p>
+        Texas Movement Consulting is one lane inside Texas Movement International. It connects directly to Media for
+        documentation and signal, to Performance and Health when systems touch the physical layer, and to Distribution
+        when IP defense and platform ops are part of the work.
+      </p>
+      <p>
+        The point is not to treat consulting as a separate agency. The point is to make consulting output compound with
+        the rest of Texas Movement&mdash;so systems, content, physical training, and IP defense all line up.
+      </p>
+    </div>
+  </section>
+
+  <!-- Early Childhood AI Toolkit -->
+  <section id="early-childhood" class="section section--tight">
+    <div class="wrap grid-2">
+      <div>
+        <div class="eyebrow">EARLY CHILDHOOD &middot; AI TOOLKIT</div>
+        <h2>Play-based AI tools for daycare and early childhood programs.</h2>
+        <p>
+          Texas Movement Consulting also supports early childhood leaders with a practical AI toolkit built for real
+          daycare and preschool classrooms. It helps directors and teachers generate weekly curriculum, theme-based
+          activities, and family updates in minutes, without needing to become AI experts.
+        </p>
+        <p>
+          The toolkit is play-based, safety-first, and inclusive of diverse families and abilities. It is designed so a
+          first-year teacher and a 20-year veteran can both copy a prompt, add their room details, and get ready-to-run
+          plans that fit their program&rsquo;s standards.
+        </p>
+        <p class="cta-link">
+          <a href="/early-childhood-ai-toolkit"> View the Early Childhood AI Toolkit &rarr; </a>
+        </p>
+      </div>
+
+      <aside class="panel-highlight">
+        <h3>What&rsquo;s inside the toolkit.</h3>
+        <p>The Early Childhood AI Toolkit includes three core tools:</p>
+        <p>
+          A <strong>Weekly Curriculum Generator</strong> that turns a single theme and age group into a full, play-based
+          week of learning.
+        </p>
+        <p>
+          A <strong>Theme-Based Activity Builder</strong> that fills any theme with varied circle, center, movement, and
+          art/sensory activities.
+        </p>
+        <p>
+          An <strong>Adaptation &amp; Parent Communication assistant</strong> that adapts plans for every child and
+          produces warm, plain-language family updates.
+        </p>
+        <p class="cta-link">
+          <a href="/early-childhood-ai-toolkit"> Launch the toolkit for your center &rarr; </a>
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section--tight">
+    <div class="wrap">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently asked questions.</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>What kind of work is this?</h3>
+          <p>
+            Strategy, systems design, AI-assisted workflows, and decision support for founders and operators. The
+            output is a system and a record, not just slides.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Who is it a fit for?</h3>
+          <p>
+            Founders, operators, and teams with real stakes, clear-enough briefs, and a willingness to implement. It is
+            not a fit for vague or purely speculative work.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you provide legal or tax advice?</h3>
+          <p>
+            No. Work stays inside systems and operations. It supports your counsel; it does not replace legal, tax, or
+            medical advice.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>How does an engagement start?</h3>
+          <p>
+            Every engagement is meant to begin with a scoped brief and a 30-Day Systems &amp; AI Diagnostic, which sets
+            baselines, constraints, and priorities before any deeper work. Online diagnostic intake is opening soon
+            &mdash; see <a href="/start">Start a diagnostic</a> for the current status.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>How is this different from generic consulting?</h3>
+          <p>
+            It is systems-first, documented, and built to compound with the rest of Texas Movement rather than sit as a
+            disconnected project.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Where should I go for keynote speaking?</h3>
+          <p>
+            Keynote and live speaking runs through
+            <a href={PROPERTIES.founder.url} target="_blank" rel="noopener noreferrer">AlexanderMathai.com</a>.
+            Consulting work and keynotes share the same systems lens and standards.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start -->
+  <section id="start" class="section section--tight section--panel">
+    <div class="wrap">
+      <div class="eyebrow">GET STARTED</div>
+      <h2>Start with a diagnostic.</h2>
+      <p>
+        Every engagement is built around a short scoped brief: context, constraints, and what a good outcome looks
+        like. Diagnostic intake isn&rsquo;t open for live submissions on this site yet.
+      </p>
+      <p class="cta-link">
+        <a href="/start">See the current status of diagnostic intake &rarr;</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

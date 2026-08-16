@@ -1,0 +1,12 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*", "src/**/*.ts", "src/**/*.astro"],
+  "exclude": ["dist", "packages/constants"],
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "paths": {
+      "@tmi/constants": ["./packages/constants/src/index.ts"]
+    }
+  }
+}

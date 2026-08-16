@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Accessibility"
+  description="Accessibility statement for Texas Movement Consulting: what this rebuild addressed, what's still outstanding, and how to report a barrier."
+  path="/accessibility"
+>
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow">ACCESSIBILITY</div>
+      <h1>Accessibility statement.</h1>
+      <p>
+        This page describes the current state of accessibility work on this site honestly. It is not a certification
+        of compliance with any specific standard &mdash; no formal third-party audit has been performed.
+      </p>
+
+      <h2 style="margin-top: 32px;">What this rebuild addressed</h2>
+      <ul class="steps" style="list-style: disc;">
+        <li>A skip-to-content link at the top of every page for keyboard and screen-reader users.</li>
+        <li>
+          A real, keyboard-reachable mobile navigation disclosure (a button with <code>aria-expanded</code> controlling
+          a visible panel) &mdash; the previous version of this site hid the entire primary navigation below 900px
+          width with no replacement.
+        </li>
+        <li>Visible focus outlines on every interactive element (links, buttons, form controls).</li>
+        <li>Descriptive alt text on every meaningful image; decorative images use empty alt text.</li>
+        <li>One <code>&lt;h1&gt;</code> per page and heading levels that do not skip.</li>
+        <li>Automated color-contrast and structural checks (axe-core) run against the built pages in CI.</li>
+      </ul>
+
+      <h2 style="margin-top: 32px;">Known gaps</h2>
+      <ul class="steps" style="list-style: disc;">
+        <li>
+          No manual screen-reader testing (VoiceOver, NVDA, JAWS) has been performed &mdash; only automated
+          axe-core checks and manual keyboard review.
+        </li>
+      </ul>
+
+      <div class="notice-panel" style="margin-top: 32px;">
+        <p>
+          <strong>How to report a barrier.</strong> This site does not currently have a verified contact inbox to
+          route accessibility reports to (see <a href="/start">Start a diagnostic</a> for context). This is tracked as
+          a launch blocker &mdash; a real reporting channel will be added here once an inbox is confirmed to exist and
+          forward.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

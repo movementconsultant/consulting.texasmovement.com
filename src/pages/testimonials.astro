@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Client Results & Testimonials"
+  description="Client results and testimonials for Texas Movement Consulting engagements."
+  path="/testimonials"
+>
+  <style>
+    .testimonial-card {
+      border-radius: 14px;
+      border: 1px solid var(--line-strong);
+      background: var(--panel);
+      padding: 24px;
+    }
+
+    .testimonial-card blockquote {
+      margin: 0 0 1.25rem;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--ink);
+      font-style: italic;
+      border-left: 3px solid var(--tension);
+      padding-left: 1rem;
+    }
+
+    .testimonial-author {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+
+    .testimonial-author strong {
+      color: var(--ink);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .notice-card {
+      border-radius: 14px;
+      border: 1px solid var(--line-strong);
+      background: var(--paper);
+      padding: 24px;
+    }
+  </style>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="eyebrow">CLIENT RESULTS</div>
+      <h1>Client results &amp; testimonials.</h1>
+      <p>
+        Every TMC engagement is a founder or operator going from stuck to moving forward. These stories help the next
+        builder decide whether TMC is right for them.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <p style="margin-bottom: 24px;">
+        <strong>First featured client:</strong> Diamond Kouture Beauty &mdash; vegan lip cosmetics, now live and shoppable
+        at
+        <a href="https://diamondkbeauty.com" target="_blank" rel="noopener noreferrer">diamondkbeauty.com</a>.
+      </p>
+
+      <article class="testimonial-card">
+        <blockquote>
+          Everything was at a standstill before TMC stepped in. Now people can feel more safe, secure, and confident
+          when they shop, and I&rsquo;m more confident my business can receive more sales than before. TMC came in and
+          fixed everything in no time &mdash; no delays in communication, and they worked side by side with me
+          throughout the entire process. Their hands-on, audit-first approach felt like real diagnostics for my
+          business, and they were patient, professional, and clear about exactly what I needed to be successful. If
+          you want to be successful, come to TMC.
+        </blockquote>
+        <p class="testimonial-author">
+          <strong>Diamond Osayande</strong>
+          <em>Founder, Diamond Kouture Beauty &mdash; Cruelty-Free, Plant-Based Lip Cosmetics</em>
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--tight section--panel">
+    <div class="wrap">
+      <div class="notice-card">
+        <h2>Sharing your results</h2>
+        <p>
+          A verified process for collecting and featuring client testimonials is still being finalized. This page
+          doesn&rsquo;t collect submissions yet.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

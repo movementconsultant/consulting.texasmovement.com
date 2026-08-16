@@ -1,0 +1,15 @@
+# Cloudflare Pages scaffold for consulting.texasmovement.com.
+#
+# This is a static Astro build (`output: "static"` in astro.config.mjs), so
+# Cloudflare Pages just needs to be pointed at the build output directory —
+# no Pages Functions / Workers adapter is required for a pure static site.
+#
+# NOT YET CONNECTED: no Cloudflare account/dashboard credentials are
+# available to this build. Connecting this repo to a real Cloudflare Pages
+# project (to get a live preview URL) requires a human with dashboard
+# access — see docs/LAUNCH_BLOCKERS.md. Locally, `npm run build` followed by
+# `npm run preview` (astro preview) is the closest verifiable substitute.
+
+name = "consulting-texasmovement-com"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "dist"
