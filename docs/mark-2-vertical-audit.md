@@ -1,0 +1,259 @@
+# Mark-2 vertical audit — consulting.texasmovement.com
+
+Date: 2026-08-16
+Auditor: Claude Code (release-readiness audit pass), part of the ecosystem-wide
+release sprint alongside texasmovement.com and alexandermathai.com.
+
+## Repository and current branch
+
+`movementconsultant/consulting.texasmovement.com`, branch
+`claude/texas-movement-rebuild-pq14fo` (open draft PR #1 against `main`).
+Audited at HEAD `030e76378ba38166cad8aca5e5b5ed9ff438d8f5` plus one fix commit
+made during this audit pass (see below).
+
+## Existing public hostname/domain
+
+`consulting.texasmovement.com` (subdomain of the live `texasmovement.com`
+hub) — asserted in `CNAME`, `wrangler.toml`, `packages/constants/src/ecosystem.ts`,
+and every canonical/OG tag. **No evidence of an actual live deployment at this
+hostname was found in the repo.** `wrangler.toml` explicitly documents "NOT
+YET CONNECTED: no Cloudflare account/dashboard credentials are available to
+this build." `main` still holds the original four-file static GitHub Pages
+site (`CNAME`, `index.html`, etc., untouched by this rebuild).
+
+## Current build/deploy stack
+
+Astro 7 (`astro build`, static output, no adapter/SSR). Vendored internal
+package `@tmi/constants` at `packages/constants` (`file:./packages/constants`
+dependency — the real `movementconsultant/tmi-constants` package doesn't
+exist yet upstream, documented as a known follow-up). Target host: Cloudflare
+Pages (`wrangler.toml` present, `pages_build_output_dir = "dist"`), not yet
+connected. Legacy four static HTML files preserved untouched at repo root
+per the "never delete" rule.
+
+## CI/build/test result
+
+All commands run for real in this session, from a clean `npm install`:
+
+```
+$ npx astro check
+Result (21 files): 0 errors, 0 warnings, 0 hints
+
+$ node packages/constants/scripts/check.mjs --strict
+Errors: 0 — PASS (8 pre-existing TBD values in vendored org.ts/social.ts,
+none of which this property renders; 38 pre-existing "hard-codes a domain"
+drift warnings in legacy .html/test files, not build-blocking)
+
+$ PUBLIC_PREVIEW=true npm run build   (astro build + postbuild guard)
+8 page(s) built — check-public-output.mjs: Errors: 0 — PASS
+
+$ PUBLIC_PREVIEW=false npm run build  (production-mode build, verified separately)
+8 page(s) built — check-public-output.mjs: Errors: 0 — PASS
+
+$ npx vitest run
+Test Files 1 passed (1) / Tests 9 passed (9)
+
+$ PUBLIC_PREVIEW=true node scripts/a11y-check.mjs   (axe-core via Playwright Chromium)
+Total violations across 7 pages: 0 — PASS
+
+$ npm run ci   (typecheck && check:constants && build && test:unit && test:a11y)
+All five steps PASS, exit code 0
+```
+
+Every check the repo defines passes cleanly, in both preview and production
+`PUBLIC_PREVIEW` modes.
+
+## Real content/pages available
+
+7 real routes plus `/robots.txt` and `/sitemap.xml`: `/` (marketing/overview),
+`/start` (diagnostic-intake CTA, honest placeholder), `/early-childhood-ai-toolkit`
+(lead-magnet page with copy-paste AI prompts), `/testimonials` (one real,
+pre-existing client testimonial + a non-submitting notice), `/privacy`,
+`/terms` (both honest "policy content pending" stubs), `/accessibility` (real,
+specific statement of what was and wasn't done). All content is migrated from
+the four legacy static HTML files with, per `docs/MIGRATION_INVENTORY.md`,
+zero functional or content loss — verified by spot-checking the migrated
+copy against the preserved legacy files.
+
+## Public claims and unsupported-content risks
+
+- No fabricated clients, metrics, partnerships, or team members found.
+- The one testimonial (Diamond Kouture Beauty / Diamond Osayande, with a link
+  to `diamondkbeauty.com`) is carried over verbatim from the legacy
+  `testimonials.html` — confirmed by diffing against the preserved legacy
+  file, not something invented in this rebuild.
+- External reference links on `/early-childhood-ai-toolkit` (NAEYC, TeachAI,
+  UNICEF) are also carried over verbatim from the legacy HTML — real
+  third-party resource links, not TMI claims.
+- `/privacy` and `/terms` explicitly disclose they are not real legal
+  documents rather than presenting placeholder text as if it were policy.
+- **Defect found and fixed:** `/accessibility`'s "Known gaps" section
+  described "the embedded testimonial submission form (Google Forms, on the
+  Testimonials page)" as still present and only partially accessible. This
+  Google Form iframe was in fact already removed from `/testimonials` in the
+  same commit that authored `accessibility.astro` (per
+  `docs/LAUNCH_BLOCKERS.md`) — so the accessibility statement was describing
+  a feature that does not exist in the live output, which is itself a
+  minor factual-accuracy risk on a page whose entire purpose is to be
+  accurate. Removed the stale bullet (see "What was fixed" below).
+
+## Social/external links and verification state
+
+No social-media links are rendered anywhere on this property (it doesn't
+render its own social-icon footer; the ecosystem footer/nav is generated by
+`liveFooterFor()` in `src/lib/site.ts`, which filters `@tmi/constants`
+properties down to `status === "live"` only — non-live ecosystem properties
+are never linked). External links present (the client testimonial link and
+the three childhood-education reference links) point at real, independently
+verifiable third-party sites, not TMI/ecosystem properties, and are not
+gated by a "verified" flag because they aren't ecosystem/social claims — they
+are legacy reference citations, matching the existing "never delete" content
+policy. No `verified: false`-style gate pattern was needed here because no
+unverified TMI social/ecosystem link is rendered in the first place; this is
+consistent with, not a gap relative to, the pattern used in
+texasmovement.com's `isHeldPendingConfirmation()`/`isFooterEligible()` and
+alexandermathai.com's `social.ts` `verified` flag.
+
+## Contact/commerce status
+
+No working contact path exists, and the repo is explicit about it:
+- `/start` (primary CTA) is a static page — no form backend, no `mailto:`,
+  no lead capture — because `consulting@texasmovement.com` is not in
+  `VERIFIED_INBOXES` (`src/lib/site.ts`, empty by default).
+- The legacy `/testimonials` Google Form (a live, unverified third-party
+  submission endpoint) has already been disabled in this branch's history
+  and replaced with a non-submitting notice — enforced going forward by a
+  postbuild guard (`check-public-output.mjs` check 6) that fails the build
+  on any Google Forms/Typeform/JotForm embed not explicitly allow-listed in
+  `VERIFIED_THIRD_PARTY_EMBEDS`.
+- No `mailto:` links, no email addresses, and no inert `<form>`/`<input>`
+  markup render anywhere in `dist/` — confirmed both by the postbuild guard
+  passing and by manual `grep` against the built output.
+- No commerce/checkout functionality exists on this property.
+
+## SEO/indexing behavior
+
+Confirmed by inspecting actual build output in both modes:
+
+| | `PUBLIC_PREVIEW=true` (default) | `PUBLIC_PREVIEW=false` |
+|---|---|---|
+| `robots.txt` | `Disallow: /` | `Allow: /` + `Sitemap:` line |
+| `sitemap.xml` | empty `<urlset>` | 7 real `<loc>` entries at `consulting.texasmovement.com` |
+| `<meta name="robots">` | `noindex, nofollow` | `index, follow, max-image-preview:large` |
+| `<link rel="canonical">` | absent | present, points at `https://consulting.texasmovement.com/...` |
+
+`PUBLIC_PREVIEW` defaults to preview-safe (`true`) when unset, matching the
+texasmovement.com pattern exactly. No canonical or sitemap URL ever points at
+localhost, `*.pages.dev`, or any guessed/staging domain in either mode —
+both modes only ever reference the property's own real intended domain,
+which is correct since that domain (`consulting.texasmovement.com`) is a
+literal subdomain of the already-live `texasmovement.com` hub, not a guess.
+
+## Accessibility status
+
+`scripts/a11y-check.mjs` (axe-core via Playwright Chromium against
+`astro preview`) reports 0 violations across all 7 real pages, both before
+and after this audit's fix. Manual spot checks: exactly one `<h1>` per page
+(verified via `grep` on all 7 built pages), a real keyboard-reachable skip
+link and mobile-nav disclosure (`src/components/Nav.astro`), visible focus
+outlines, and alt text on meaningful images per the repo's own
+`/accessibility` statement. `/accessibility` itself explicitly discloses
+what's *not* covered (no manual screen-reader pass) rather than overclaiming
+compliance — this is a stronger accessibility disclosure than a typical
+"Building"-stage property and was left as-is.
+
+## Ecosystem classification: Building
+
+This is not Live: there is no evidence of any actual deployed instance at
+`consulting.texasmovement.com` or anywhere else. `wrangler.toml` states
+plainly that no Cloudflare Pages project is connected, and `PUBLIC_PREVIEW`
+still defaults to the preview-safe state (noindex, empty sitemap) even in
+this branch's checked-in configuration — the repo has never been flipped to
+a real production build by anyone with deploy access. `main` (the branch any
+real GitHub Pages/Cloudflare deploy would be pointed at) still serves the
+original four-file legacy site, untouched.
+
+This is also not Route: a "Route" property honestly redirects visitors
+elsewhere because it has no independent deployment of its own. This
+property *is* a real, substantially complete Astro rebuild with its own
+distinct pages, content, and design system — routing it away would discard
+real, working, launch-ready content rather than being the honest choice for
+an empty shell.
+
+So: **Building.** It has a real, extensively-developed repo (7 working
+routes, full governance tooling, 0 build/test/a11y errors) but nothing is
+publicly reachable at the property's hostname yet, and the two things that
+would flip it toward Live — a verified contact inbox and an actual connected
+Cloudflare Pages deployment with `PUBLIC_PREVIEW=false` — are both still
+outstanding and both require actions only a human with the relevant access
+(inbox, Cloudflare dashboard) can take. This is a more complete "Building"
+than a typical private shell (it's release-audited and CI-green, not just
+scaffolded), but "more complete" is not "deployed," and the classification
+rule is explicit that `PUBLIC_PREVIEW` still defaulting preview-safe with no
+evidence of a live deployment means Building or Route, not Live.
+
+## Launch recommendation
+
+Do not merge PR #1 or flip `PUBLIC_PREVIEW=false` in a real deploy yet. The
+codebase itself is release-ready from an engineering standpoint (clean
+build, clean tests, clean a11y scan, no fabricated claims, correct
+preview/production SEO behavior, no live unverified endpoints) — the
+remaining blockers are all owner-side decisions, not code defects:
+
+1. Verify `consulting@texasmovement.com` (or an alternate inbox) so `/start`
+   can get a real submission path.
+2. Get real `/privacy` and `/terms` legal text from counsel.
+3. Connect a Cloudflare Pages project (dashboard access required) and only
+   then flip `PUBLIC_PREVIEW=false` for a genuine production build.
+4. Decide whether to re-enable the `/testimonials` Google Form (needs
+   explicit confirmation of ownership/destination) or leave it retired.
+
+Once 1–3 are resolved and a real deployment exists and passes this same
+audit again in production mode, this property is a strong Live candidate —
+its engineering quality already exceeds the bar.
+
+## Required owner verification
+
+- Confirm `consulting@texasmovement.com` exists and forwards, or provide an
+  alternate verified inbox.
+- Provide reviewed privacy policy and terms of service text.
+- Grant/perform Cloudflare Pages project connection and DNS.
+- Confirm ownership and destination of the legacy `/testimonials` Google
+  Form if it should be reinstated (exact URL preserved in
+  `docs/LAUNCH_BLOCKERS.md`).
+- Sign off on (or reject) the one design-consistency call already flagged in
+  `docs/LAUNCH_BLOCKERS.md` (unifying the toolkit/testimonials pages onto
+  the shared design tokens instead of their original bespoke palettes).
+
+## Exact blockers
+
+- No verified inbox → `/start` cannot get a real submission path.
+- No Cloudflare Pages connection → no live URL exists at all, at any domain.
+- No real `/privacy` / `/terms` text → policy pages remain honest stubs, not
+  real policies.
+- `/testimonials` Google Form re-enablement is gated on ownership
+  confirmation (currently disabled, correctly, pending that).
+
+## Safe next action
+
+No code or deploy action is safe to take further without owner input — the
+repo is already at the point where the only remaining moves are owner
+decisions (inbox verification, legal text, Cloudflare dashboard access) or a
+real deploy, none of which fall under this audit's authority. The one
+code-level defect found during this pass (a stale accessibility-statement
+claim describing an already-removed Google Form) has been fixed and
+committed. No further code changes are recommended until an owner acts on
+one of the items above.
+
+## What was fixed during this audit
+
+- `src/pages/accessibility.astro`: removed a stale "Known gaps" bullet
+  claiming a Google Forms iframe was still embedded on `/testimonials`. That
+  form had already been removed (see `docs/LAUNCH_BLOCKERS.md`); the
+  accessibility statement was describing functionality that no longer
+  exists in the built output. Verified `npm run ci` (typecheck, constants
+  check, build with postbuild guard, unit tests, a11y scan) still passes
+  clean after the fix.
+
+No other changes were made. This was an audit-and-narrow-fix pass only —
+no features added, no redesign, no other files touched.
